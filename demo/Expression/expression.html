@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>ng-model</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div ng-app="" ng-init="quantity=1;cost=5;firstName='John';lastName='Doe';
+    person={firstName:'John',lastName:'Doe'};
+    points=[1,15,19,2,40];">
+    <h2>表达式</h2>
+    <p>我的第一个表达式: {{ 5 + 5 }}</p>
+
+    <p>总价： {{ quantity * cost }}</p>
+    <p>总价： <span ng-bind="quantity * cost"></span></p>
+
+    <p>姓名： {{ firstName + " " + lastName }}</p>
+    <p>姓名： <span ng-bind="firstName + ' ' + lastName"></span></p>
+
+    <p>姓为 {{ person.lastName }}</p>
+    <p>姓为 <span ng-bind="person.lastName"></span></p>
+
+    <p>第三个值为 {{ points[2] }}</p>
+    <p>第三个值为 <span ng-bind="points[2]"></span></p>
+
+</div>
+<script defer src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+</body>
+</html>
