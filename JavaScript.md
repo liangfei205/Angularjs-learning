@@ -1,4 +1,4 @@
-# JavaScript 规范
+# [JavaScript 规范](https://github.com/sivan/javascript-style-guide/blob/master/es5/README.md)
 
 ## <a name="table-of-contents">目录</a>
 
