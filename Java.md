@@ -1,21 +1,27 @@
 # JAVA规范
 
 ## 目录
-0. [GIT](#Git)
+1. [GIT](#Git)
 1. [源文件](#Sourcefile)
-2. [格式](#Formatting)
-3. [命名约定](#Naming)
-4. [编程实践](#ProgrammingPractices)
-5. [Javadoc](#Javadoc)
-6. [微服务&组件规范](#ms)
+1. [格式](#Formatting)
+1. [命名约定](#Naming)
+1. [编程实践](#ProgrammingPractices)
+1. [Javadoc](#Javadoc)
+1. [微服务&组件规范](#ms)
 
-## GIT
+## <a name="Git">GIT</a>
 * MS-HMS需开发人员自行fork个人repo，fork时请确保同步选项选中，fork后先将master, release, staging, test, dev分支设置为不经过pull request不可变更
 * 不得提交有工具生成的文件和目录如：.iml, .idea, target
 * 所有文件必须LF换回，不得提交CRLF换行的文件，请自行修改GIT设置
-* 提交注释为<JIRA Key>:<JIRA Summary>后跟具体注释（可考虑换回）如：HMS-1210:测试环境反复注册eureka，升级到Brixton.SR3
+* 提交注释如下:
 
-## 源文件
+  ```javascript
+  任务号：GP-610
+  提交者：张XX
+  提交事项：签约平台和PC工作站首页改版，根据权限配置增加使用指南
+  ```
+
+## <a name="Sourcefile">源文件</a>
 * 除下面特别说明意外以Google-Java-Style-Guide为准
   * 4.2 缩进4个空格
   * 4.4 代码行字符限制120，package、import除外
@@ -24,7 +30,7 @@
   * 4.8.8 对应比较长的数字加上下划线分隔，如：3_000_000_000L
   * 6.2 捕获异常时要避免直接使用Exception
 
-## 微服务
+## <a name="ms">微服务</a>
 * 必装：JDK8、IDEA、Maven、Redis、mysql、Git
 * 选装：Sonarqube、SQLyog、SourceTree、TortoiseGit
 * 本地开发配置文件为：application-local.yml
