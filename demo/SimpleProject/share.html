@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>ng-app</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="paretnCtrl">
+        <input type="text" ng-model="name" />
+        <div ng-controller="childCtrl1">
+            {{name}}
+            <button ng-click="setName()">set name to jack</button>
+        </div>
+        <div ng-controller="childCtrl2">
+            {{name}}
+            <button ng-click="setName()">set name to tom</button>
+        </div>
+</div>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('paretnCtrl', function($scope) {
+        $scope.name = "王鹏飞";
+    });
+    app.controller('childCtrl1', function($scope) {
+        $scope.setName = function() {
+            $scope.name = "jack";
+        };
+    });
+    app.controller('childCtrl2', function($scope) {
+        $scope.setName = function() {
+            $scope.name = "tom";
+        };
+    });
+</script>
+</body>
+</html>

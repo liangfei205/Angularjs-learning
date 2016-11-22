@@ -2,7 +2,7 @@
 
 ## 目录
   1. [SPA](#spa)
-  1. [Directive DataBind](#dd)
+  1. [Directive&DataBind](#dd)
    1. [Directives](#directives)
    1. [Expression](#expression)
    1. [Filter](#filter)
@@ -11,7 +11,7 @@
    1. [View](#view)
    1. [Model](#model)
    1. [Scope](#scope)
-  1. [Modules Router](#mr)
+  1. [Modules&Router](#mr)
    1. [Dependency Injection](#di)
    1. [Providers](#providers)
    1. [Services](#services)
@@ -26,7 +26,7 @@
 ## SPA
 ### 定义(SPA)
 
-## Directive DataBind
+## Directive&DataBind
 ### Directives
 #### Directive List
 | 指令				| 描述 																|
