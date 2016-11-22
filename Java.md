@@ -1,5 +1,6 @@
 # JAVA规范
 
+<a name="Catlog"></a>
 ## 目录
 1. [文件名称](#FileName)
 1. [文件组织](#FileStructure)
@@ -11,13 +12,13 @@
 1. [命名规范](#Naming)
 1. [编程惯例](#Program)
 1. [代码示例](#Code)
-
 1. [GIT](#Git)
 1. [源文件](#Sourcefile)
 1. [Javadoc](#Javadoc)
 1. [微服务&组件规范](#MicroService)
 
-## <a name="Git">文件名称</a>
+<a name="FileName"></a>
+## 文件名称
 这部分列出了常用的文件名及其后缀
 
 ### 文件后缀
@@ -36,12 +37,15 @@ Java 字节码 | .class
 `GNUmakefile` | makefiles的首选文件名。我们使用 `gnumake`来构建软件.
 `README`      | 概述特定目录下所含内容的文件的首选文件名.
 
-## <a name="FileStructure">文件组织</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="FileStructure"></a>
+## 文件组织
 一个文件由被空行分割而成的段落以及标识每个段落的可选注释共同组成。
 
 超过2000行的程序难以阅读，应该尽量避免。
 
-正确编码格式的范例，见 ["Java 源文件案例"](#Code).
+正确编码格式的范例，见 ["Java 源文件示例"](#SourceDemo).
 
 ### Java 源文件
 每个Java源文件都包含一个单一的公共类或接口。若私有类和接口与一个公共类相关联，可以将它们和公共类放入同一个源文件。公共类必须是这个文件中的第一个类或接口。
@@ -80,8 +84,9 @@ Java 源文件还遵循以下规则：
 
 ```  
 
+<a name="InterfaceDeclare"></a>
 ### 类和接口声明
-T下表描述了类和接口声明的各个部分以及它们出现的先后次序。见 ["Java 源文件案例"](#SourceDemo) 一个包含注释的例子.
+T下表描述了类和接口声明的各个部分以及它们出现的先后次序。见 ["Java 源文件示例"](#SourceDemo) 一个包含注释的例子.
 
 class/interface 声明的各个部分 | 注解
 ------------------------------------|-------
@@ -92,6 +97,8 @@ Class (`static`) 变量 | 先是`public`class 变量,接着是 `protected`,再�
 实例变量 | 先是 `public` class 变量,接着是 `protected`,再是包级别 (没有访问修饰符), 再是 `private`.
 构造器 |
 方法 | 这些方法应该按功能，而非作用域或访问权限，分组。例如，一个私有的类方法可以置于两个公有的实例方法之间。其目的是为了更便于阅读和理解代码.
+
+**[⬆ 回到顶部](#Catlog)**
 
 ## <a name="Indent">缩进</a>
 4个空格常被作为缩进排版的一个单位。缩进的确切解释并未详细指定 (使用空格 还是 tab) . Tab 一定要设置为8个空格 (而非4个)。
@@ -195,7 +202,10 @@ if语句的换行通常使用8个空格的规则，因为常规缩进(4个空格
 
 ```
 
-## <a name="Note">注释</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Note"></a>
+## 注释
 Java 有两类注释: implementation comments（实现注释）和 documentation comments（文档注释）。 实现注释常见于 C++,使用 `/*...*/`,和 `//`。文档注释 (也称为"doc comments") 是 Java 独有的,使用 `/**...*/`。文档注释可以通过 javadoc 工具转成 HTML 文件。
 
 实现注释用以注释代码或者特殊的实现。 文档注释从 implementation-free (实现自由)的角度描述代码的规范。它可以被那些手头没有源码的开发人员读懂。
@@ -293,8 +303,9 @@ Java 有两类注释: implementation comments（实现注释）和 documentation
 
 ```
 
-#### <a name="DocumentDeclare">文档注释</a>
-注意：此处描述的注释格式之范例，参见["Java 源文件范例"](page11.md)。
+<a name="DocumentDeclare"></a>
+#### 文档注释
+注意：此处描述的注释格式之范例，参见["Java 源文件示例"](#SourceDemo)。
 
 更多细节，详见"How to Write Doc Comments for Javadoc"，里面包含了文档注释标签的信息(@return, @param, @see): 
 
@@ -321,7 +332,10 @@ Java 有两类注释: implementation comments（实现注释）和 documentation
 
 文档注释不能放在一个方法或构造器的定义块中，因为Java会将位于文档注释之后的第一个声明与其相关联。
 
-## <a name="Declare">声明</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Declare"></a>
+## 声明
 ### 每行声明变量的数量
 推荐一行一个声明，因为这样以利于写注释。即,
 
@@ -428,7 +442,10 @@ Java 有两类注释: implementation comments（实现注释）和 documentation
 
 - 方法与方法之间以空行分隔
 
-## <a name="Statement">语句</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Statement"></a>
+## 语句
 ### 简单语句
 每行至多包含一条语句，例如:
 
@@ -597,7 +614,10 @@ Every `switch` statement should include a default case. The `break` in the defau
 
 ```
 
-## <a name="Blank">空白</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Blank"></a>
+## 空白
 ### 空行
 空行将逻辑相关的代码段分隔开，以提高可读性。
 
@@ -660,7 +680,10 @@ Every `switch` statement should include a default case. The `break` in the defau
 
 ```
 
-## <a name="Naming">命名规范</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Naming"></a>
+## 命名规范
 命名规范使程序更易读，从而更易于理解。它们也可以提供一些有关标识符功能的信息，以助于理解代码，例如，不论它是一个常量，包，还是类
 
 标识符类型 | 命名规则 | 示例
@@ -673,7 +696,10 @@ Every `switch` statement should include a default case. The `break` in the defau
 实例变量(Instance Variables)	 | 大小写规则和变量名相似，除了前面需要一个下划线	 | `int _employeeId` `String _name` `Customer _customer`
 常量(Constants)	 | 类常量和ANSI常量的声明，应该全部大写，单词间用下划线隔开。(尽量避免ANSI常量，容易引起错误)	 | `static final int MIN_WIDTH = 4` `static final int MAX_WIDTH = 999` `static final int GET_THE_CPU = 1`
 
-## <a name="Program">编程惯例</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Program"></a>
+## 编程惯例
 ### 提供对实例以及类变量的访问
 如果没有充分理由，不要设置实例或者类变量为 public。通常实例变量无需显式的set(设置)和gotten(获取)，通常这作为方法调用的side effect (边缘效应)而产生。
 
@@ -802,9 +828,13 @@ Every `switch` statement should include a default case. The `break` in the defau
 #### 特殊注解
 使用`XXX` 标识处代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进。使用 `FIXME`标识处代码需要修正，甚至代码是错误的，不能工作，需要修复。
 
-## <a name="Code">代码示例</a>
-### <a name="SourceDemo">Java 源文件示例</a>
-下面的例子，展示了如何合理布局一个包含单一公共类的Java源程序。接口的布局与其相似。更多信息参见 ["类和接口声明"](page03.md) and ["文档注释"](#DocumentDeclare)
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Code"></a>
+## 代码示例
+<a name="SourceDemo"></a>
+### Java 源文件示例
+下面的例子，展示了如何合理布局一个包含单一公共类的Java源程序。接口的布局与其相似。更多信息参见 ["类和接口声明"](#InterfaceDeclare) and ["文档注释"](#DocumentDeclare)
 
 ```java
 	
@@ -879,7 +909,10 @@ Every `switch` statement should include a default case. The `break` in the defau
 
 ```
 
-## <a name="Git">GIT</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Git"></a>
+## GIT
 * 开发人员需自行fork个人repo，fork时请确保同步选项选中，fork后先将master, release, staging, test, dev分支设置为不经过pull request不可变更
 * 不得提交有工具生成的文件和目录如：.iml, .idea, target
 * 所有文件必须LF换回，不得提交CRLF换行的文件，请自行修改GIT设置
@@ -891,7 +924,10 @@ Every `switch` statement should include a default case. The `break` in the defau
   提交事项：签约平台和PC工作站首页改版，根据权限配置增加使用指南
   ```
 
-## <a name="Sourcefile">源文件</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="Sourcefile"></a>
+## 源文件
 * 除下面特别说明意外以Google-Java-Style-Guide为准
   * 4.2 缩进4个空格
   * 4.4 代码行字符限制120，package、import除外
@@ -900,7 +936,10 @@ Every `switch` statement should include a default case. The `break` in the defau
   * 4.8.8 对应比较长的数字加上下划线分隔，如：3_000_000_000L
   * 6.2 捕获异常时要避免直接使用Exception
 
-## <a name="MicroService">微服务</a>
+**[⬆ 回到顶部](#Catlog)**
+
+<a name="MicroService"></a>
+## 微服务
 * 必装：JDK8、IDEA、Maven、Redis、mysql、Git
 * 选装：Sonarqube、SQLyog、SourceTree、TortoiseGit
 * 本地开发配置文件为：application-local.yml
@@ -908,3 +947,5 @@ Every `switch` statement should include a default case. The `break` in the defau
 * flyway sql脚本文件命名：V2__HMS_1234_ddl.sql，不同环境的脚本文件名要保持一致。文件名里面要体现jira号和ddl、dml
 * 本地编译通过后才能提交代码合并请求，今后开发和测试的Jenkins build要开启单元测试，单元测试失败会导致build失败，请务必单元测试通过后发合并请求
 * 禁用@SuppressWarnings("all")，慎用@SuppressWarnings("unused")，建议使用IDE的Suppress for ...
+
+**[⬆ 回到顶部](#Catlog)**

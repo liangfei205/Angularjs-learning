@@ -1,6 +1,8 @@
 # [Angular规范](https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md)
 
+<a name="Catlog"></a>
 # 目录
+
 1. [概览](#概览)
   1. [目录结构](#目录结构)
   1. [标记](#标记)
@@ -145,6 +147,8 @@ services
 
 组件命名的约定可以在每个组件中看到。
 
+**[⬆ 回到顶部](#Catlog)**
+
 ## 标记
 
 [太长慎读](http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-6-move-scripts-bottom-7200.html) 把script标签放在文档底部。
@@ -178,7 +182,7 @@ services
 
 其它的HTML标签应该遵循下面的指南的 [建议](http://mdo.github.io/code-guide/#html-attribute-order)
 
-## 标记
+## 命名约定
 
 下表展示了各个Angular元素的命名约定
 
@@ -190,8 +194,6 @@ Directives | lowerCamelCase  | userInfo |
 Filters | lowerCamelCase | userFilter |
 Services | UpperCamelCase | User | constructor
 Services | lowerCamelCase | dataFactory | others
-
-
 
 ## 其他
 
@@ -239,6 +241,8 @@ module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, M
 });
 ```
 
+**[⬆ 回到顶部](#Catlog)**
+
 # 模块
 
 * 模块应该用驼峰式命名。为表明模块 `b` 是模块 `a` 的子模块, 可以用点号连接: `a.b` 。
@@ -249,6 +253,8 @@ module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, M
 	0. 按照组件类型组织
 
 	当前并无太大差别，但前者更加清晰。同时，如果 lazy-loading modules 被实现的话 (当前并未列入 AngularJS 的路线图)，这种方式将改善应用的性能。
+
+**[⬆ 回到顶部](#Catlog)**
 
 # 控制器
 
@@ -426,6 +432,8 @@ module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, M
    <div ng-bind="home.bindingValue"></div>
    ```
 
+**[⬆ 回到顶部](#Catlog)**
+
 # 指令
 
 * 使用小写字母开头的驼峰法命名指令。
@@ -438,6 +446,7 @@ module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, M
 * 使用 `scope.$on('$destroy', fn)` 来清除。这点在使用第三方指令的时候特别有用。
 * 处理不可信的数据时，不要忘记使用 `$sce` 。
 
+**[⬆ 回到顶部](#Catlog)**
 
 # 过滤器
 
@@ -445,6 +454,7 @@ module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, M
 * 尽可能使过滤器精简。过滤器在 `$digest` loop 中被频繁调用，过于复杂的过滤器将使得整个应用缓慢。
 * 在过滤器中只做一件事。更加复杂的操作可以用 pipe 串联多个过滤器来实现。
 
+**[⬆ 回到顶部](#Catlog)**
 
 # 服务
 
@@ -554,6 +564,8 @@ module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, M
 	});
 	```
 
+**[⬆ 回到顶部](#Catlog)**
+
 # 模板
 
 * 使用 `ng-bind` 或者 `ng-cloak` 而非简单的 `{{ }}` 以防止页面渲染时的闪烁。
@@ -575,14 +587,20 @@ $scope.divStyle = {
 <div ng-style="divStyle">my beautifully styled div which will work in IE</div>;
 ```
 
+**[⬆ 回到顶部](#Catlog)**
+
 # 路由
 
 * 在视图展示之前通过 `resolve` 解决依赖。
 * 不要在 `resolve` 回调函数中显式使用RESTful调用。将所有请求放在合适的服务中。这样你就可以使用缓存和遵循关注点分离原则。
 
+**[⬆ 回到顶部](#Catlog)**
+
 # 国际化
 
 * 在较新版本的 Angular（>=1.4.0）下，使用内置的 i18n 工具，在较老版本下（<1.4.0），使用 [`angular-translate`](https://github.com/angular-translate/angular-translate)。
+
+**[⬆ 回到顶部](#Catlog)**
 
 # 性能
 
@@ -598,4 +616,4 @@ $scope.divStyle = {
 
 * 用打包、缓存html模板文件到你的主js文件中，减少网络请求, 可以用 [grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) / [gulp-html2js](https://github.com/fraserxu/gulp-html2js). 详见 [这里](http://ng-learn.org/2014/08/Populating_template_cache_with_html2js/) 和 [这里](http://slides.com/yanivefraim-1/real-world-angularjs#/34) 。 在项目有很多小html模板并可以放进主js文件中时（通过minify和gzip压缩），这个办法是很有用的。
 
-
+**[⬆ 回到顶部](#Catlog)**
