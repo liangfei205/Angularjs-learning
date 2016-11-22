@@ -1,32 +1,72 @@
 # Angular规范
 
-## 目录
-
+# 目录
+1. [概览](#概览)
   1. [目录结构](#目录结构)
-  1. [命名](#命名)
-  1. [Modules](#modules)
-  1. [Controllers](#controllers)
-  1. [Services](#services)
-  1. [Directives](#directives)
-  1. [ui-route](#ui-route)
-  1. [filter](#filter)
-  1. [常量](#常量)
-  1. [Angular$包装服务](#Angular$包装服务)
+  1. [标记](#标记)
+  1. [命名约定](#命名约定)
+  1. [其他](#其他)
+1. [模块](#模块)
+1. [控制器](#控制器)
+1. [指令](#指令)
+1. [过滤器](#过滤器)
+1. [服务](#服务)
+1. [模板](#模板)
+1. [路由](#路由)
+1. [国际化](#国际化)
+1. [性能](#性能)
   
-  
-**[返回顶部](#目录)**
-
+# 概览
 
 ## 目录结构
+
+由于一个大型的AngularJS应用有较多组成部分，所以最好通过分层的目录结构来组织。
+有两个主流的组织方式：
+
+* 按照类型优先，业务功能其次的组织方式
+
+这种方式的目录结构看起来如下：
+
+```
+.
+├── app
+│   ├── app.js
+│   ├── controllers
+│   │   ├── home
+│   │   │   ├── FirstCtrl.js
+│   │   │   └── SecondCtrl.js
+│   │   └── about
+│   │       └── ThirdCtrl.js
+│   ├── directives
+│   │   ├── home
+│   │   │   └── directive1.js
+│   │   └── about
+│   │       ├── directive2.js
+│   │       └── directive3.js
+│   ├── filters
+│   │   ├── home
+│   │   └── about
+│   └── services
+│       ├── CommonService.js
+│       ├── cache
+│       │   ├── Cache1.js
+│       │   └── Cache2.js
+│       └── models
+│           ├── Model1.js
+│           └── Model2.js
+├── partials
+├── lib
+└── test
+```
+
 * 按照业务功能优先，类型其次的组织方式
 
 如下：
 
 ```
 .
-├── js
+├── app
 │   ├── app.js
-│   ├── config.js
 │   ├── common
 │   │   ├── controllers
 │   │   ├── directives
@@ -54,16 +94,93 @@
 │       │   └── filter3.js
 │       └── services
 │           └── service3.js
-├── css
+├── partials
 ├── lib
-├── test
-└── ...
+└── test
 ```
 
-**[返回顶部](##目录)**
+* 当目录里有多个单词时, 使用 lisp-case 语法:
 
-## 命名
-* 下表展示了各个Angular元素的命名约定
+```
+app
+ ├── app.js
+ └── my-complex-module
+     ├── controllers
+     ├── directives
+     ├── filters
+     └── services
+```
+
+* 在创建指令时，合适的做法是将相关的文件放到同一目录下 (如：模板文件, CSS/SASS 文件, JavaScript文件)。如果你在整个项目周期都选择这种组织方式，
+
+```
+app
+└── directives
+    ├── directive1
+    │   ├── directive1.html
+    │   ├── directive1.js
+    │   └── directive1.sass
+    └── directive2
+        ├── directive2.html
+        ├── directive2.js
+        └── directive2.sass
+```
+
+那么，上述的两种目录结构均能适用。
+* 组件的单元测试应与组件放置在同一目录下下。在这种方式下，当改变组件时，更加容易找到对应的测试。同时，单元测试也充当了文档和示例。
+
+```
+services
+├── cache
+│   ├── cache1.js
+│   └── cache1.spec.js
+└── models
+    ├── model1.js
+    └── model1.spec.js
+```
+
+* `app.js`文件包含路由定义、配置和启动说明(如果需要的话)。
+* 每一个 JavaScript 文件应该仅包含 **一个组件** 。文件名应该以组件名命名。
+* 使用 Angular 项目模板，如 [Yeoman](http://yeoman.io), [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home).
+
+组件命名的约定可以在每个组件中看到。
+
+## 标记
+
+[太长慎读](http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-6-move-scripts-bottom-7200.html) 把script标签放在文档底部。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MyApp</title>
+</head>
+<body>
+  <div ng-app="myApp">
+    <div ng-view></div>
+  </div>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+保持标签的简洁并把AngularJS的标签放在标准HTML属性后面。这样提高了代码可读性。标准HTML属性和AngularJS的属性没有混到一起，提高了代码的可维护性。
+
+```html
+<form class="frm" ng-submit="login.authenticate()">
+  <div>
+    <input class="ipt" type="text" placeholder="name" require ng-model="user.name">
+  </div>
+</form>
+```
+
+其它的HTML标签应该遵循下面的指南的 [建议](http://mdo.github.io/code-guide/#html-attribute-order)
+
+## 标记
+
+下表展示了各个Angular元素的命名约定
 
 元素 | 命名风格 | 实例 | 用途
 ----|------|----|--------
@@ -74,74 +191,66 @@ Filters | lowerCamelCase | userFilter |
 Services | UpperCamelCase | User | constructor
 Services | lowerCamelCase | dataFactory | others
 
-**[返回顶部](#目录)**
 
-## Modules
 
-### 定义(aka Setters)
+## 其他
 
-  - 不使用任何一个使用了setter语法的变量来定义modules。
+* 使用：
+    * `$timeout`  替代 `setTimeout`
+    * `$interval` instead of `setInterval`
+    * `$window`   替代 `window`
+    * `$document` 替代 `document`
+    * `$http`     替代 `$.ajax`
 
-	*为什么?*：在一个文件只有一个组件的条件下，完全不需要为一个模块引入一个变量。
+这将使你更易于在测试时处理代码异常 (例如：你在 `setTimeout` 中忘记 `$scope.$apply`)
 
-  ```javascript
-  /* avoid */
-  var app = angular.module('app', [
-      'ngAnimate',
-      'ngRoute',
-      'app.shared',
-      'app.dashboard'
-  ]);
-  ```
+使用如下工具自动化你的工作流
+    * [Yeoman](http://yeoman.io)
+    * [Gulp](http://gulpjs.com)
+    * [Grunt](http://gruntjs.com)
+    * [Bower](http://bower.io)
 
-	你只需要用简单的setter语法来代替。
+* 使用 promise (`$q`) 而非回调。这将使你的代码更加优雅、直观，并且免于回调地狱。
+* 尽可能使用 `$resource` 而非 `$http`。更高的抽象可以避免冗余。
+* 使用AngularJS的预压缩版 (像 [ngmin](https://github.com/btford/ngmin) 或 [ng-annotate](https://github.com/olov/ng-annotate)) 避免在压缩之后出现问题。
+* 不要使用全局变量或函数。通过依赖注入解决所有依赖，这可以减少 bug ，规避很多测试时的麻烦。
+* 为避免使用全局变量或函数，可以借助 Grunt 或 Gulp 把你的代码放到一个立即执行的函数表达式（IIFE）中。可用的插件有 [grunt-wrap](https://www.npmjs.com/package/grunt-wrap) 或 [gulp-wrap](https://www.npmjs.com/package/gulp-wrap/)。下面是 Gulp 的示例：
 
-  ```javascript
-  /* recommended */
-  angular
-    	.module('app', [
-        'ngAnimate',
-        'ngRoute',
-        'app.shared',
-        'app.dashboard'
-    ]);
-  ```
+```Javascript
+gulp.src("./src/*.js")
+    .pipe(wrap('(function(){\n"use strict";\n<%= contents %>\n})();'))
+    .pipe(gulp.dest("./dist"));
+```
 
-### Getters
+* 不要污染 `$scope`。仅添加与视图相关的函数和变量。
+* [使用 controllers 而非 `ngInit`](https://github.com/angular/angular.js/pull/4366/files)。`ngInit` 只有在一种情况下的使用是合适的：用来给 `ngRepeat`的特殊属性赋予一个别名。除此之外, 你应该使用 controllers 而不是 `ngInit` 来初始化scope变量。`ngInit` 中的表达式会传递给 Angular 的 `$parse` 服务，通过词法分析，语法分析，求值等过程。这会导致:
+    - 对性能的巨大影响，因为解释器由 Javascript 写成
+    - 多数情况下，`$parse` 服务中对表达式的缓存基本不起作用，因为 `ngInit` 表达式经常只有一次求值
+    - 很容易出错，因为是模板中写字符串，没有针对表达式的语法高亮和进一步的编辑器支持
+    - 不会抛出运行时错误
+* 不要使用 `$` 前缀来命名变量, 属性和方法. 这种前缀是预留给 AngularJS 来使用的.
+* 当使用 DI 机制来解决依赖关系, 要根据他们的类型进行排序 -  AngularJS 内建的依赖要优先, 之后才是你自定义的：
 
-  - 使用module的时候，避免直接用一个变量，而是使用getter的链式语法。
+```javascript
+module.factory('Service', function ($rootScope, $timeout, MyCustomDependency1, MyCustomDependency2) {
+  return {
+    //Something
+  };
+});
+```
 
-	*为什么？*：这将产生更加易读的代码，并且可以避免变量冲突和泄漏。
+# 模块
 
-  ```javascript
-  /* avoid */
-  var app = angular.module('app');
-  app.controller('SomeController', SomeController);
+* 模块应该用驼峰式命名。为表明模块 `b` 是模块 `a` 的子模块, 可以用点号连接: `a.b` 。
 
-  function SomeController() { }
-  ```
+	有两种常见的组织模块的方式：
 
-  ```javascript
-  /* recommended */
-  angular
-      .module('app')
-      .controller('SomeController', SomeController);
+	0. 按照功能组织
+	0. 按照组件类型组织
 
-  function SomeController() { }
-  ```
+	当前并无太大差别，但前者更加清晰。同时，如果 lazy-loading modules 被实现的话 (当前并未列入 AngularJS 的路线图)，这种方式将改善应用的性能。
 
-### Setting vs Getting
-
-  - 只能设置一次。
-
-  *为什么？*：一个module只能被创建一次，创建之后才能被检索到。
-
-    - 设置module，`angular.module('app', []);`。
-    - 获取module，`angular.module('app');`。
-    
-**[返回顶部](#目录)**
-
-## 控制器
+# 控制器
 
 * 不要在控制器里操作 DOM，这会让你的控制器难以测试，而且违背了[关注点分离原则](https://en.wikipedia.org/wiki/Separation_of_concerns)。应该通过指令操作 DOM。
 * 通过控制器完成的功能命名控制器 (如：购物卡，主页，控制板)，并以字符串`Ctrl`结尾。
@@ -156,6 +265,33 @@ Services | lowerCamelCase | dataFactory | others
   module.controller('MyCtrl', MyCtrl);
   ```
 
+   为了避免在压缩代码时产生问题，你可以使用工具自动生成标准的数组定义式语法，如：[ng-annotate](https://github.com/olov/ng-annotate) （还有 grunt 任务 [grunt-ng-annotate](https://github.com/mzgol/grunt-ng-annotate)）
+
+* 使用 `controller as` 语法:
+
+  ```
+  <div ng-controller="MainCtrl as main">
+     {{ main.title }}
+  </div>
+  ```
+
+  ```JavaScript
+  app.controller('MainCtrl', MainCtrl);
+
+  function MainCtrl () {
+    this.title = 'Some title';
+  }
+  ```
+
+   使用 `controller as` 主要的优点是:
+   * 创建了一个“独立”的组件——绑定的属性不属于 `$scope` 原型链。这是一个很好的实践，因为 `$scope` 原型继承有一些重要的缺点（这可能是为什么它在 Angular 2 中被移除了）：
+      * Scope值的改变会在你不注意的地方有影响。
+      * 难以重构。
+      * [dot rule](http://jimhoskins.com/2012/12/14/nested-scopes-in-angularjs.html)'.
+   * 当你不需要做必须由 `$scope` 完成的操作（比如`$scope.$broadcast`）时，移除掉了 `$scope`，就是为 Angular2 做好准备。
+   * 语法上更接近于普通的 JavaScript 构造函数。
+
+   想深入了解 `controller as` ，请看: [digging-into-angulars-controller-as-syntax](http://toddmotto.com/digging-into-angulars-controller-as-syntax/)
 * 如果使用数组定义语法声明控制器，使用控制器依赖的原名。这将提高代码的可读性：
 
   ```JavaScript
@@ -184,7 +320,7 @@ Services | lowerCamelCase | dataFactory | others
   ```Javascript
   // 这是把业务逻辑放在控制器的常见做法
   angular.module('Store', [])
-  .controller('OrderCtrl', ['$scope',function ($scope) {
+  .controller('OrderCtrl', function ($scope) {
 
     $scope.items = [];
 
@@ -201,7 +337,7 @@ Services | lowerCamelCase | dataFactory | others
         return memo + (item.qty * item.price);//-->控制器中的业务逻辑
       }, 0);
     };
-  }]);
+  });
   ```
 
   当你把业务逻辑交给模型层的服务，控制器看起来就会想这样：（关于 service-model 的实现，参看 'use services as your Model'）:
@@ -209,7 +345,7 @@ Services | lowerCamelCase | dataFactory | others
   ```Javascript
   // Order 在此作为一个 'model'
   angular.module('Store', [])
-  .controller('OrderCtrl', ['$scope','Order',function ($scope,Order) {
+  .controller('OrderCtrl', function (Order) {
 
     $scope.items = Order.items;
 
@@ -224,7 +360,7 @@ Services | lowerCamelCase | dataFactory | others
     $scope.totalPrice = function () {
       return Order.total();
     };
-  }]);
+  });
   ```
 
   为什么控制器不应该包含业务逻辑和应用状态？
@@ -266,280 +402,31 @@ Services | lowerCamelCase | dataFactory | others
 
    module.controller('MyCtrl', MyCtrl);
    ```
-
-**[返回顶部](#目录)**
-
-### 可访问的成员置顶###
-
-  - 使用从[显露模块模式](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript)派生出来的技术把service（它的接口）中可调用的成员暴露到顶部，
-
-    *为什么？*：易读，并且让你可以立即识别service中的哪些成员可以被调用，哪些成员必须进行单元测试（或者被别人嘲笑）。
-
-    *为什么？*：当文件内容很长时，这可以避免需要滚动才能看到暴露了哪些东西。
-
-    *为什么？*：虽然你可以随意写一个函数，但当函数代码超过一行时就会降低可读性并造成滚动。通过把实现细节放下面、把可调用接口置顶的形式返回service的方式来定义可调用的接口，从而使代码更加易读。
-
-  ```javascript
-  /* avoid */
-  function dataService () {
-      var someValue = '';
-      function save () {
-        /* */
-      };
-      function validate () {
-        /* */
-      };
-
-      return {
-          save: save,
-          someValue: someValue,
-          validate: validate
-      };
-  }
-  ```
-
-  ```javascript
-  /* recommended */
-  function dataService () {
-      var someValue = '';
-      var service = {
-          save: save,
-          someValue: someValue,
-          validate: validate
-      };
-      return service;
-
-      ////////////
-
-      function save () {
-        /* */
-      };
-
-      function validate () {
-        /* */
-      };
-  }
-  ```
-
-  这种绑定方式复制了宿主对象，原始值不会随着暴露模块模式的使用而更新。
-
-  ![Factories Using "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-2.png)
-
-### 函数声明隐藏实现细节
-
-  - 函数声明隐藏实现细节，置顶绑定成员，当你需要在controller中绑定一个函数时，把它指向一个函数声明，这个函数声明在文件的后面会出现。
-
-    *为什么？*：易读，易识别哪些成员可以在View中绑定和使用。
-
-    *为什么？*：把函数的实现细节放到后面，你可以更清楚地看到重要的东西。
-
-    *为什么？*：由于函数声明会被置顶，所以没有必要担心在声明它之前就使用函数的问题。
-
-    *为什么？*：你再也不用担心当 `a`依赖于 `b`时，把`var a`放到`var b`之前会中断你的代码的函数声明问题。
-
-    *为什么？*：函数表达式中顺序是至关重要的。
-
-  ```javascript
-  /**
-   * avoid
-   * Using function expressions
-   */
-   function dataservice($http, $location, $q, exception, logger) {
-      var isPrimed = false;
-      var primePromise;
-
-      var getAvengers = function() {
-        // implementation details go here
-      };
-
-      var getAvengerCount = function() {
-        // implementation details go here
-      };
-
-      var getAvengersCast = function() {
-        // implementation details go here
-      };
-
-      var prime = function() {
-        // implementation details go here
-      };
-
-      var ready = function(nextPromises) {
-        // implementation details go here
-      };
-
-      var service = {
-          getAvengersCast: getAvengersCast,
-          getAvengerCount: getAvengerCount,
-          getAvengers: getAvengers,
-          ready: ready
-      };
-
-      return service;
-  }
-  ```
-
-  ```javascript
-  /**
-   * recommended
-   * Using function declarations
-   * and accessible members up top.
-   */
-  function dataservice($http, $location, $q, exception, logger) {
-      var isPrimed = false;
-      var primePromise;
-
-      var service = {
-          getAvengersCast: getAvengersCast,
-          getAvengerCount: getAvengerCount,
-          getAvengers: getAvengers,
-          ready: ready
-      };
-
-      return service;
-
-      ////////////
-
-      function getAvengers() {
-        // implementation details go here
-      }
-
-      function getAvengerCount() {
-        // implementation details go here
-      }
-
-      function getAvengersCast() {
-        // implementation details go here
-      }
-
-      function prime() {
-        // implementation details go here
-      }
-
-      function ready(nextPromises) {
-        // implementation details go here
-      }
-  }
-  ```
-
-**[返回顶部](#目录)**
-
-## Factories
-
-### 独立的数据调用
-
-  - 把进行数据操作和数据交互的逻辑放到factory、service中，数据服务负责XHR请求、本地存储、内存存储和其它任何数据操作。
-
-    *为什么？*：controller的作用是查看视图和收集视图的信息，它不应该关心如何取得数据，只需要知道哪里需要用到数据。把取数据的逻辑放到数据服务中能够让controller更简单、更专注于对view的控制。
-
-    *为什么？*：方便测试。
-
-    *为什么？*：数据服务的实现可能有非常明确的代码来处理数据仓库，这可能包含headers、如何与数据交互或是其它service，例如`$http`。把逻辑封装到单独的数据服务中，这隐藏了外部调用者（例如controller）对数据的直接操作，这样更加容易执行变更。
-
-  ```javascript
-  /* recommended */
-
-  // dataservice factory
-  angular
-      .module('app.core')
-      .service('dataservice', ['$http', 'logger',function dataservice($http, logger) {
-      return {
-          getAvengers: getAvengers
-      };
-
-      function getAvengers() {
-          return $http.get('/api/maa')
-              .then(getAvengersComplete)
-              .catch(getAvengersFailed);
-
-          function getAvengersComplete(response) {
-              return response.data.results;
-          }
-
-          function getAvengersFailed(error) {
-              logger.error('XHR Failed for getAvengers.' + error.data);
-          }
-      }
-  }])
-  ```
-
-    注意：数据服务被调用时（例如controller），隐藏调用的直接行为，如下所示。
-
-  ```javascript
-  /* recommended */
-
-  // controller calling the dataservice factory
-  angular
-      .module('app.avengers')
-      .controller('Avengers',  ['dataservice', 'logger',function Avengers(dataservice, logger) {
-      var vm = this;
-      vm.avengers = [];
-
-      activate();
-
-      function activate() {
-          return getAvengers().then(function() {
-              logger.info('Activated Avengers View');
-          });
-      }
-
-      function getAvengers() {
-          return dataservice.getAvengers()
-            .then(function(data) {
-                vm.avengers = data;
-                return vm.avengers;
-            });
-      }
-  }])
-  ```
-
-### 数据调用返回一个Promise
-
-  - 就像`$http`一样，调用数据时返回一个promise，在你的调用函数中也返回一个promise。
-
-    *为什么？*：你可以把promise链接到一起，在数据调用完成并且resolve或是reject这个promise后采取进一步的行为。
-
-  ```javascript
-  /* recommended */
-
-  activate();
-
-  function activate() {
-      /**
-       * Step 1
-       * Ask the getAvengers function for the
-       * avenger data and wait for the promise
-       */
-      return getAvengers().then(function() {
-        /**
-         * Step 4
-         * Perform an action on resolve of final promise
-         */
-        logger.info('Activated Avengers View');
-      });
-  }
-
-  function getAvengers() {
-      /**
-       * Step 2
-       * Ask the data service for the data and wait
-       * for the promise
-       */
-      return dataservice.getAvengers()
-        .then(function(data) {
-            /**
-             * Step 3
-             * set the data and resolve the promise
-             */
-            vm.avengers = data;
-            return vm.avengers;
-        });
-  }
-  ```
-
-**[返回顶部](#目录)**
-
-## Directives
+* 有内嵌的控制器时使用 "内嵌作用域" ( `controllerAs` 语法)：
+
+   **app.js**
+   ```javascript
+   module.config(function ($routeProvider) {
+     $routeProvider
+       .when('/route', {
+         templateUrl: 'partials/template.html',
+         controller: 'HomeCtrl',
+         controllerAs: 'home'
+       });
+   });
+   ```
+   **HomeCtrl**
+   ```javascript
+   function HomeCtrl() {
+     this.bindingValue = 42;
+   }
+   ```
+   **template.html**
+   ```
+   <div ng-bind="home.bindingValue"></div>
+   ```
+
+# 指令
 
 * 使用小写字母开头的驼峰法命名指令。
 * 在 link function 中使用 `scope` 而非 `$scope`。在 compile 中, 你已经定义参数的 post/pre link functions 将在函数被执行时传递, 你无法通过依赖注入改变他们。这种方式同样应用在 AngularJS 项目中。
@@ -551,352 +438,164 @@ Services | lowerCamelCase | dataFactory | others
 * 使用 `scope.$on('$destroy', fn)` 来清除。这点在使用第三方指令的时候特别有用。
 * 处理不可信的数据时，不要忘记使用 `$sce` 。
 
-### 一个directive一个文件
 
-  - 一个文件中只创建一个directive，并依照directive来命名文件。
+# 过滤器
 
-    *为什么？*：虽然把所有directive放到一个文件中很简单，但是当一些directive是跨应用的，一些是跨模块的，一些仅仅在一个模块中使用时，想把它们独立出来就非常困难了。
-
-    *为什么？*：一个文件一个directive也更加容易维护。
-
-    > 注： "**最佳实践**：Angular文档中有提过，directive应该自动回收，当directive被移除后，你可以使用`element.on('$destroy', ...)`或者`scope.$on('$destroy', ...)`来执行一个clean-up函数。"
-
-  ```javascript
-  /* avoid */
-  /* directives.js */
-
-  angular
-      .module('app.widgets')
-
-      /* order directive仅仅会被order module用到 */
-      .directive('orderCalendarRange', orderCalendarRange)
-
-      /* sales directive可以在sales app的任意地方使用 */
-      .directive('salesCustomerInfo', salesCustomerInfo)
-
-      /* spinner directive可以在任意apps中使用 */
-      .directive('sharedSpinner', sharedSpinner);
-
-  function orderCalendarRange() {
-      /* implementation details */
-  }
-
-  function salesCustomerInfo() {
-      /* implementation details */
-  }
-
-  function sharedSpinner() {
-      /* implementation details */
-  }
-  ```
-
-  ```javascript
-  /* recommended */
-  /* calendarRange.directive.js */
-
-  /**
-   * @desc order directive that is specific to the order module at a company named Acme
-   * @example <div acme-order-calendar-range></div>
-   */
-  angular
-      .module('sales.order')
-      .directive('acmeOrderCalendarRange', orderCalendarRange);
-
-  function orderCalendarRange() {
-      /* implementation details */
-  }
-  ```
-
-  ```javascript
-  /* recommended */
-  /* customerInfo.directive.js */
-
-  /**
-   * @desc sales directive that can be used anywhere across the sales app at a company named Acme
-   * @example <div acme-sales-customer-info></div>
-   */
-  angular
-      .module('sales.widgets')
-      .directive('acmeSalesCustomerInfo', salesCustomerInfo);
-
-  function salesCustomerInfo() {
-      /* implementation details */
-  }
-  ```
-
-  ```javascript
-  /* recommended */
-  /* spinner.directive.js */
-
-  /**
-   * @desc spinner directive that can be used anywhere across apps at a company named Acme
-   * @example <div acme-shared-spinner></div>
-   */
-  angular
-      .module('shared.widgets')
-      .directive('acmeSharedSpinner', sharedSpinner);
-
-  function sharedSpinner() {
-      /* implementation details */
-  }
-  ```
-
-    注：由于directive使用条件比较广，所以命名就存在很多的选项。选择一个让directive和它的文件名都清楚分明的名字。下面有一些例子，不过更多的建议去看[命名](#命名)章节。
-
-### 在directive中操作DOM
-
-  - 当需要直接操作DOM的时候，使用directive。如果有替代方法可以使用，例如：使用CSS来设置样式、[animation services](https://docs.angularjs.org/api/ngAnimate)、Angular模板、[`ngShow`](https://docs.angularjs.org/api/ng/directive/ngShow)或者[`ngHide`](https://docs.angularjs.org/api/ng/directive/ngHide)，那么就直接用这些即可。例如，如果一个directive只是想控制显示和隐藏，用ngHide/ngShow即可。
-
-    *为什么？*：DOM操作的测试和调试是很困难的，通常会有更好的方法（CSS、animations、templates）。
-
-### 提供一个唯一的Directive前缀
-
-  - 提供一个短小、唯一、具有描述性的directive前缀，例如`acmeSalesCustomerInfo`在HTML中声明为`acme-sales-customer-info`。
-
-    *为什么？*：方便快速识别directive的内容和起源，例如`acme-`可能预示着这个directive是服务于Acme company。
-
-    注：避免使用`ng-`为前缀，研究一下其它广泛使用的directive避免命名冲突，例如[Ionic Framework](http://ionicframework.com/)的`ion-`。
-
-### 限制元素和属性
-
-  - 当创建一个directive需要作为一个独立元素时，restrict值设置为`E`（自定义元素），也可以设置可选值`A`（自定义属性）。一般来说，如果它就是为了独立存在，用`E`是合适的做法。一般原则是允许`EA`，但是当它是独立的时候这更倾向于作为一个元素来实施，当它是为了增强已存在的DOM元素时则更倾向于作为一个属性来实施。
-
-    *为什么？*：这很有意义！
-
-    *为什么？*：虽然我们允许directive被当作一个class来使用，但如果这个directive的行为确实像一个元素的话，那么把directive当作元素或者属性是更有意义的。
-
-    注：Angular 1.3 +默认使用EA。
-
-  ```html
-  <!-- avoid -->
-  <div class="my-calendar-range"></div>
-  ```
-
-  ```javascript
-  /* avoid */
-  angular
-      .module('app.widgets')
-      .directive('myCalendarRange', myCalendarRange);
-
-  function myCalendarRange () {
-      var directive = {
-          link: link,
-          templateUrl: '/template/is/located/here.html',
-          restrict: 'C'
-      };
-      return directive;
-
-      function link(scope, element, attrs) {
-        /* */
-      }
-  }
-  ```
-
-  ```html
-  <!-- recommended -->
-  <my-calendar-range></my-calendar-range>
-  <div my-calendar-range></div>
-  ```
-
-  ```javascript
-  /* recommended */
-  angular
-      .module('app.widgets')
-      .directive('myCalendarRange', myCalendarRange);
-
-  function myCalendarRange () {
-      var directive = {
-          link: link,
-          templateUrl: '/template/is/located/here.html',
-          restrict: 'EA'
-      };
-      return directive;
-
-      function link(scope, element, attrs) {
-        /* */
-      }
-  }
-  ```
-  
-**[返回顶部](#目录)**
-
-## 路由
-### Route Resolve Promises
-
-  - 当一个controller在激活之前，需要依赖一个promise的完成时，那么就在controller的逻辑执行之前在`$routeProvider`中解决这些依赖。如果你需要在controller被激活之前有条件地取消一个路由，那么就用route resolver。
-
-  - 当你决定在过渡到视图之前取消路由时，使用route resolve。
-
-    *为什么？*：controller在加载前可能需要一些数据，这些数据可能是从一个通过自定义factory或是[$http](https://docs.angularjs.org/api/ng/service/$http)的promise而来的。[route resolve](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)允许promise在controller的逻辑执行之前解决，因此它可能对从promise中来的数据做一些处理。
-
-    *为什么？*：这段代码将在路由后的controller的激活函数中执行，视图立即加载，promise resolve的时候将会开始进行数据绑定，可以（通过`ng-view`或`ui-view`）在视图的过渡之间加个loading状态的动画。
-
-    注意：这段代码将在路由之前通过一个promise来执行，拒绝了承诺就会取消路由，接受了就会等待路由跳转到新视图。如果你想更快地进入视图，并且无需验证是否可以进入视图，你可以考虑用[控制器 `activate` 技术]。
-
-  ```javascript
-  /* avoid */
-  angular
-      .module('app')
-      .controller('Avengers', ['movieService',
-
-  function (movieService) {
-      var vm = this;
-      // unresolved
-      vm.movies;
-      // resolved asynchronously
-      movieService.getMovies().then(function(response) {
-          vm.movies = response.movies;
-      });
-  }]);
-  ```
-
-  ```javascript
-  /* better */
-
-  // route-config.js
-  angular
-      .module('app')
-      .config(config);
-
-  function config ($routeProvider) {
-      $routeProvider
-          .state('/avengers', {
-              templateUrl: 'avengers.html',
-              controller: 'Avengers',
-              
-              resolve: {
-                  moviesPrepService: ['movieService',function(movieService) {
-                      return movieService.getMovies();
-                  }]
-              }
-          });
-  }
-
-  // avengers.js
-  angular
-      .module('app')
-      .controller('Avengers', ['moviesPrepService',function(moviesPrepService) {
-      var vm = this;
-      vm.movies = moviesPrepService.movies;
-  });
-  ```
-
-    注意：下面这个例子展示了命名函数的路由解决，这种方式对于调试和处理依赖注入更加方便。
-
-  ```javascript
-  /* even better */
-
-  // route-config.js
-  angular
-      .module('app')
-      .config(config);
-
-  function config($routeProvider) {
-      $routeProvider
-          .state('/avengers', {
-              templateUrl: 'avengers.html',
-              controller: 'Avengers',
-              controllerAs: 'vm',
-              resolve: {
-                  moviesPrepService: moviesPrepService
-              }
-          });
-  }
-
-  function moviesPrepService(movieService) {
-      return movieService.getMovies();
-  }
-
-  // avengers.js
-  angular
-      .module('app')
-      .controller('Avengers', ['moviesPrepService',
-  function (moviesPrepService) {
-        var vm = this;
-        vm.movies = moviesPrepService.movies;
-  });
-  ```
-**[返回顶部](#目录)**
-    
-## Filters
-
-
-  - 避免使用filters扫描一个复杂对象的所有属性，应该用filters来筛选选择的属性。
-
-    *为什么？*：不恰当的使用会造成滥用并且会带来糟糕的性能问题，例如对一个复杂的对象使用过滤器。
 * 使用小写字母开头的驼峰法命名过滤器。
 * 尽可能使过滤器精简。过滤器在 `$digest` loop 中被频繁调用，过于复杂的过滤器将使得整个应用缓慢。
 * 在过滤器中只做一件事。更加复杂的操作可以用 pipe 串联多个过滤器来实现。
-* 
-**[返回顶部](#目录)**
-    
-## 常量
 
-### 供应全局变量
 
-  - 为供应库中的全局变量创建一个Angular常量。
+# 服务
 
-    *为什么？*：提供一种注入到供应库的方法，否则就是全局变量。通过让你更容易地了解你的组件之间的依赖关系来提高代码的可测试性。这还允许你模拟这些依赖关系，这是很有意义的。
+这个部分包含了 AngularJS 服务组件的相关信息。下面提到的东西与定义服务的具体方式（`.provider`, `.factory`, `.service` 等）无关，除非有特别提到。
 
-    ```javascript
-    // constants.js
+* 用驼峰法命名服务。
+  * 用首字母大写的驼峰法命名你自己的服务, 把服务写成构造函数的形式，例如：
 
-    /* global toastr:false, moment:false */
-    (function() {
-        'use strict';
+    ```JavaScript
+    function MainCtrl($scope, User) {
+      $scope.user = new User('foo', 42);
+    }
 
-        angular
-            .module('QY.config')
-            .constant('toastr', toastr)
-            .constant('moment', moment);
-    })();
+    module.controller('MainCtrl', MainCtrl);
+
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    module.factory('User', function () {
+      return User;
+    });
     ```
 
-  - 对于一些不需要变动，也不需要从其它service中获取的值，使用常量定义，当一些常量只是在一个模块中使用但是有可能会在其它应用中使用的话，把它们写到一个以当前的模块命名的文件中。把常量集合到一起是非常有必要的，你可以把它们写到`constants.js`的文件中。
+  * 用首字母小写的驼峰法命名其它所有的服务。
 
-    *为什么？*：一个可能变化的值，即使变动的很少，也会从service中重新被检索，因此你不需要修改源代码。例如，一个数据服务的url可以被放到一个常量中，但是更好的的做法是把它放到一个web service中。
+* 把业务逻辑封装到服务中，把业务逻辑抽象为服务作为你的 `model`。例如：
+  ```Javascript
+  //Order is the 'model'
+  angular.module('Store')
+  .factory('Order', function () {
+      var add = function (item) {
+        this.items.push (item);
+      };
 
-    *为什么？*：常量可以被注入到任何angular组件中，包括providers。
+      var remove = function (item) {
+        if (this.items.indexOf(item) > -1) {
+          this.items.splice(this.items.indexOf(item), 1);
+        }
+      };
 
-    *为什么？*：当一个应用程序被分割成很多可以在其它应用程序中复用的小模块时，每个独立的模块都应该可以操作它自己包含的相关常量。
+      var total = function () {
+        return this.items.reduce(function (memo, item) {
+          return memo + (item.qty * item.price);
+        }, 0);
+      };
 
-    ```javascript
-    // Constants used by the entire app
-    angular
-        .module('app.core')
-        .constant('moment', moment);
+      return {
+        items: [],
+        addToOrder: add,
+        removeFromOrder: remove,
+        totalPrice: total
+      };
+  });
+  ```
 
-    // Constants used only by the sales module
-    angular
-        .module('app.sales')
-        .constant('events', {
-            ORDER_CREATED: 'event_order_created',
-            INVENTORY_DEPLETED: 'event_inventory_depleted'
-        });
-    ```
+  如果需要例子展现如何在控制器中使用服务，请参考 'Avoid writing business logic inside controllers'。
+* 将业务逻辑封装成 `service` 而非 `factory`，这样我们可以更容易在服务间实现“经典式”继承：
 
-**[返回顶部](#目录)**
+	```JavaScript
+	function Human() {
+	  //body
+	}
+	Human.prototype.talk = function () {
+	  return "I'm talking";
+	};
 
-## Angular $包装服务
+	function Developer() {
+	  //body
+	}
+	Developer.prototype = Object.create(Human.prototype);
+	Developer.prototype.code = function () {
+	  return "I'm coding";
+	};
 
-### $document和$window
+	myModule.service('human', Human);
+	myModule.service('developer', Developer);
 
-  - 用[`$document`](https://docs.angularjs.org/api/ng/service/$document)和[`$window`](https://docs.angularjs.org/api/ng/service/$window)代替`document`和`window`。
+	```
 
-    *为什么？*：使用内部包装服务将更容易测试，也避免了你自己去模拟document和window。
+* 使用 `$cacheFactory` 进行会话级别的缓存，缓存网络请求或复杂运算的结果。
+* 如果给定的服务需要配置，把配置相关代码放在 `config` 回调里，就像这样：
 
-### $timeout和$interval
+	```JavaScript
+	angular.module('demo', [])
+	.config(function ($provide) {
+	  $provide.provider('sample', function () {
+	    var foo = 42;
+	    return {
+	      setFoo: function (f) {
+	        foo = f;
+	      },
+	      $get: function () {
+	        return {
+	          foo: foo
+	        };
+	      }
+	    };
+	  });
+	});
 
-  - 用[`$timeout`](https://docs.angularjs.org/api/ng/service/$timeout)和[`$interval`](https://docs.angularjs.org/api/ng/service/$interval)代替`setTimeout`和`setInterval` 。
+	var demo = angular.module('demo');
 
-    *为什么？*：易于测试，处理Angular消化周期从而保证数据的同步绑定。
+	demo.config(function (sampleProvider) {
+	  sampleProvider.setFoo(41);
+	});
+	```
 
-* 总结：
-    * `$timeout`  替代 `setTimeout`
-    * `$interval` instead of `setInterval`
-    * `$window`   替代 `window`
-    * `$document` 替代 `document`
-    * `$http`     替代 `$.ajax`
-    
-**[返回顶部](#目录)**
+# 模板
+
+* 使用 `ng-bind` 或者 `ng-cloak` 而非简单的 `{{ }}` 以防止页面渲染时的闪烁。
+* 避免在模板中使用复杂的表达式。
+* 当需要动态设置 <img> 的 `src` 时使用 `ng-src` 而非 `src` 中嵌套 `{{}}` 的模板。
+* 当需要动态设置<a>的 `href` 时使用 `ng-href` 而非 `href` 中嵌套 `{{ }}` 的模板。
+* 通过 `ng-style` 指令配合对象式参数和 scope 变量来动态设置元素样式，而不是将 scope 变量作为字符串通过 `{{ }}` 用于 `style` 属性。
+
+```HTML
+<script>
+...
+$scope.divStyle = {
+  width: 200,
+  position: 'relative'
+};
+...
+</script>
+
+<div ng-style="divStyle">my beautifully styled div which will work in IE</div>;
+```
+
+# 路由
+
+* 在视图展示之前通过 `resolve` 解决依赖。
+* 不要在 `resolve` 回调函数中显式使用RESTful调用。将所有请求放在合适的服务中。这样你就可以使用缓存和遵循关注点分离原则。
+
+# 国际化
+
+* 在较新版本的 Angular（>=1.4.0）下，使用内置的 i18n 工具，在较老版本下（<1.4.0），使用 [`angular-translate`](https://github.com/angular-translate/angular-translate)。
+
+# 性能
+
+* 优化 digest cycle
+
+	* 只监听必要的变量。仅在必要时显式调用 `$digest` 循环(例如：在进行实时通讯时，不要在每次接收到消息时触发 `$digest` 循环)。
+	* 对于那些只初始化一次并不再改变的内容, 使用一次性 watcher [`bindonce`](https://github.com/Pasvaz/bindonce) （对于早期的 AngularJS）。如果是 AngularJS >=1.3.0 的版本，应使用Angular内置的一次性数据绑定(One-time bindings).
+	* 尽可能使 `$watch` 中的运算简单。在单个 `$watch` 中进行繁杂的运算将使得整个应用变慢(由于JavaScript的单线程特性，`$digest` loop 只能在单一线程进行)
+	* 当监听集合时, 如果不是必要的话不要深度监听. 最好使用 `$watchCollection`, 对监听的表达式和之前表达式的值进行浅层的检测.
+	* 当没有变量被  `$timeout` 回调函数所影响时，在 `$timeout` 设置第三个参数为 false 来跳过 `$digest` 循环.
+	* 当面对超大不太改变的集合, [使用 immutable data structures](http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs).
+
+
+* 用打包、缓存html模板文件到你的主js文件中，减少网络请求, 可以用 [grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) / [gulp-html2js](https://github.com/fraserxu/gulp-html2js). 详见 [这里](http://ng-learn.org/2014/08/Populating_template_cache_with_html2js/) 和 [这里](http://slides.com/yanivefraim-1/real-world-angularjs#/34) 。 在项目有很多小html模板并可以放进主js文件中时（通过minify和gzip压缩），这个办法是很有用的。
+
 
