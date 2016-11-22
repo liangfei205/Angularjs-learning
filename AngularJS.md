@@ -1,4 +1,4 @@
-# Angular规范
+# [Angular规范](https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md)
 
 # 目录
 1. [概览](#概览)
