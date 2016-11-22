@@ -1,16 +1,42 @@
 # JAVA规范
 
 ## 目录
+1. [文件名称](#FileName)
+1. [文件组织](page03.md)
+1. [缩进](page04.md)
+1. [注释](page05.md)
+1. [声明](page06.md)
+1. [语句](page07.md)
+1. [空白](page08.md)
+1. [命名规范](#Naming)
+1. [编程惯例](#Programming)
+1. [代码示例](#Code)
+
 1. [GIT](#Git)
 1. [源文件](#Sourcefile)
-1. [格式](#Formatting)
-1. [命名约定](#Naming)
-1. [编程实践](#ProgrammingPractices)
 1. [Javadoc](#Javadoc)
 1. [微服务&组件规范](#ms)
 
+## 文件名称
+这部分列出了常用的文件名及其后缀
+
+### 文件后缀
+Java 软件使用下面文件后缀:
+文件类别    | 后缀
+-----------|--------
+Java 源文件 | .java
+Java 字节码 | .class
+
+### 常见文件名称
+常见文件名称包括:
+
+文件名称     | 用法
+--------------|-----
+`GNUmakefile` | makefiles的首选文件名。我们使用 `gnumake`来构建软件.
+`README`      | 概述特定目录下所含内容的文件的首选文件名.
+
 ## <a name="Git">GIT</a>
-* MS-HMS需开发人员自行fork个人repo，fork时请确保同步选项选中，fork后先将master, release, staging, test, dev分支设置为不经过pull request不可变更
+* 开发人员需自行fork个人repo，fork时请确保同步选项选中，fork后先将master, release, staging, test, dev分支设置为不经过pull request不可变更
 * 不得提交有工具生成的文件和目录如：.iml, .idea, target
 * 所有文件必须LF换回，不得提交CRLF换行的文件，请自行修改GIT设置
 * 提交注释如下:
