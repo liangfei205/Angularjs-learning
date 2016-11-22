@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="demo">
+<script src="./vendor/angular.js"></script>
+<script src="./vendor/angular-route.js"></script>
+<script>
+    var demo = angular.module('demo', ['ngRoute']);
+    demo.config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/', {
+            templateUrl: 'partial/a.html',
+            controller: 'demoCtrl'
+        }).when('/index2', {
+            templateUrl: 'partial/b.html'
+        }).otherwise({
+            redirectTo: '/'
+        });
+    }]);
+    demo.controller('demoCtrl', function ($scope, demoService) {
+        $scope.name = 'liangfei';
+        $scope.users = demoService.getUsers();
+    });
+    demo.factory('demoService', function() {
+
+        function getUsers() {
+            var users = [{
+                name: 'liangfei'
+            },{
+                name: 'wanglin'
+            },{
+                name: 'Jhon'
+            },{
+                name: 'Jane'
+            }];
+            return users;
+        }
+
+        return {
+            getUsers: getUsers
+        };
+    });
+</script>
+<div>
+   <div ng-view></div>
+</div>
+</body>
+</html>
