@@ -1,7 +1,7 @@
-# JAVA 规范
+# JAVA规范
 
 ## 目录
-0. GIT
+0. [GIT](#Git)
 1. [源文件](#Sourcefile)
 2. [格式](#Formatting)
 3. [命名约定](#Naming)
