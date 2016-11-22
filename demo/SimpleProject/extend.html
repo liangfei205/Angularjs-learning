@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>ng-app</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="parentCtrl">
+    <p><input type="text" ng-model="value1">请输入内容</p>
+    <h1>您输入的内容为：{{value1}}</h1>
+    <div ng-controller="childCtrl">
+        <button ng-click="gerParentValue()">提交</button>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('parentCtrl', function ($scope) {
+        $scope.value2 = "我是王鹏飞";
+    });
+
+    app.controller('childCtrl', function ($scope) {
+        $scope.gerParentValue = function () {
+            alert($scope.value1 + " " + $scope.value2);
+        }
+    });
+</script>
+</body>
+</html>

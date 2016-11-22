@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>ng-model</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div ng-app="" ng-init="quantity=1;price=5">
+    <h2>价格计算器</h2>
+    数量： <input type="number" ng-model="quantity">
+    价格： <input type="number" ng-model="price">
+    <p><b>总价：</b> {{ quantity * price }}</p>
+</div>
+<script defer src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+</body>
+</html>

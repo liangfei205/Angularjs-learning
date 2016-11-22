@@ -1,0 +1,6 @@
+[submodule "angular2"]
+	path = angular2
+	url = https://github.com/angular/angular.git
+[submodule "angular1"]
+	path = angular1
+	url = https://github.com/angular/angular.js.git

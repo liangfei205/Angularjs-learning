@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>original</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div ng-app="" ng-init="price=5;time=1479727899;
+    childrenArray = [
+        {name:'kimi',age:3},
+        {name:'cindy',age:4},
+        {name:'anglar',age:4},
+        {name:'shitou',age:6},
+        {name:'tiantian',age:5}
+    ];
+    childrenObject = {
+        name:'tiantian',
+        age:5,
+        sex:'male'
+    };">
+    <h2>currency (货币处理)</h2>
+    <p><b>before:</b> {{ price }}</p>
+    <p><b>after:</b> {{price | currency : '￥'}}</p>
+
+    <h2>date (日期格式化)</h2>
+    <p><b>before:</b> {{time}}</p>
+    <p><b>after:</b> {{time | date : 'yyyy-MM-dd hh:mm:ss EEEE'}}</p>
+
+    <h2>filter (从数组项中选择一个子集)</h2>
+    <p><b>before:</b> {{childrenArray}}</p>
+    <p><b>after:</b> {{ childrenArray | filter : 'a' }} //匹配属性值中含有a的</p>
+    <p><b>after:</b> {{ childrenArray | filter : 4 }}  //匹配属性值中含有4的</p>
+    <p><b>after:</b> {{ childrenArray | filter : {name : 'i'} }} //参数是对象，匹配name属性中含有i的</p>
+
+    <h2>json (格式化json对象)</h2>
+    <p><b>before:</b> {{childrenObject}}</p>
+    <p><b>after:</b> {{childrenObject | json}}</p>
+
+    <h2>limitTo(限制数组长度或字符串长度)</h2>
+    <p><b>before:</b> </p>
+    <p><b>after:</b> </p>
+
+    <h2>lowercase(小写)</h2>
+    <p><b>before:</b> </p>
+    <p><b>after:</b> </p>
+
+    <h2>uppercase(大写)</h2>
+    <p><b>before:</b> </p>
+    <p><b>after:</b> </p>
+
+    <h2>number(格式化数字)</h2>
+    <p><b>before:</b> </p>
+    <p><b>after:</b> </p>
+
+    <h2>orderBy(排序)</h2>
+    <p><b>before:</b> </p>
+    <p><b>after:</b> </p>
+</div>
+<script defer src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+</body>
+</html>
