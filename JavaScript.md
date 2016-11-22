@@ -1,7 +1,7 @@
-# JavaScript 规范
+# [JavaScript 规范](https://github.com/sivan/javascript-style-guide/blob/master/es5/README.md)
 
-## <a name="catalog">目录</a>
-  1. [目录](#catalog)
+## <a name="table-of-contents">目录</a>
+
   1. [类型](#types)
   1. [对象](#objects)
   1. [数组](#arrays)
@@ -22,8 +22,11 @@
   1. [构造函数](#constructors)
   1. [事件](#events)
   1. [模块](#modules)
-  
-  
+  1. [jQuery](#jquery)
+  1. [ECMAScript 5 兼容性](#ecmascript-5-compatibility)
+  1. [测试](#testing)
+  1. [性能](#performance)
+
 ## <a name="types">类型</a>
 
   - **原始值**: 存取直接作用于它自身。
@@ -57,7 +60,7 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 ## <a name="objects">对象</a>
 
@@ -71,7 +74,7 @@
     var item = {};
     ```
 
-  - 不要使用<a href="http://es5.github.io/#x7.6.1" target="_blank">保留字</a>作为键名，它们在 IE8 下不工作。<a href="https://github.com/airbnb/javascript/issues/61" target="_blank">更多信息</a>。
+  - 不要使用[保留字](http://es5.github.io/#x7.6.1)作为键名，它们在 IE8 下不工作。[更多信息](https://github.com/airbnb/javascript/issues/61)。
 
     ```javascript
     // bad
@@ -106,7 +109,7 @@
     };
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 ## <a name="arrays">数组</a>
 
@@ -133,7 +136,7 @@
     someStack.push('abracadabra');
     ```
 
-  - 当你需要拷贝数组时，使用 Array#slice。<a href="http://jsperf.com/converting-arguments-to-an-array/7" target="_blank">jsPerf</a>
+  - 当你需要拷贝数组时，使用 Array#slice。[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length;
@@ -158,7 +161,7 @@
     }
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="strings">字符串</a>
@@ -180,7 +183,7 @@
     ```
 
   - 超过 100 个字符的字符串应该使用连接符写成多行。
-  - 注：若过度使用，通过连接符连接的长字符串可能会影响性能。<a href="http://jsperf.com/ya-string-concat" target="_blank">jsPerf</a> & <a href="https://github.com/airbnb/javascript/issues/40" target="_blank">讨论</a>.
+  - 注：若过度使用，通过连接符连接的长字符串可能会影响性能。[jsPerf](http://jsperf.com/ya-string-concat) & [讨论](https://github.com/airbnb/javascript/issues/40).
 
     ```javascript
     // bad
@@ -198,7 +201,7 @@
       'with this, you would get nowhere fast.';
     ```
 
-  - 程序化生成的字符串使用 Array#join 连接而不是使用连接符。尤其是 IE 下：<a href="http://jsperf.com/string-vs-array-concat/2" target="_blank">jsPerf</a>.
+  - 程序化生成的字符串使用 Array#join 连接而不是使用连接符。尤其是 IE 下：[jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     ```javascript
     var items;
@@ -243,7 +246,7 @@
     }
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="functions">函数</a>
@@ -268,7 +271,7 @@
     ```
 
   - 永远不要在一个非函数代码块（if、while 等）中声明一个函数，把那个函数赋给一个变量。浏览器允许你这么做，但它们的解析表现不一致。
-  - **注：** ECMA-262 把 `块` 定义为一组语句。函数声明不是语句。<a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97" target="_blank">阅读对 ECMA-262 这个问题的说明</a>。
+  - **注：** ECMA-262 把 `块` 定义为一组语句。函数声明不是语句。[阅读对 ECMA-262 这个问题的说明](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97)。
 
     ```javascript
     // bad
@@ -301,7 +304,7 @@
     }
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 
@@ -337,7 +340,7 @@
     var isJedi = getProp('jedi');
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="variables">变量</a>
@@ -459,7 +462,7 @@
     }
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="hoisting">提升</a>
@@ -540,9 +543,9 @@
     }
     ```
 
-  - 了解更多信息在 <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting" target="_blank">JavaScript Scoping & Hoisting</a>by <a href="http://www.adequatelygood.com/" target="_blank">Ben Cherry</a>.
+  - 了解更多信息在 [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 
@@ -589,9 +592,9 @@
     }
     ```
 
-  - 了解更多信息在 <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108" target="_blank">Truth Equality and JavaScript</a> by Angus Croll.
+  - 了解更多信息在 [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="blocks">块</a>
@@ -642,7 +645,7 @@
     ```
 
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="comments">注释</a>
@@ -693,7 +696,7 @@
     function getType() {
       console.log('fetching type...');
       // set the default type to 'no type'
-      var type = this._type || 'no type';
+      var type = this.type || 'no type';
 
       return type;
     }
@@ -703,7 +706,7 @@
       console.log('fetching type...');
 
       // set the default type to 'no type'
-      var type = this._type || 'no type';
+      var type = this.type || 'no type';
 
       return type;
     }
@@ -735,7 +738,7 @@
     }
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="whitespace">空白</a>
@@ -920,7 +923,7 @@
     ```
 
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 ## <a name="commas">逗号</a>
 
@@ -958,7 +961,7 @@
     };
     ```
 
-  - 额外的行末逗号：**不需要**。这样做会在 IE6/7 和 IE9 怪异模式下引起问题。同样，多余的逗号在某些 ES3 的实现里会增加数组的长度。在 ES5 中已经澄清了 (<a href="http://es5.github.io/#D" target="_blank">source</a>)：
+  - 额外的行末逗号：**不需要**。这样做会在 IE6/7 和 IE9 怪异模式下引起问题。同样，多余的逗号在某些 ES3 的实现里会增加数组的长度。在 ES5 中已经澄清了 ([source](http://es5.github.io/#D))：
 
   > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
 
@@ -986,7 +989,7 @@
     ];
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="semicolons">分号</a>
@@ -1013,9 +1016,9 @@
     })();
     ```
 
-    <a href="http://stackoverflow.com/a/7365214/1712802" target="_blank">了解更多</a>.
+    [了解更多](http://stackoverflow.com/a/7365214/1712802).
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="type-casting--coercion">类型转换</a>
@@ -1063,7 +1066,7 @@
     var val = parseInt(inputValue, 10);
     ```
 
-  - 如果因为某些原因 `parseInt` 成为你所做的事的瓶颈而需要使用位操作解决<a href="http://jsperf.com/coercion-vs-casting/3" target="_blank">性能问题</a>时，留个注释说清楚原因和你的目的。
+  - 如果因为某些原因 `parseInt` 成为你所做的事的瓶颈而需要使用位操作解决[性能问题](http://jsperf.com/coercion-vs-casting/3)时，留个注释说清楚原因和你的目的。
 
     ```javascript
     // good
@@ -1075,7 +1078,7 @@
     var val = inputValue >> 0;
     ```
 
-  - **注：** 小心使用位操作运算符。数字会被当成 <a href="http://es5.github.io/#x4.3.19" target="_blank">64 位值</a>，但是位操作运算符总是返回 32 位的整数（<a href="http://es5.github.io/#x11.7" target="_blank">source</a>）。位操作处理大于 32 位的整数值时还会导致意料之外的行为。<a href="https://github.com/airbnb/javascript/issues/109" target="_blank">讨论</a>。最大的 32 位整数是 2,147,483,647：
+  - **注：** 小心使用位操作运算符。数字会被当成 [64 位值](http://es5.github.io/#x4.3.19)，但是位操作运算符总是返回 32 位的整数（[source](http://es5.github.io/#x11.7)）。位操作处理大于 32 位的整数值时还会导致意料之外的行为。[讨论](https://github.com/airbnb/javascript/issues/109)。最大的 32 位整数是 2,147,483,647：
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
@@ -1098,7 +1101,7 @@
     var hasAge = !!age;
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="naming-conventions">命名规则</a>
@@ -1153,18 +1156,21 @@
     });
     ```
 
-  - 使用下划线 `_` 开头命名私有属性。
+  - 不要使用下划线前/后缀。
+
+  > 为什么？JavaScript 并没有私有属性或私有方法的概念。虽然使用下划线是表示「私有」的一种共识，但实际上这些属性是完全公开的，它本身就是你公共接口的一部分。这种习惯或许会导致开发者错误的认为改动它不会造成破坏或者不需要去测试。长话短说：如果你想要某处为「私有」，它必须不能是显式提出的。
 
     ```javascript
     // bad
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
+    this._firstName = 'Panda';
 
     // good
-    this._firstName = 'Panda';
+    this.firstName = 'Panda';
     ```
 
-  - 使用 `_this` 保存 `this` 的引用。
+  - 不要保存 `this` 的引用。使用 Function#bind。
 
     ```javascript
     // bad
@@ -1183,12 +1189,19 @@
       };
     }
 
-    // good
+    // bad
     function () {
       var _this = this;
       return function () {
         console.log(_this);
       };
+    }
+
+    // good
+    function () {
+      return function () {
+        console.log(this);
+      }.bind(this);
     }
     ```
 
@@ -1206,7 +1219,7 @@
     };
     ```
 
-  - **注：** IE8 及以下版本对命名函数表达式的处理有些怪异。了解更多信息到 <a href="http://kangax.github.io/nfe/" target="_blank">http://kangax.github.io/nfe/</a>。
+  - **注：** IE8 及以下版本对命名函数表达式的处理有些怪异。了解更多信息到 [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/)。
 
   - 如果你的文件导出一个类，你的文件名应该与类名完全相同。
     ```javascript
@@ -1227,7 +1240,7 @@
     var CheckBox = require('./CheckBox');
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="accessors">存取器</a>
@@ -1281,7 +1294,7 @@
     };
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="constructors">构造函数</a>
@@ -1366,7 +1379,7 @@
     };
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="events">事件</a>
@@ -1397,12 +1410,12 @@
     });
     ```
 
-  **[⬆ 回到顶部](#目录)**
+  **[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="modules">模块</a>
 
-  - 模块应该以 `!` 开始。这样确保了当一个不好的模块忘记包含最后的分号时，在合并代码到生产环境后不会产生错误。<a href="https://github.com/airbnb/javascript/issues/44#issuecomment-13063933" target="_blank">详细说明</a>
+  - 模块应该以 `!` 开始。这样确保了当一个不好的模块忘记包含最后的分号时，在合并代码到生产环境后不会产生错误。[详细说明](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
   - 文件应该以驼峰式命名，并放在同名的文件夹里，且与导出的名字一致。
   - 增加一个名为 `noConflict()` 的方法来设置导出的模块为前一个版本并返回它。
   - 永远在模块顶部声明 `'use strict';`。
@@ -1428,4 +1441,101 @@
     }(this);
     ```
 
-**[⬆ 回到顶部](#目录)**
+**[⬆ 回到顶部](#table-of-contents)**
+
+
+## <a name="jquery">jQuery</a>
+
+  - 使用 `$` 作为存储 jQuery 对象的变量名前缀。
+
+    ```javascript
+    // bad
+    var sidebar = $('.sidebar');
+
+    // good
+    var $sidebar = $('.sidebar');
+    ```
+
+  - 缓存 jQuery 查询。
+
+    ```javascript
+    // bad
+    function setSidebar() {
+      $('.sidebar').hide();
+
+      // ...stuff...
+
+      $('.sidebar').css({
+        'background-color': 'pink'
+      });
+    }
+
+    // good
+    function setSidebar() {
+      var $sidebar = $('.sidebar');
+      $sidebar.hide();
+
+      // ...stuff...
+
+      $sidebar.css({
+        'background-color': 'pink'
+      });
+    }
+    ```
+
+  - 对 DOM 查询使用层叠 `$('.sidebar ul')` 或 父元素 > 子元素 `$('.sidebar > ul')`。 [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - 对有作用域的 jQuery 对象查询使用 `find`。
+
+    ```javascript
+    // bad
+    $('ul', '.sidebar').hide();
+
+    // bad
+    $('.sidebar').find('ul').hide();
+
+    // good
+    $('.sidebar ul').hide();
+
+    // good
+    $('.sidebar > ul').hide();
+
+    // good
+    $sidebar.find('ul').hide();
+    ```
+
+**[⬆ 回到顶部](#table-of-contents)**
+
+
+## <a name="ecmascript-5-compatibility">ECMAScript 5 兼容性</a>
+
+  - 参考 [Kangax](https://twitter.com/kangax/) 的 ES5 [兼容表](http://kangax.github.com/es5-compat-table/).
+
+**[⬆ 回到顶部](#table-of-contents)**
+
+
+## <a name="testing">测试</a>
+
+  - **Yup.**
+
+    ```javascript
+    function () {
+      return true;
+    }
+    ```
+
+**[⬆ 回到顶部](#table-of-contents)**
+
+
+## <a name="performance">性能</a>
+
+  - [On Layout & Web Performance](http://kellegous.com/j/2013/01/26/layout-performance/)
+  - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
+  - [Try/Catch Cost In a Loop](http://jsperf.com/try-catch-in-loop-cost)
+  - [Bang Function](http://jsperf.com/bang-function)
+  - [jQuery Find vs Context, Selector](http://jsperf.com/jquery-find-vs-context-sel/13)
+  - [innerHTML vs textContent for script text](http://jsperf.com/innerhtml-vs-textcontent-for-script-text)
+  - [Long String Concatenation](http://jsperf.com/ya-string-concat)
+  - Loading...
+
+**[⬆ 回到顶部](#table-of-contents)**
+
