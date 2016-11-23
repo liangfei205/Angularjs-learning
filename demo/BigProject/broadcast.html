@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>index</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="parentCtr">
+    <div ng-controller="childCtr1">childCtr1 name :
+        <input ng-model="name" type="text" ng-change="change(name)" />
+    </div>
+    <div ng-controller="childCtr2">from childCtr1 name:
+        <input ng-model="ctr1Name" />
+    </div>
+</div>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller("parentCtr",function ($scope) {
+        $scope.$on("Ctr1NameChange",function (event, msg) {//接收到来自子childCtr1的信息后再广播给所有子controller
+            console.log("parent", msg);
+            $scope.$broadcast("Ctr1NameChangeFromParrent", msg);//给所有子controller广播
+        });
+    });
+    app.controller("childCtr1", function ($scope) {
+        $scope.change = function (name) {
+            console.log("childCtr1", name);
+            $scope.$emit("Ctr1NameChange", name);//将信息传递给父controller
+        };
+    }).controller("childCtr2", function ($scope) {
+        $scope.$on("Ctr1NameChangeFromParrent",function (event, msg) { //监听来自父controller的信息
+            console.log("childCtr2", msg);
+            $scope.ctr1Name = msg;
+        });
+    });
+</script>
+</body>
+</html>

@@ -7,8 +7,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
-<div ng-app="" ng-init="">
+<div ng-app="myApp" ng-init="name='Jack Zhang';">
+    <h2>name:</h2>
+    {{ name }}<br>
+    <h2>reverse name:</h2>
+    {{ name | reverse }}<br>
+    <h2>reverse&uppercase name:</h2>
+    {{ name | reverse:true }}<br>
 </div>
-<script defer src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.filter("reverse",function(){
+        return function(input,uppercase){
+            var out = "";
+            for(var i=0 ; i<input.length; i++){
+                out = input.charAt(i)+out;
+            }
+            if(uppercase){
+                out = out.toUpperCase();
+            }
+            return out;
+        }
+    });
+</script>
 </body>
 </html>

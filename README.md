@@ -23,10 +23,13 @@
    1. [$http / $resource](#hr)
    1. [Broadcast](#broadcast)
 
+<a name="spa"></a>
 ## SPA
 ### 定义(SPA)
 
+<a name="dd"></a>
 ## Directive&DataBind
+<a name="directives"></a>
 ### Directives
 #### Directive List
 | 指令				| 描述 																|
@@ -98,6 +101,7 @@ AngularJS 支持以下事件:
 * ng-keyup
 * ng-keypress
 * ng-change
+
 #### Custom Directives
 你可以使用 .directive 函数来添加自定义的指令。
 要调用自定义指令，HTML 元素上需要添加自定义指令名。
@@ -136,9 +140,10 @@ div class="runoob-directive"></div>
 <!-- 指令: runoob-directive -->
 ```
 
+<a name="expression"></a>
 ### Expression
 
-
+<a name="filter"></a>
 ### Filter
 ####过滤器语法
 我们可以直接在{{}}中使用filter，跟在表达式后面用 | 分割，语法如下：
@@ -186,3 +191,68 @@ var myAppModule = angular.module("myApp",[]);
             });
 ```
 
+<a name="sp"></a>
+## Simple Project
+
+<a name="controllers"></a>
+### Controllers
+
+<a name="view"></a>
+### View
+
+<a name="model"></a>
+### Model
+
+<a name="scope"></a>
+### Scope
+
+
+<a name="mr"></a>
+## Modules&Router
+
+<a name="di"></a>
+### Dependency Injection
+
+<a name="providers"></a>
+### Providers
+
+<a name="services"></a>
+### Services
+
+<a name="factory"></a>
+### Factory
+
+<a name="router"></a>
+### Router
+
+
+<a name="bp"></a>
+## Big Project
+
+<a name="uir"></a>
+### ui-router
+
+<a name="pd"></a>
+### Promises / Deferred
+
+<a name="hr"></a>
+### $http / $resource
+
+<a name="broadcast"></a>
+### Broadcast
+
+- $emit只能向parent controller传递event与data
+- $broadcast只能向child controller传递event与data
+- $on用于接收event与data
+
+$emit和$broadcast可以传多个参数，$on也可以接收多个参数。
+在$on的方法中的event事件参数，其对象的属性和方法如下:
+
+| 事件属性 | 目的 |
+| ----------------- |:-----------------------------------------------------------------:|
+| event.targetScope | 发出或者传播原始事件的作用域 |
+|event.currentScope | 目前正在处理的事件的作用域 |
+|event.name | 事件名称 |
+|event.stopPropagation() | 一个防止事件进一步传播(冒泡/捕获)的函数(这只适用于使用`$emit`发出的事件) |
+|event.preventDefault() | 这个方法实际上不会做什么事，但是会设置`defaultPrevented`为true。直到事件监听器的实现者采取行动之前它才会检查`defaultPrevented`的值。 |
+|event.defaultPrevented | 如果调用 |
