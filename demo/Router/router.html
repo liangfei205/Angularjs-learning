@@ -8,8 +8,8 @@
 </head>
 <body ng-app="myApp">
 <div>
-    <a href="#/">index1</a>
-    <a href="#/index2">index2</a>
+    <a href="#/index1">index1</a>
+    <a href="#/index2/200">index2</a>
    <div ng-view></div>
 </div>
 <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
@@ -17,18 +17,27 @@
 <script>
     var demo = angular.module('myApp', ['ngRoute']);
     demo.config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/', {
+        $routeProvider.when('/index1', {
             templateUrl: 'partial/a.html',
-            controller: 'demoCtrl'
-        }).when('/index2', {
-            templateUrl: 'partial/b.html'
+            controller: 'demoCtrl1',
+            controllerAs: 'vm'
+        }).when('/index2/:userid', {
+            templateUrl: 'partial/b.html',
+            controller: 'demoCtrl2'
+        }).when('/error', {
+            templateUrl: 'partial/error.html'
         }).otherwise({
-            redirectTo: '/'
+            redirectTo: '/error'
         });
     }]);
-    demo.controller('demoCtrl', function ($scope, demoService) {
-        $scope.name = 'liangfei';
-        $scope.users = demoService.getUsers();
+    demo.controller('demoCtrl1', function (demoService) {
+        var vm = this;
+        vm.name = 'liangfei';
+        vm.users = demoService.getUsers();
+        return vm;
+    });
+    demo.controller('demoCtrl2', function ($scope, $routeParams) {
+        $scope.userid = $routeParams.userid;
     });
     demo.factory('demoService', function() {
         function getUsers() {

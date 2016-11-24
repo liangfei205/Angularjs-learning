@@ -1,8 +1,8 @@
 <h2>index1</h2>
 <div>
-    <input ng-model="name"/>
+    <input ng-model="vm.name"/>
 </div>
-<p ng-bind="name">Hello Everyone!</p>
+<p ng-bind="vm.name">Hello Everyone!</p>
 <ul>
-    <li ng-repeat="user in users|filter:name" ng-bind="user.name"></li>
+    <li ng-repeat="user in vm.users | filter : name" ng-bind="user.name"></li>
 </ul>
