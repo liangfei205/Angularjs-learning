@@ -5,14 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        input.ng-invalid {
+            border: 1px solid red;
+            background: red;
+        }
+        input.ng-valid {
+            border: 1px solid green;
+            background: green;
+        }
+    </style>
 </head>
 <body>
 <div ng-app="myApp" ng-init="">
+    <form>
+        <input ng-model="info.number" placeholder="请输入数字" ensure-match="^\d*$">
+    </form>
 
 </div>
 <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
 <script>
     var app = angular.module('myApp', []);
+    app.directive('ensureMatch', function () {
+        return {
+            require: 'ngModel',
+            restrict: 'EACM',
+            link: function (scope, ele, attrs, c) {
+                scope.$watch(attrs.ngModel, function () {
+                    var expr = new RegExp(attrs.ensureMatch);
+                    if (expr.test(ele.val())) {
+                        c.$setValidity('match', true);
+                    } else {
+                        c.$setValidity('match', false);
+                    }
+                });
+            }
+        };
+    });
 </script>
 </body>
 </html>
