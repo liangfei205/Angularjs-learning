@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="demo">
+<div ng-controller="demoCtrl">
+    <div>
+        <input ng-model="name"/>
+    </div>
+    <p ng-bind="name">Hello Everyone!</p>
+    <ul>
+        <li ng-repeat="user in users|filter:name" ng-bind="user.name"></li>
+    </ul>
+</div>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script>
+    var demo = angular.module('demo', []);
+    demo.controller('demoCtrl', function ($scope, demoService) {
+        $scope.name = 'liangfei';
+        $scope.users = demoService.getUsers();
+    });
+    demo.factory('demoService', function() {
+
+        function getUsers() {
+            var users = [{
+                name: 'liangfei'
+            },{
+                name: 'wanglin'
+            },{
+                name: 'Jhon'
+            },{
+                name: 'Jane'
+            }];
+            return users;
+        }
+
+        return {
+            getUsers: getUsers
+        };
+    });
+</script>
+</body>
+</html>
