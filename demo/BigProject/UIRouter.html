@@ -6,9 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-<body>
-<div ng-app="" ng-init="">
+<body ng-app="myApp">
+<div ui-view>
 </div>
-<script defer src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-ui-router/1.0.0-beta.3/angular-ui-router.min.js"></script>
+<script>
+    var app = angular.module('myApp', ['ui.router']);
+    app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+                .state('main', {
+                    url: '/main',
+                    template:
+                    '<a ui-sref="main.index1">index1</a><br>'
+                    +'<a ui-sref="main.index2({userid:200})">index2</a>'
+                    +'<div ui-view></div>',
+                    abstract: true
+                })
+                .state('main.index1', {
+                    url: '/index1',
+                    templateUrl: 'partial/a.html',
+                    controller: 'demoCtrl1',
+                    controllerAs: 'vm'
+                })
+                .state('main.index2', {
+                    url: '/index2/:userid',
+                    templateUrl: 'partial/b.html',
+                    controller: 'demoCtrl2'
+                })
+                .state('error', {
+                    url: '/error',
+                    templateUrl: 'partial/error.html'
+                });
+        $urlRouterProvider.otherwise('error');
+    }]);
+    app.controller('demoCtrl1', function (demoService) {
+        var vm = this;
+        vm.name = 'liangfei';
+        vm.users = demoService.getUsers();
+        return vm;
+    });
+    app.controller('demoCtrl2', function ($scope, $stateParams) {
+        $scope.userid = $stateParams.userid;
+    });
+    app.factory('demoService', function () {
+        function getUsers() {
+            var users = [{
+                name: 'liangfei'
+            }, {
+                name: 'wanglin'
+            }, {
+                name: 'Jhon'
+            }, {
+                name: 'Jane'
+            }];
+            return users;
+        }
+
+        return {
+            getUsers: getUsers
+        };
+    });
+</script>
 </body>
 </html>
