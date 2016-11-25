@@ -20,7 +20,6 @@
     app.controller('parentCtrl', function ($scope) {
         $scope.value2 = "我是王鹏飞";
     });
-
     app.controller('childCtrl', function ($scope) {
         $scope.gerParentValue = function () {
             alert($scope.value1 + " " + $scope.value2);

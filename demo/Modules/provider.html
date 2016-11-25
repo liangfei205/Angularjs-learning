@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
+    <title>provider</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-<body ng-app="demo">
+<body ng-app="myApp">
 <div ng-controller="demoCtrl">
     <div>
         <input ng-model="name"/>
@@ -16,8 +18,8 @@
 </div>
 <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
 <script>
-    var demo = angular.module('demo', []);
-    demo.controller('demoCtrl', function ($scope, demoService) {
+    var app = angular.module('myApp', []);
+    app.controller('demoCtrl', function ($scope, demoService) {
         $scope.name = 'liangfei';
         $scope.users = demoService.getUsers();
     });
@@ -25,26 +27,26 @@
         this.getUsers = function () {
             var users = [{
                 name: 'liangfei'
-            },{
+            }, {
                 name: 'wanglin'
-            },{
+            }, {
                 name: 'Jhon'
-            },{
+            }, {
                 name: 'Jane'
             }];
             return users;
         }
     };
-    demo.provider('demoService', {
-        $get: function() {
+    app.provider('demoService', {
+        $get: function () {
             function getUsers() {
                 var users = [{
                     name: 'liangfei'
-                },{
+                }, {
                     name: 'wanglin'
-                },{
+                }, {
                     name: 'Jhon'
-                },{
+                }, {
                     name: 'Jane'
                 }];
                 return users;

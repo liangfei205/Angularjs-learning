@@ -15,8 +15,8 @@
 <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
 <script>
-    var demo = angular.module('myApp', ['ngRoute']);
-    demo.config(['$routeProvider', function($routeProvider) {
+    var app = angular.module('myApp', ['ngRoute']);
+    app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/index1', {
             templateUrl: 'partial/a.html',
             controller: 'demoCtrl1',
@@ -30,24 +30,24 @@
             redirectTo: '/error'
         });
     }]);
-    demo.controller('demoCtrl1', function (demoService) {
+    app.controller('demoCtrl1', function (demoService) {
         var vm = this;
         vm.name = 'liangfei';
         vm.users = demoService.getUsers();
         return vm;
     });
-    demo.controller('demoCtrl2', function ($scope, $routeParams) {
+    app.controller('demoCtrl2', function ($scope, $routeParams) {
         $scope.userid = $routeParams.userid;
     });
-    demo.factory('demoService', function() {
+    app.factory('demoService', function () {
         function getUsers() {
             var users = [{
                 name: 'liangfei'
-            },{
+            }, {
                 name: 'wanglin'
-            },{
+            }, {
                 name: 'Jhon'
-            },{
+            }, {
                 name: 'Jane'
             }];
             return users;

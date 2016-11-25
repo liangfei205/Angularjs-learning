@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Promises / Deferred</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+    <label for="flag">please checked
+        <input id="flag" type="checkbox" ng-model="flag" /><br/>
+    </label>
+    <hr/>
+    <button ng-click="handle()">点击我</button>
+</div>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript">
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", ["$scope", "$q", function ($scope, $q) {
+        $scope.flag = true;
+        $scope.handle = function () {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+            promise.then(function (result) {
+                alert("Success: " + result);
+            }, function (error) {
+                alert("Fail: " + error);
+            });
+
+            if ($scope.flag) {
+                deferred.resolve("you checked!");
+            } else {
+                deferred.reject("sorry, not checked!");
+            }
+        }
+    }]);
+</script>
+</body>
+</html>
