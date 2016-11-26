@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>ng-app</title>
+    <title>extend</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,7 +20,6 @@
     app.controller('parentCtrl', function ($scope) {
         $scope.value2 = "我是王鹏飞";
     });
-
     app.controller('childCtrl', function ($scope) {
         $scope.gerParentValue = function () {
             alert($scope.value1 + " " + $scope.value2);

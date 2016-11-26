@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>router</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body ng-app="myApp">
+<div>
+    <a href="#/index1">index1</a><br>
+    <a href="#/index2/200">index2</a>
+   <div ng-view></div>
+</div>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
+<script>
+    var app = angular.module('myApp', ['ngRoute']);
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/index1', {
+            templateUrl: 'partial/a.html',
+            controller: 'demoCtrl1',
+            controllerAs: 'vm'
+        }).when('/index2/:userid', {
+            templateUrl: 'partial/b.html',
+            controller: 'demoCtrl2'
+        }).when('/error', {
+            templateUrl: 'partial/error.html'
+        }).otherwise({
+            redirectTo: '/error'
+        });
+    }]);
+    app.controller('demoCtrl1', function (demoService) {
+        var vm = this;
+        vm.name = 'liangfei';
+        vm.users = demoService.getUsers();
+        return vm;
+    });
+    app.controller('demoCtrl2', function ($scope, $routeParams) {
+        $scope.userid = $routeParams.userid;
+    });
+    app.factory('demoService', function () {
+        function getUsers() {
+            var users = [{
+                name: 'liangfei'
+            }, {
+                name: 'wanglin'
+            }, {
+                name: 'Jhon'
+            }, {
+                name: 'Jane'
+            }];
+            return users;
+        }
+
+        return {
+            getUsers: getUsers
+        };
+    });
+</script>
+</body>
+</html>

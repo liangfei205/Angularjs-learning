@@ -1,0 +1,8 @@
+<h2>index1</h2>
+<div>
+    <input ng-model="vm.name"/>
+</div>
+<p ng-bind="vm.name">Hello Everyone!</p>
+<ul>
+    <li ng-repeat="user in vm.users | filter : name" ng-bind="user.name"></li>
+</ul>
