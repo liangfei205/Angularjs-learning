@@ -85,7 +85,7 @@
                             headers: {
                                 "content-type": "application/json"
                             },
-                            url: "./Json/user.json",
+                            url: "./Json/role.json",
                             isArray: false,
                             timeout: 30000
                         });
@@ -127,7 +127,7 @@
                         $scope.roleInfo = response;
                     }
                     , function () {
-                        $scope.roleInfo = '找不到该用户';
+                        $scope.roleInfo = '找不到该角色';
                     }
             );
         };

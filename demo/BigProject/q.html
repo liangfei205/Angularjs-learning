@@ -33,6 +33,19 @@
             } else {
                 deferred.reject("sorry, not checked!");
             }
+
+            var funcA = function(){
+                console.log("funcA");
+                return "hello,funA";
+            };
+            var funcB = function(){
+                console.log("funcB");
+                return "hello,funB";
+            };
+            $q.all([funcA(),funcB()])
+                    .then(function(result){
+                        console.log(result);
+                    });
         }
     }]);
 </script>
