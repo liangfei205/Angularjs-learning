@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "message": "成功",
+  "errCode": "",
+  "value": [
+    {
+      "IS_ENABLE": true,
+      "ROLE_KEY_ID": 1,
+      "ROLE_NAME": "超级管理员",
+      "ROLE_CODE": "001",
+      "ROLE_TYPE_CODE": "0003000010",
+      "ROLE_TYPE_NAME": "签约平台角色"
+    },
+    {
+      "IS_ENABLE": true,
+      "ROLE_KEY_ID": 3,
+      "ROLE_NAME": "后台运维",
+      "ROLE_CODE": "1476344028434",
+      "ROLE_TYPE_CODE": "0003000010",
+      "ROLE_TYPE_NAME": "签约平台角色"
+    },
+    {
+      "IS_ENABLE": true,
+      "ROLE_KEY_ID": 12,
+      "ROLE_NAME": "数据统计查询",
+      "ROLE_CODE": "1476946115800",
+      "ROLE_TYPE_CODE": "0003000010",
+      "ROLE_TYPE_NAME": "签约平台角色"
+    },
+    {
+      "IS_ENABLE": true,
+      "ROLE_KEY_ID": 16,
+      "ROLE_NAME": "pc平台管理员",
+      "ROLE_CODE": "1477895262305",
+      "ROLE_TYPE_CODE": "0003000010",
+      "ROLE_TYPE_NAME": "签约平台角色"
+    }
+  ]
+}

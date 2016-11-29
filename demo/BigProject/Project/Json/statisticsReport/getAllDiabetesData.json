@@ -1,0 +1,164 @@
+{
+  "success": true,
+  "message": "获取数据成功",
+  "errCode": "",
+  "value": {
+    "ORGANIZATION_LEVEL": "1",
+    "PER_MONTH_DIABETES_DATA": [
+      {
+        "ADD_TIME": "10",
+        "DIABETES_TOTAL": 15
+      },
+      {
+        "ADD_TIME": "11",
+        "DIABETES_TOTAL": 5
+      }
+    ],
+    "DIABETES_DATA": {
+      "DIABETES_TOTAL": 20,
+      "FOLLOW_UP_TOTAL": 8,
+      "DIABETES_AVERAGE": 75,
+      "RESIDENT_FOLLOW_UP_ED_AVERAGE": 0.4,
+      "DOCTOR_PER_RESIDENT_MANAGEMENT": 0.4
+    },
+    "TIME_LIST": [
+      {"TIME": "01"},
+      {"TIME": "02"},
+      {"TIME": "03"},
+      {"TIME": "04"},
+      {"TIME": "05"},
+      {"TIME": "06"},
+      {"TIME": "07"},
+      {"TIME": "08"},
+      {"TIME": "09"},
+      {"TIME": "10"},
+      {"TIME": "11"}
+    ],
+    "ODP_DISTRIBUTION_DATA": [
+      {
+        "DIABETES_PERSENT": 40.00,
+        "DIABETES_TOTAL": 20,
+        "ORGANIZATION_KEY_ID": 44,
+        "ORGANIZATION_NAME": "地区一",
+        "SUB_DIABETES_TOTAL": 8
+      },
+      {
+        "DIABETES_PERSENT": 35.00,
+        "DIABETES_TOTAL": 20,
+        "ORGANIZATION_KEY_ID": 1,
+        "ORGANIZATION_NAME": "地区二",
+        "SUB_DIABETES_TOTAL": 7
+      },
+      {
+        "DIABETES_PERSENT": 5.00,
+        "DIABETES_TOTAL": 20,
+        "ORGANIZATION_KEY_ID": 49,
+        "ORGANIZATION_NAME": "地区三",
+        "SUB_DIABETES_TOTAL": 1
+      },
+      {
+        "DIABETES_PERSENT": 5.00,
+        "DIABETES_TOTAL": 20,
+        "ORGANIZATION_KEY_ID": 46,
+        "ORGANIZATION_NAME": "地区四",
+        "SUB_DIABETES_TOTAL": 1
+      },
+      {
+        "DIABETES_PERSENT": 5.00,
+        "DIABETES_TOTAL": 20,
+        "ORGANIZATION_KEY_ID": 51,
+        "ORGANIZATION_NAME": "地区五",
+        "SUB_DIABETES_TOTAL": 1
+      }
+    ],
+    "GLUCOSE_AND_WARNING": [
+      {
+        "DIABETES_RECORD_TOTAL": 4,
+        "UNSTABLE_COUNT": 3,
+        "DIABETES_PERSENT": 75.00,
+        "ORGANIZATION_KEY_ID": 44,
+        "ORGANIZATION_NAME": "地区一",
+        "STABLE_COUNT": 1
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 5,
+        "UNSTABLE_COUNT": 1,
+        "DIABETES_PERSENT": 20.00,
+        "ORGANIZATION_KEY_ID": 1,
+        "ORGANIZATION_NAME": "地区二",
+        "STABLE_COUNT": 4
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 6,
+        "ORGANIZATION_NAME": "地区三",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 10,
+        "ORGANIZATION_NAME": "地区四",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 21,
+        "ORGANIZATION_NAME": "地区五",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 26,
+        "ORGANIZATION_NAME": "地区六",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 38,
+        "ORGANIZATION_NAME": "地区七",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 49,
+        "ORGANIZATION_NAME": "地区八",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 5,
+        "ORGANIZATION_NAME": "地区九",
+        "STABLE_COUNT": 0
+      },
+      {
+        "DIABETES_RECORD_TOTAL": 0,
+        "UNSTABLE_COUNT": 0,
+        "DIABETES_PERSENT": 0,
+        "ORGANIZATION_KEY_ID": 9,
+        "ORGANIZATION_NAME": "地区十",
+        "STABLE_COUNT": 0
+      }
+    ],
+    "DIABETES_FACTORS": {
+      "REGULAR_MOVEMENT": 5,
+      "OBESITY": 1,
+      "OVERWEIGHT": 2,
+      "SMOKING": 8,
+      "DRINK": 6
+    }
+  }
+}

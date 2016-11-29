@@ -1,6 +1,6 @@
 "use strict";
 APP.CONFIG.constant("ENV", {
-    "urlBase": "../Json/",
+	"urlBase": "./Json/",
     "timeout": 30000,
     "runMode": "debug"
 });

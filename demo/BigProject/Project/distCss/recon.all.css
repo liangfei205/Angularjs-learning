@@ -46,7 +46,20 @@ body, html {
 * {
   box-sizing: border-box; }
 
-.btnBoxShadow, .generalBtn, .generalSearchRow button.md-button, .organizationCard .organizationSearchRow button.md-button, .organizationCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button, .newCreateBtn button.md-button, .organizationCard .userRoleSelectRow button.md-button, .tabSelectTable .tabSelectBtn .md-button, .generalEditTab .generalBtnRow button.md-button, .newOrEditDoctor .baseDataPart .generalBtnRow button.md-button, .reportBtn > section button.md-button.md-raised {
+md-datepicker .md-datepicker-input-container {
+  width: 100%;
+  margin-left: 0; }
+
+md-input-container label {
+  font-weight: 300; }
+
+.md-raised.md-primary.md-button {
+  color: #ffffff; }
+
+.md-raised.md-button {
+  color: #3d93fe; }
+
+.btnBoxShadow, .generalBtn, .generalSearchRow button.md-button, .commonCard .commonSearchRow button.md-button, .commonCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button, .newCreateBtn button.md-button, .commonCard .userRoleSelectRow button.md-button, .tabSelectTable .tabSelectBtn .md-button, .physicalSearchLine .newCreateBtn button.md-button, .generalEditTab .generalBtnRow button.md-button, .newOrEditDoctor .baseDataPart .generalBtnRow button.md-button, .reportBtn > section button.md-button.md-raised {
   box-shadow: 0 1px 8px 0 #bbd9ff, 0 3px 4px 0 #bbd9ff, 0 3px 3px -2px #bbd9ff !important; }
 
 .backgroundColor {
@@ -58,19 +71,19 @@ body, html {
   width: 100%;
   min-height: 100%; }
 
-.whiteBackgroundColor, .generalTable, .generalEditTab, .newOrEditDoctor .baseDataPart, .organizationCard, .doctorCard, .newOrEditDoctor, .tabSelectTable, .residentCard, .familyDetailCard, .residentDetailCard {
+.whiteBackgroundColor, .generalTable, .generalEditTab, .newOrEditDoctor .baseDataPart, .commonCard, .doctorCard, .newOrEditDoctor, .tabSelectTable, .residentCard, .familyDetailCard, .residentDetailCard, .secondSideNavRow, .physicalDetail .physicalCard, .identificationInfo .identificationCard > md-content, .identificationInfo .identificationTableCard > md-content {
   background-color: #ffffff; }
 
-.cardMargin, .topMainMenu, .mainWelcome, .organizationCard, .doctorCard, .residentCard {
-  margin-top: 24px; }
+.cardMargin, .topMainMenu, .mainWelcome, .commonCard, .doctorCard, .residentCard {
+  margin-top: 8px; }
 
 .tableMargin, .generalTable, .generalEditTab, .newOrEditDoctor .baseDataPart, .newOrEditDoctor, .tabSelectTable, .familyDetailCard, .residentLeftCard, .residentDetailCard {
-  margin-top: 36px; }
+  margin-top: 8px; }
 
-.mainWidth, .generalEditTab, .newOrEditDoctor .baseDataPart, .topTitle md-toolbar, .topMainMenu md-menu-bar, .newOrEditDoctor {
+.mainWidth, .generalEditTab, .newOrEditDoctor .baseDataPart, .topTitle md-toolbar, .newOrEditDoctor {
   width: 1200px; }
 
-.btnRadius, .topButton, .generalTable md-toolbar button.md-button, .generalTable md-toolbar a.md-button, .generalEditTab md-toolbar button.md-button, .newOrEditDoctor .baseDataPart md-toolbar button.md-button, .generalEditTab md-toolbar a.md-button, .newOrEditDoctor .baseDataPart md-toolbar a.md-button, .familyDetailCard md-toolbar button.md-button, .familyDetailCard md-toolbar a.md-button, .residentDetailCard md-toolbar button.md-button, .residentDetailCard md-toolbar a.md-button, .generalBtn, .generalSearchRow button.md-button, .organizationCard .organizationSearchRow button.md-button, .organizationCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button, .newCreateBtn button.md-button, .organizationCard .userRoleSelectRow button.md-button, .tabSelectTable .tabSelectBtn .md-button, .loginButton, .editPassword section button {
+.btnRadius, .topButton, .generalTable md-toolbar button.md-button, .generalTable md-toolbar a.md-button, .generalEditTab md-toolbar button.md-button, .newOrEditDoctor .baseDataPart md-toolbar button.md-button, .generalEditTab md-toolbar a.md-button, .newOrEditDoctor .baseDataPart md-toolbar a.md-button, .familyDetailCard md-toolbar button.md-button, .familyDetailCard md-toolbar a.md-button, .residentDetailCard md-toolbar button.md-button, .residentDetailCard md-toolbar a.md-button, .generalBtn, .generalSearchRow button.md-button, .commonCard .commonSearchRow button.md-button, .commonCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button, .newCreateBtn button.md-button, .commonCard .userRoleSelectRow button.md-button, .tabSelectTable .tabSelectBtn .md-button, .physicalSearchLine .newCreateBtn button.md-button, .loginButton, .editPassword section button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px; }
@@ -85,7 +98,7 @@ body, html {
 .topButton:hover, .generalTable md-toolbar button.md-button:hover, .generalTable md-toolbar a.md-button:hover, .generalEditTab md-toolbar button.md-button:hover, .newOrEditDoctor .baseDataPart md-toolbar button.md-button:hover, .generalEditTab md-toolbar a.md-button:hover, .newOrEditDoctor .baseDataPart md-toolbar a.md-button:hover, .familyDetailCard md-toolbar button.md-button:hover, .familyDetailCard md-toolbar a.md-button:hover, .residentDetailCard md-toolbar button.md-button:hover, .residentDetailCard md-toolbar a.md-button:hover {
   background-color: #d4e7ff !important; }
 
-.generalBtn, .generalSearchRow button.md-button, .organizationCard .organizationSearchRow button.md-button, .organizationCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button, .newCreateBtn button.md-button, .organizationCard .userRoleSelectRow button.md-button, .tabSelectTable .tabSelectBtn .md-button {
+.generalBtn, .generalSearchRow button.md-button, .commonCard .commonSearchRow button.md-button, .commonCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button, .newCreateBtn button.md-button, .commonCard .userRoleSelectRow button.md-button, .tabSelectTable .tabSelectBtn .md-button, .physicalSearchLine .newCreateBtn button.md-button {
   width: 88px;
   height: 32px;
   font-size: 16px;
@@ -94,35 +107,57 @@ body, html {
   color: #ffffff;
   background-color: #3d93fe; }
 
-.generalBtn:hover, .generalSearchRow button.md-button:hover, .organizationCard .organizationSearchRow button.md-button:hover, .organizationCard .userSearchRow button.md-button:hover, .doctorCard .doctorSearchRow button.md-button:hover, .residentCard .residentSearchRow button.md-button:hover, .newCreateBtn button.md-button:hover, .organizationCard .userRoleSelectRow button.md-button:hover, .tabSelectTable .tabSelectBtn .md-button:hover {
+.generalBtn:hover, .generalSearchRow button.md-button:hover, .commonCard .commonSearchRow button.md-button:hover, .commonCard .userSearchRow button.md-button:hover, .doctorCard .doctorSearchRow button.md-button:hover, .residentCard .residentSearchRow button.md-button:hover, .newCreateBtn button.md-button:hover, .commonCard .userRoleSelectRow button.md-button:hover, .tabSelectTable .tabSelectBtn .md-button:hover {
   background-color: #3176cb; }
 
-.generalCardPadding, .organizationCard, .doctorCard, .residentCard {
+.generalCardPadding, .commonCard, .doctorCard, .residentCard {
   padding: 24px 30px 24px 30px; }
 
-.generalSearchRow, .organizationCard .organizationSearchRow, .organizationCard .userSearchRow, .doctorCard .doctorSearchRow, .residentCard .residentSearchRow {
+.generalDatepickRow {
   height: 80px;
   font-size: 16px;
   font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
   padding-right: 30px; }
-  .generalSearchRow label, .organizationCard .organizationSearchRow label, .organizationCard .userSearchRow label, .doctorCard .doctorSearchRow label, .residentCard .residentSearchRow label {
+  .generalDatepickRow label {
     font-weight: normal; }
-  .generalSearchRow > div, .organizationCard .organizationSearchRow > div, .organizationCard .userSearchRow > div, .doctorCard .doctorSearchRow > div, .residentCard .residentSearchRow > div {
+  .generalDatepickRow > div {
     width: 188px; }
-  .generalSearchRow md-input-container, .organizationCard .organizationSearchRow md-input-container, .organizationCard .userSearchRow md-input-container, .doctorCard .doctorSearchRow md-input-container, .residentCard .residentSearchRow md-input-container {
+  .generalDatepickRow md-input-container {
     width: 188px; }
-  .generalSearchRow > span, .organizationCard .organizationSearchRow > span, .organizationCard .userSearchRow > span, .doctorCard .doctorSearchRow > span, .residentCard .residentSearchRow > span {
+  .generalDatepickRow > span {
     width: 36px; }
-  .generalSearchRow button.md-button, .organizationCard .organizationSearchRow button.md-button, .organizationCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button {
-    margin: 0; }
 
-.generalTableTitle, .generalTable md-toolbar > span, .generalEditTab md-toolbar > span, .newOrEditDoctor .baseDataPart md-toolbar > span, .tabSelectTable .md-tab, .familyDetailCard md-toolbar > span, .residentDetailCard md-toolbar > span {
+.generalSearchRow, .commonCard .commonSearchRow, .commonCard .userSearchRow, .doctorCard .doctorSearchRow, .residentCard .residentSearchRow {
+  height: 80px;
+  font-size: 16px;
+  font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
+  padding-right: 30px; }
+  .generalSearchRow label, .commonCard .commonSearchRow label, .commonCard .userSearchRow label, .doctorCard .doctorSearchRow label, .residentCard .residentSearchRow label {
+    font-weight: normal; }
+  .generalSearchRow > div, .commonCard .commonSearchRow > div, .commonCard .userSearchRow > div, .doctorCard .doctorSearchRow > div, .residentCard .residentSearchRow > div {
+    width: 188px; }
+  .generalSearchRow md-input-container, .commonCard .commonSearchRow md-input-container, .commonCard .userSearchRow md-input-container, .doctorCard .doctorSearchRow md-input-container, .residentCard .residentSearchRow md-input-container {
+    width: 188px; }
+  .generalSearchRow > span, .commonCard .commonSearchRow > span, .commonCard .userSearchRow > span, .doctorCard .doctorSearchRow > span, .residentCard .residentSearchRow > span {
+    width: 36px; }
+  .generalSearchRow button.md-button, .commonCard .commonSearchRow button.md-button, .commonCard .userSearchRow button.md-button, .doctorCard .doctorSearchRow button.md-button, .residentCard .residentSearchRow button.md-button {
+    margin: 0 0 6px 0; }
+
+.flag {
+  cursor: pointer; }
+
+.generalTableTitle, .generalTable md-toolbar > span, .generalEditTab md-toolbar > span, .newOrEditDoctor .baseDataPart md-toolbar > span, .searchAlert md-toolbar > span, .searchAlert .searchAlert md-toolbar > span, .tabSelectTable .md-tab, .familyDetailCard md-toolbar > span, .title_top > span, .generalBtnRow > span, .residentDetailCard md-toolbar > span, .evaluationEditCard > md-toolbar > span {
   font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
   color: #ffffff;
   font-size: 22px; }
 
+.lightBlueBackgroundColor, .physicalDetail .physicalCard md-toolbar, .identificationInfo .identificationCard md-toolbar, .identificationInfo .identificationTableCard md-toolbar, .evaluationEditCard md-card-header {
+  background-color: #82baff !important;
+  padding: 0 30px 0 30px !important; }
+
 .generalTable md-toolbar {
-  padding: 0 30px 0 30px; }
+  padding: 0 30px 0 30px;
+  background-color: #3d93fe !important; }
   .generalTable md-toolbar button.md-button {
     margin-left: 24px;
     margin-right: 0; }
@@ -144,58 +179,59 @@ body, html {
 .newCreateBtn button.md-button {
   margin: 0; }
 
-.generalEditTab md-toolbar, .newOrEditDoctor .baseDataPart md-toolbar {
-  padding: 0 30px 0 30px; }
-  .generalEditTab md-toolbar button.md-button, .newOrEditDoctor .baseDataPart md-toolbar button.md-button {
-    margin-left: 24px;
-    margin-right: 0; }
-  .generalEditTab md-toolbar a.md-button, .newOrEditDoctor .baseDataPart md-toolbar a.md-button {
-    margin-left: 24px;
-    margin-right: 0; }
-
-.generalEditTab .generalEditTabPadding, .newOrEditDoctor .baseDataPart .generalEditTabPadding {
-  padding: 24px 0 24px 60px;
-  font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 16px; }
-  .generalEditTab .generalEditTabPadding label, .newOrEditDoctor .baseDataPart .generalEditTabPadding label {
-    font-weight: normal; }
-
-.generalEditTab .generalLongInputRow, .newOrEditDoctor .baseDataPart .generalLongInputRow {
-  min-height: 100px; }
-  .generalEditTab .generalLongInputRow > div, .newOrEditDoctor .baseDataPart .generalLongInputRow > div {
-    width: 524px; }
-  .generalEditTab .generalLongInputRow md-input-container, .newOrEditDoctor .baseDataPart .generalLongInputRow md-input-container {
-    width: 524px; }
-
-.generalEditTab .generalNormalInputRow, .newOrEditDoctor .baseDataPart .generalNormalInputRow {
-  height: 100px; }
-  .generalEditTab .generalNormalInputRow > div, .newOrEditDoctor .baseDataPart .generalNormalInputRow > div {
-    width: 168px; }
-  .generalEditTab .generalNormalInputRow > span, .newOrEditDoctor .baseDataPart .generalNormalInputRow > span {
-    width: 60px; }
-  .generalEditTab .generalNormalInputRow md-input-container, .newOrEditDoctor .baseDataPart .generalNormalInputRow md-input-container {
-    width: 168px; }
-
-.generalEditTab .generalAddressRow, .newOrEditDoctor .baseDataPart .generalAddressRow {
-  height: 100px; }
-  .generalEditTab .generalAddressRow > div, .newOrEditDoctor .baseDataPart .generalAddressRow > div {
-    width: 168px; }
-  .generalEditTab .generalAddressRow > span, .newOrEditDoctor .baseDataPart .generalAddressRow > span {
-    width: 30px; }
-  .generalEditTab .generalAddressRow md-input-container, .newOrEditDoctor .baseDataPart .generalAddressRow md-input-container {
-    width: 168px; }
-
-.generalEditTab .generalBtnRow, .newOrEditDoctor .baseDataPart .generalBtnRow {
-  height: 80px; }
-  .generalEditTab .generalBtnRow button.md-button, .newOrEditDoctor .baseDataPart .generalBtnRow button.md-button {
-    margin: 0 24px 0 0; }
-
-.generalEditTab .generalTitleRow, .newOrEditDoctor .baseDataPart .generalTitleRow {
-  font-size: 16px;
-  font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
-  color: #9C9C9C;
-  height: 100px;
-  font-weight: bold; }
+.generalEditTab, .newOrEditDoctor .baseDataPart {
+  margin-top: 0;
+  margin-bottom: 36px; }
+  .generalEditTab md-toolbar, .newOrEditDoctor .baseDataPart md-toolbar {
+    padding: 0 30px 0 30px;
+    background-color: #3d93fe; }
+    .generalEditTab md-toolbar > span, .newOrEditDoctor .baseDataPart md-toolbar > span {
+      font-size: 22px; }
+    .generalEditTab md-toolbar button.md-button, .newOrEditDoctor .baseDataPart md-toolbar button.md-button {
+      margin-left: 24px;
+      margin-right: 0; }
+    .generalEditTab md-toolbar a.md-button, .newOrEditDoctor .baseDataPart md-toolbar a.md-button {
+      margin-left: 24px;
+      margin-right: 0; }
+  .generalEditTab .generalEditTabPadding, .newOrEditDoctor .baseDataPart .generalEditTabPadding {
+    padding: 24px 0 24px 60px;
+    font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 16px; }
+    .generalEditTab .generalEditTabPadding label, .newOrEditDoctor .baseDataPart .generalEditTabPadding label {
+      font-weight: normal; }
+  .generalEditTab .generalLongInputRow, .newOrEditDoctor .baseDataPart .generalLongInputRow {
+    min-height: 100px; }
+    .generalEditTab .generalLongInputRow > div, .newOrEditDoctor .baseDataPart .generalLongInputRow > div {
+      width: 524px; }
+    .generalEditTab .generalLongInputRow md-input-container, .newOrEditDoctor .baseDataPart .generalLongInputRow md-input-container {
+      width: 524px; }
+  .generalEditTab .generalNormalInputRow, .newOrEditDoctor .baseDataPart .generalNormalInputRow {
+    height: 100px; }
+    .generalEditTab .generalNormalInputRow > div, .newOrEditDoctor .baseDataPart .generalNormalInputRow > div {
+      width: 168px; }
+    .generalEditTab .generalNormalInputRow > span, .newOrEditDoctor .baseDataPart .generalNormalInputRow > span {
+      width: 60px; }
+    .generalEditTab .generalNormalInputRow md-input-container, .newOrEditDoctor .baseDataPart .generalNormalInputRow md-input-container {
+      width: 168px; }
+  .generalEditTab .generalAddressRow, .newOrEditDoctor .baseDataPart .generalAddressRow {
+    height: 100px; }
+    .generalEditTab .generalAddressRow > div, .newOrEditDoctor .baseDataPart .generalAddressRow > div {
+      width: 168px; }
+    .generalEditTab .generalAddressRow > span, .newOrEditDoctor .baseDataPart .generalAddressRow > span {
+      width: 30px; }
+    .generalEditTab .generalAddressRow md-input-container, .newOrEditDoctor .baseDataPart .generalAddressRow md-input-container {
+      width: 168px; }
+  .generalEditTab .generalBtnRow, .newOrEditDoctor .baseDataPart .generalBtnRow {
+    background-color: white;
+    height: 80px; }
+    .generalEditTab .generalBtnRow button.md-button, .newOrEditDoctor .baseDataPart .generalBtnRow button.md-button {
+      margin: 0 24px 0 0; }
+  .generalEditTab .generalTitleRow, .newOrEditDoctor .baseDataPart .generalTitleRow {
+    font-size: 16px;
+    font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #9C9C9C;
+    height: 100px;
+    font-weight: bold; }
 
 .noErrorsSpacer .md-errors-spacer {
   display: none; }
@@ -210,22 +246,119 @@ body, html {
   background-color: #cBe1ff !important;
   color: #3D93FE; }
 
+.md-panel-outer-wrapper {
+  position: fixed; }
+
+.searchAlert {
+  min-width: 720px;
+  background-color: #fff; }
+  .searchAlert md-toolbar {
+    padding: 0 0 0 30px;
+    background-color: #3d93fe; }
+    .searchAlert md-toolbar > span {
+      color: #fff; }
+    .searchAlert md-toolbar md-icon {
+      color: #fff;
+      fill: #fff; }
+  .searchAlert .searchArea {
+    padding: 56px 40px 50px 40px; }
+    .searchAlert .searchArea .searchPart > md-input-container {
+      width: 490px;
+      margin-right: 30px; }
+    .searchAlert .searchArea .tablePart {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      min-width: 640px;
+      max-height: 320px;
+      overflow-x: auto; }
+  .searchAlert .searchAlert md-toolbar {
+    padding: 0 30px 0 30px;
+    background-color: #3d93fe; }
+    .searchAlert .searchAlert md-toolbar > span {
+      color: #fff; }
+  .searchAlert .searchAlert .tablePart {
+    min-width: 608px;
+    max-height: 320px;
+    overflow-x: auto; }
+  .searchAlert .searchAlert md-dialog-content > div {
+    padding: 58px 20px 72px 20px; }
+  .searchAlert .searchAlert .searchPart {
+    width: 608px; }
+    .searchAlert .searchAlert .searchPart button.md-button {
+      width: 88px;
+      height: 36px;
+      margin: 0 0 0 30px; }
+
+.secondTableMagin {
+  margin-top: 36px !important; }
+
+.secondCardMagin {
+  margin-top: 24px !important; }
+
+.editToolbarBackgroundColor {
+  background-color: #3d93fe !important; }
+
+.sidebarButton {
+  margin-top: 16px;
+  color: #666666;
+  font-size: 18px;
+  height: 48px;
+  text-align: left;
+  padding-left: 36px;
+  background-color: #c8e1ff;
+  border: none; }
+
+.sidebarSelectButton {
+  margin-top: 16px; }
+  .sidebarSelectButton > button.md-button {
+    color: #666666;
+    font-size: 18px;
+    height: 64px;
+    background-color: #ffffff; }
+  .sidebarSelectButton > button.md-button.selected {
+    background-color: #c8e1ff; }
+  .sidebarSelectButton > button.md-button:hover {
+    background-color: #c8e1ff; }
+
+.loadingModal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100000;
+  background-color: rgba(255, 255, 255, 0.55); }
+  .loadingModal .modal-dialog {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
 .baseSpan, .login md-toolbar span, .editPassword md-toolbar {
   font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
   color: #ffffff; }
 
 .login {
   background: url("../images/login/banner.png");
-  background-size: 100%; }
+  background-size: 100%;
+  width: 100%;
+  height: 100%; }
   .login md-toolbar span {
-    font-size: 22px; }
+    /*font-size: $cardTitleFontSize;*/
+    font-size: 26px; }
   .login md-content {
-    height: 444px;
-    width: 790px; }
+    height: 322px;
+    width: 602px; }
   .login md-input-container {
-    margin: 12px 0 0 0; }
+    margin: 12px 0 0 10px; }
   .login section {
-    margin: 22px 0 88px 0; }
+    margin: 0 0 30px 0; }
   .login i {
     width: 24px;
     height: 24px;
@@ -295,18 +428,53 @@ body, html {
       font-size: 16px;
       color: #ffffff; }
 
+.menu_pc {
+  width: 1200px;
+  height: 64px;
+  display: flex;
+  background-color: #fff; }
+
+.menu_nav {
+  width: 1200px;
+  height: 20px; }
+  .menu_nav .nav_span {
+    color: #666666;
+    font-size: 12px; }
+  .menu_nav .nav_a {
+    color: #3D93FE;
+    font-size: 12px; }
+
 .topMainMenu md-menu-bar {
+  /*@extend .mainWidth;*/
   font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 18px;
   background-color: #ffffff;
   color: #666666;
-  padding: 0; }
+  padding: 0;
+  margin-right: 16px; }
+  .topMainMenu md-menu-bar span {
+    font-size: 18px; }
   .topMainMenu md-menu-bar md-menu button {
     width: 148px;
-    height: 65px;
+    height: 64px;
     text-align: center;
-    line-height: 65px; }
+    line-height: 64px; }
   .topMainMenu md-menu-bar md-menu button:hover {
+    background-color: #c8e1ff;
+    color: #3d93fe; }
+  .topMainMenu md-menu-bar md-menu button.selected {
+    background-color: #c8e1ff;
+    color: #3d93fe; }
+  .topMainMenu md-menu-bar .md-button {
+    width: 148px;
+    height: 64px;
+    text-align: center;
+    line-height: 64px;
+    margin: 0;
+    border-radius: 0; }
+  .topMainMenu md-menu-bar .md-button:hover {
+    background-color: #c8e1ff;
+    color: #3d93fe; }
+  .topMainMenu md-menu-bar .md-button.selected {
     background-color: #c8e1ff;
     color: #3d93fe; }
   .topMainMenu md-menu-bar .md-menu.md-open button {
@@ -339,27 +507,27 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
     font-family: "Lantinghei-SC-Extralight", "SimHei";
     color: #ffffff; }
 
-.organizationCard .organizationSearchRow {
+.commonCard .commonSearchRow {
   width: 890px; }
 
-.organizationCard .md-errors-spacer {
+.commonCard .md-errors-spacer {
   display: none; }
 
-.organizationCard .userSearchRow {
+.commonCard .userSearchRow {
   width: 666px; }
 
-.organizationCard .userRoleSelectRow {
+.commonCard .userRoleSelectRow {
   width: 666px;
   height: 80px;
   font-size: 16px;
   font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
   padding-right: 30px; }
-  .organizationCard .userRoleSelectRow > div {
+  .commonCard .userRoleSelectRow > div {
     width: 524px; }
-  .organizationCard .userRoleSelectRow md-input-container {
+  .commonCard .userRoleSelectRow md-input-container {
     width: 524px; }
-  .organizationCard .userRoleSelectRow button.md-button {
-    margin: 0; }
+  .commonCard .userRoleSelectRow button.md-button {
+    margin: 0 0 6px 0; }
 
 .editTabBootsrapTabel {
   margin-right: 60px;
@@ -369,6 +537,8 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
     line-height: 42px;
     height: 42px;
     margin: 0; }
+  .editTabBootsrapTabel .width98 {
+    width: 98px; }
   .editTabBootsrapTabel thead tr {
     line-height: 50px;
     font-size: 16px; }
@@ -390,7 +560,10 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   width: 666px; }
 
 .newOrEditDoctor .editLeftPart {
-  width: 280px; }
+  width: 280px;
+  height: -webkit-calc(100vh - 36px);
+  height: -moz-calc(100vh - 36px);
+  height: calc(100vh - 36px); }
   .newOrEditDoctor .editLeftPart .editShowUser {
     font-size: 18px;
     color: #333333;
@@ -437,8 +610,18 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
     .residentCard .residentSearchRow .ageLine > label {
       width: 12px; }
 
+.residentCard md-checkbox {
+  margin-bottom: 20px; }
+  .residentCard md-checkbox .md-container {
+    top: 0;
+    height: 0; }
+
 .familyDetailCard md-toolbar {
-  padding: 0 30px 0 30px; }
+  padding: 0 30px 0 30px;
+  background-color: #82baff;
+  height: 64px; }
+  .familyDetailCard md-toolbar > span {
+    font-size: 20px; }
   .familyDetailCard md-toolbar button.md-button {
     margin-left: 24px;
     margin-right: 0; }
@@ -451,31 +634,37 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   font-size: 16px; }
 
 .familyDetailCard .inputRow > div {
-  width: 324px;
-  margin-right: 60px;
+  width: 27%;
+  margin-right: 4.8%;
   height: 80px; }
 
 .familyDetailCard .inputRow md-input-container {
-  width: 324px; }
+  width: 100%; }
 
 .familyDetailCard .radioRow {
   height: 80px; }
   .familyDetailCard .radioRow label {
     width: 150px;
-    margin: 0; }
+    margin: 0;
+    color: #666666; }
   .familyDetailCard .radioRow .md-label {
     margin-left: 36px; }
   .familyDetailCard .radioRow md-radio-button {
     margin-right: 30px; }
 
 .familyDetailCard .addressRow {
-  height: 80px; }
+  /*height: 80px;*/ }
   .familyDetailCard .addressRow label {
     width: 150px;
-    margin: 0; }
-  .familyDetailCard .addressRow > div md-input-container {
-    width: 168px;
-    margin-right: 30px; }
+    margin-top: 28px; }
+  .familyDetailCard .addressRow > label {
+    height: 100px;
+    color: #666666; }
+  .familyDetailCard .addressRow .addressArea > div {
+    width: 28%;
+    margin-right: 1.8%; }
+  .familyDetailCard .addressRow md-input-container {
+    width: 100%; }
 
 .familyDetailCard .mulselectRow {
   margin-top: 32px;
@@ -483,6 +672,8 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   .familyDetailCard .mulselectRow label {
     width: 150px;
     margin: 0; }
+  .familyDetailCard .mulselectRow > label {
+    color: #666666; }
   .familyDetailCard .mulselectRow .mulselect {
     height: 40px; }
   .familyDetailCard .mulselectRow .md-label {
@@ -494,12 +685,67 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   .familyDetailCard .textareaRow > div textarea {
     width: 524px; }
 
+.familyDetailCard md-checkbox {
+  margin-bottom: 20px; }
+  .familyDetailCard md-checkbox .md-container {
+    top: 0;
+    height: 0; }
+
 .residentLeftCard {
   width: 280px;
-  margin-right: 20px; }
+  margin-right: 20px;
+  height: -webkit-calc(100vh - 36px);
+  height: -moz-calc(100vh - 36px);
+  height: calc(100vh - 36px);
+  box-shadow: none; }
+  .residentLeftCard md-content {
+    background-color: #f3f9fb;
+    overflow-x: hidden; }
+    .residentLeftCard md-content > div {
+      border-radius: 2px;
+      background-color: white;
+      box-shadow: 0px 1px 5px 0px rgba(0, 48, 107, 0.12);
+      background-color: #ffffff;
+      margin: 2px;
+      overflow-x: hidden; }
+    .residentLeftCard md-content > p {
+      height: 20px; }
+
+.title_top {
+  background-color: #3d93fe;
+  height: 64px;
+  padding: 0 30px 0 30px; }
+  .title_top > span {
+    font-size: 22px;
+    line-height: 64px; }
+  .title_top > div {
+    float: right;
+    margin-top: 8px; }
+  .title_top .new_butt {
+    background-color: #fff;
+    color: #3D93FE; }
+  .title_top .new_butt:not[disabled]:hover {
+    background-color: #fff; }
+
+.generalBtnRow {
+  height: 64px;
+  padding: 0 30px 0 30px; }
+  .generalBtnRow > span {
+    font-size: 22px;
+    margin-right: 510px; }
+
+.residentDetailCard md-checkbox {
+  margin-bottom: 20px; }
+  .residentDetailCard md-checkbox .md-container {
+    top: 0;
+    height: 0; }
 
 .residentDetailCard md-toolbar {
-  padding: 0 30px 0 30px; }
+  padding: 0 30px 0 30px;
+  background-color: #82baff;
+  height: 64px; }
+  .residentDetailCard md-toolbar > span {
+    font-size: 20px; }
   .residentDetailCard md-toolbar button.md-button {
     margin-left: 24px;
     margin-right: 0; }
@@ -508,10 +754,13 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
     margin-right: 0; }
   .residentDetailCard md-toolbar md-radio-group {
     color: #ffffff; }
+    .residentDetailCard md-toolbar md-radio-group label {
+      color: #ffffff !important; }
   .residentDetailCard md-toolbar .md-on {
-    background-color: #ffffff; }
+    background-color: #ffffff;
+    border-color: #ffffff !important; }
   .residentDetailCard md-toolbar .md-off {
-    border-color: #ffffff; }
+    border-color: #ffffff !important; }
 
 .residentDetailCard > div {
   padding: 24px 0 24px 4.8%;
@@ -531,7 +780,8 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
     width: 100%; }
   .residentDetailCard .radioRow label {
     width: 12.67%;
-    margin: 0; }
+    margin: 0;
+    color: #666666; }
   .residentDetailCard .radioRow .md-label {
     margin-left: 20px; }
   .residentDetailCard .radioRow md-radio-button {
@@ -542,6 +792,8 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   .residentDetailCard .addressRow label {
     width: 12.67%;
     margin: 0; }
+  .residentDetailCard .addressRow > label {
+    color: #666666; }
   .residentDetailCard .addressRow > div {
     width: 14%;
     margin-right: 2.4%; }
@@ -554,6 +806,8 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   .residentDetailCard .mulselectRow label {
     width: 12.67%;
     margin: 0; }
+  .residentDetailCard .mulselectRow > label {
+    color: #666666; }
   .residentDetailCard .mulselectRow .mulselect {
     height: 40px; }
   .residentDetailCard .mulselectRow .md-label {
@@ -568,10 +822,19 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
     width: 100%; }
 
 .leftPartTitle {
-  height: 60px;
-  font-size: 22px;
-  color: #333333;
-  font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif; }
+  height: 450px; }
+  .leftPartTitle .residentTitle {
+    color: #333333;
+    font-size: 22px;
+    margin-bottom: 24px; }
+  .leftPartTitle .residentImg {
+    width: 160px;
+    height: 210px;
+    margin-bottom: 16px; }
+  .leftPartTitle .residentSpecial {
+    margin-bottom: 16px; }
+    .leftPartTitle .residentSpecial > span {
+      width: 24px; }
 
 .leftPartSmallTitle {
   height: 46px;
@@ -584,6 +847,50 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   height: 20px;
   background-color: #f3f9fb; }
 
+.hypertensionIcon > div {
+  background: url("../images/special/hypertensionIcon.png");
+  background-size: 100%;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 6px;
+  border-radius: 5px; }
+
+.hypertensionIcon > span {
+  color: #999999;
+  font-size: 14px; }
+
+.diabetesIcon > div {
+  background: url("../images/special/diabetesIcon.png");
+  background-size: 100%;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 6px;
+  border-radius: 5px; }
+
+.diabetesIcon > span {
+  color: #999999;
+  font-size: 14px; }
+
+.secondSideNavRow {
+  margin-top: 8px;
+  margin-bottom: 20px; }
+  .secondSideNavRow > div {
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #666666;
+    padding: 0;
+    margin-right: 16px;
+    height: 54px;
+    width: 148px;
+    text-align: center;
+    line-height: 54px; }
+  .secondSideNavRow > div.selected {
+    background-color: #c8e1ff;
+    color: #3d93fe; }
+  .secondSideNavRow > div:hover {
+    background-color: #c8e1ff;
+    color: #3d93fe; }
+
 .reportBtn > section {
   margin-top: 22px; }
   .reportBtn > section button.md-button.md-raised {
@@ -592,6 +899,8 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
 .reportChart {
   width: 480px;
   height: 360px; }
+  .reportChart .chartPart {
+    width: 480px; }
 
 .reportDetailChart {
   width: 840px;
@@ -613,3 +922,454 @@ md-menu-content.topMainMenuItem.md-menu-bar-menu {
   .reportBtnRow button.md-raised.md-primary {
     color: #ffffff;
     margin: 0; }
+
+.reportSearchRow {
+  height: 80px;
+  font-size: 16px;
+  font-family: "Hiragino Sans GB", "SimHei", -apple-system, "Helvetica Neue", "Arial", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "SimHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "FZLanTingHei-R-GBK", "Lantinghei-SC-Extralight", "Microsoft JhengHei", "WenQuanYi Micro Hei", sans-serif;
+  padding-right: 30px; }
+  .reportSearchRow label {
+    font-weight: normal; }
+  .reportSearchRow > div {
+    width: 188px; }
+  .reportSearchRow md-input-container {
+    width: 188px; }
+  .reportSearchRow > span {
+    width: 36px; }
+  .reportSearchRow md-input-container._md-datepicker-floating-label._md-datepicker-has-calendar-icon button.md-datepicker-button.md-icon-button.md-button.md-ink-ripple {
+    display: none; }
+  .reportSearchRow md-input-container._md-datepicker-floating-label._md-datepicker-has-calendar-icon .md-datepicker-input-container {
+    margin-left: 0;
+    width: 100%; }
+  .reportSearchRow md-input-container._md-datepicker-floating-label._md-datepicker-has-calendar-icon label {
+    left: 2px !important; }
+
+.reportTimeChoose > div {
+  width: 128px; }
+
+.reportTimeChoose md-input-container {
+  width: 128px; }
+
+.reportTimeChoose > span {
+  width: 36px; }
+
+.reportMoreInfo {
+  height: 74px;
+  width: 480px; }
+  .reportMoreInfo > div {
+    margin-top: 16px;
+    margin-bottom: 22px; }
+  .reportMoreInfo button.md-button {
+    margin: 0; }
+
+.reportMathData {
+  font-size: 16px;
+  margin-left: 32px;
+  color: #666666; }
+  .reportMathData > span {
+    margin-top: 24px; }
+  .reportMathData > div {
+    margin-top: 18px;
+    margin-bottom: 24px; }
+    .reportMathData > div > span {
+      margin-right: 30px; }
+  .reportMathData .smallMagin {
+    margin-right: 24px; }
+  .reportMathData .specialColor {
+    color: #3d93fe; }
+
+.reportSmallChart {
+  margin-left: 120px; }
+  .reportSmallChart > div {
+    width: 480px;
+    height: 270px; }
+
+.halfRow {
+  width: 520px; }
+
+.totalRow {
+  width: 1200px; }
+
+.templateInputRow {
+  width: 324px;
+  margin-right: 60px;
+  height: 84px; }
+
+.templateMain > div {
+  padding-left: 60px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 16px; }
+
+.templateMain .templateInputRow {
+  width: 324px;
+  margin-right: 60px;
+  height: 84px; }
+
+.templateMain .templateMulselectRow {
+  margin-top: 18px;
+  min-height: 40px; }
+  .templateMain .templateMulselectRow label {
+    margin: 0 32px 0 0; }
+  .templateMain .templateMulselectRow > label {
+    color: #666666; }
+  .templateMain .templateMulselectRow .mulselect {
+    height: 40px;
+    width: 180px; }
+  .templateMain .templateMulselectRow .md-label {
+    margin-left: 32px; }
+
+.templateMain .templateMulinputRow label {
+  margin: 0 16px 0 0; }
+
+.templateMain .templateMulinputRow > label {
+  color: #666666; }
+
+.templateMain .templateMulinputRow .spanClass {
+  margin: 0 12px 0 12px; }
+
+.templateMain .templateMulinputRow md-input-container {
+  margin: 0;
+  width: 48px; }
+
+.templateMain .templateNumberRow > div {
+  width: 324px;
+  margin-right: 12px;
+  height: 84px; }
+
+.templateMain .templateNumberRow > span {
+  margin-top: 24px;
+  font-size: 16px;
+  color: #9e9e9e;
+  margin-right: 36px; }
+
+.templateMain .templateRadioRow {
+  height: 84px; }
+  .templateMain .templateRadioRow > label {
+    color: #666666; }
+  .templateMain .templateRadioRow label {
+    margin: 0 32px 0 0; }
+  .templateMain .templateRadioRow .md-label {
+    margin-left: 32px; }
+  .templateMain .templateRadioRow md-radio-button {
+    padding-right: 30px; }
+  .templateMain .templateRadioRow md-input-container {
+    width: 232px;
+    margin: 0 0 0 -14px; }
+
+.showTemplateRow {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 14px; }
+  .showTemplateRow label {
+    color: #666666; }
+
+.halfShowRow {
+  width: 46%; }
+
+.totalShowRow {
+  width: 92%; }
+
+.physicalTimeLine > label {
+  width: 12px; }
+
+.physicalTimeLine > span {
+  color: #b9b9b9; }
+
+.physicalTimeLine > div {
+  width: 128px;
+  margin-left: 18px;
+  margin-right: 18px; }
+
+.physicalTimeLine md-input-container {
+  width: 128px; }
+
+.physicalSearchLine > div {
+  width: 188px;
+  margin-right: 34px; }
+
+.physicalSearchLine md-input-container {
+  width: 188px; }
+
+.physicalSearchLine .newCreateBtn {
+  margin-left: 136px;
+  margin-bottom: 4px; }
+
+.physicalDetail {
+  margin-top: 8px;
+  font-size: 16px; }
+  .physicalDetail md-toolbar {
+    color: #ffffff;
+    font-size: 22px;
+    padding: 0 30px 0 30px; }
+  .physicalDetail .physicalCard {
+    margin: 0 0 24px 0; }
+    .physicalDetail .physicalCard > div {
+      padding: 30px 0 15px 0; }
+    .physicalDetail .physicalCard .inputRow {
+      height: 100px; }
+      .physicalDetail .physicalCard .inputRow > div {
+        width: 25.78%;
+        margin-left: 6.67%; }
+        .physicalDetail .physicalCard .inputRow > div md-input-container {
+          width: 100%; }
+    .physicalDetail .physicalCard .longInputRow {
+      height: 100px; }
+      .physicalDetail .physicalCard .longInputRow > div {
+        width: 58.22%;
+        margin-left: 6.67%; }
+        .physicalDetail .physicalCard .longInputRow > div md-input-container {
+          width: 100%; }
+    .physicalDetail .physicalCard .checkRow > label {
+      margin-left: 6.67%;
+      width: 12.22%;
+      color: #666666; }
+    .physicalDetail .physicalCard .checkRow > span {
+      margin-right: 3.56%; }
+    .physicalDetail .physicalCard .inputRowWithSpanAndLabel {
+      height: 100px;
+      padding-left: 6.67%; }
+      .physicalDetail .physicalCard .inputRowWithSpanAndLabel md-input-container {
+        width: 27.61%; }
+      .physicalDetail .physicalCard .inputRowWithSpanAndLabel > label {
+        width: 13.10%;
+        color: #666666; }
+      .physicalDetail .physicalCard .inputRowWithSpanAndLabel > span {
+        margin: 0 4.28% 0 1.43%; }
+    .physicalDetail .physicalCard .longInputRowWithLabel {
+      height: 100px;
+      padding-left: 6.67%; }
+      .physicalDetail .physicalCard .longInputRowWithLabel > div {
+        width: 58.22%; }
+        .physicalDetail .physicalCard .longInputRowWithLabel > div md-input-container {
+          width: 100%; }
+      .physicalDetail .physicalCard .longInputRowWithLabel > label {
+        width: 13.10%;
+        color: #666666; }
+    .physicalDetail .physicalCard .radioRowWithLongLabel > label {
+      margin-left: 6.67%;
+      margin-top: 16px;
+      width: 28.22%;
+      color: #666666; }
+      .physicalDetail .physicalCard .radioRowWithLongLabel > label > span {
+        margin-right: 18.11%; }
+    .physicalDetail .physicalCard .inputRowWithMiddleLabel {
+      height: 100px; }
+      .physicalDetail .physicalCard .inputRowWithMiddleLabel > label {
+        margin-left: 6.67%;
+        width: 28.22%;
+        color: #666666; }
+      .physicalDetail .physicalCard .inputRowWithMiddleLabel md-input-container {
+        width: 27.61%; }
+    .physicalDetail .physicalCard .radioRowWithLabel > label {
+      margin-left: 6.67%;
+      width: 12.22%;
+      margin-top: 16px;
+      color: #666666; }
+    .physicalDetail .physicalCard md-radio-button {
+      width: 108px;
+      color: #999999;
+      margin: 18px 0; }
+      .physicalDetail .physicalCard md-radio-button .md-container {
+        top: 12px; }
+    .physicalDetail .physicalCard .typeRow > label {
+      margin-left: 6.67%;
+      margin-bottom: 0;
+      margin-top: 19px;
+      width: 12.22%;
+      color: #666666; }
+    .physicalDetail .physicalCard .typeRow > span {
+      margin-right: 3.56%;
+      margin-top: 19px; }
+    .physicalDetail .physicalCard .typeRow md-radio-button {
+      width: auto !important;
+      margin-right: 16px !important; }
+    .physicalDetail .physicalCard .typeRow md-input-container {
+      width: 27.61%;
+      margin-right: 1.33%; }
+    .physicalDetail .physicalCard .typeRowLongInput > label {
+      margin-left: 6.67%;
+      width: 12.22%;
+      color: #666666; }
+    .physicalDetail .physicalCard .typeRowLongInput md-input-container {
+      width: 58.22%; }
+
+.identificationInfo md-toolbar {
+  color: #ffffff;
+  font-size: 22px;
+  padding: 0 30px 0 30px; }
+
+.identificationInfo .identificationCard {
+  margin: 0 0 24px 0; }
+  .identificationInfo .identificationCard > md-content {
+    padding-top: 30px; }
+  .identificationInfo .identificationCard .inputRow {
+    height: 100px; }
+    .identificationInfo .identificationCard .inputRow > div {
+      width: 25.78%;
+      margin-left: 6.67%; }
+      .identificationInfo .identificationCard .inputRow > div md-input-container {
+        width: 100%; }
+
+.identificationInfo .identificationTableCard {
+  margin: 0 0 24px 0; }
+  .identificationInfo .identificationTableCard > md-content {
+    padding: 0; }
+  .identificationInfo .identificationTableCard .questionTrTd {
+    font-size: 14px;
+    text-align: center;
+    width: 25%;
+    line-height: 18px;
+    padding: 14px 4.33%;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; }
+  .identificationInfo .identificationTableCard .answerTr {
+    font-size: 14px;
+    text-align: center;
+    width: 15%;
+    line-height: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; }
+  .identificationInfo .identificationTableCard .answerTd {
+    font-size: 14px;
+    width: 15%;
+    line-height: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; }
+    .identificationInfo .identificationTableCard .answerTd > span {
+      margin-left: 6.67%;
+      margin-top: 4px; }
+    .identificationInfo .identificationTableCard .answerTd > input[type="radio"] {
+      margin-left: 16px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      -webkit-appearance: none;
+      border: 3px solid white;
+      box-shadow: 0 0 0 1px #757575; }
+    .identificationInfo .identificationTableCard .answerTd > input[type="radio"]:checked {
+      background-color: #24b4f5;
+      box-shadow: 0 0 0 1px #24b4f5; }
+  .identificationInfo .identificationTableCard .td120 {
+    font-size: 14px;
+    text-align: center;
+    min-width: 10%;
+    line-height: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; }
+  .identificationInfo .identificationTableCard .tdResult {
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; }
+    .identificationInfo .identificationTableCard .tdResult > div {
+      font-size: 14px;
+      text-align: center;
+      width: 10%;
+      padding: 14px 0; }
+    .identificationInfo .identificationTableCard .tdResult md-checkbox {
+      margin: 0; }
+
+.evaluationEditCard {
+  margin-top: 8px;
+  background-color: #f3f9fb; }
+  .evaluationEditCard > md-toolbar {
+    padding: 0 30px 0 30px;
+    background-color: #82baff;
+    height: 64px; }
+    .evaluationEditCard > md-toolbar > span {
+      color: #fff; }
+  .evaluationEditCard > div {
+    margin-bottom: 30px; }
+  .evaluationEditCard md-card {
+    margin: 0 0 20px 0; }
+  .evaluationEditCard md-card-header {
+    height: 64px;
+    line-height: 64px;
+    color: white !important; }
+  .evaluationEditCard md-card-content .flex-20 {
+    color: #666666; }
+  .evaluationEditCard md-checkbox {
+    margin-bottom: 20px; }
+    .evaluationEditCard md-checkbox .md-container {
+      top: 0;
+      height: 0; }
+
+.info_area {
+  padding: 24px 0 24px 6.67%; }
+
+.info_em {
+  width: 25.78%;
+  margin-right: 60px; }
+
+.operate_area {
+  margin-top: 58px; }
+
+.half_em {
+  width: 23%;
+  margin-right: 2%; }
+
+.specialDetailCard md-checkbox {
+  margin-bottom: 20px; }
+  .specialDetailCard md-checkbox .md-container {
+    top: 0;
+    height: 0; }
+
+.specialDetailCard md-toolbar {
+  padding: 0 30px 0 30px; }
+  .specialDetailCard md-toolbar > span {
+    color: #fff;
+    font-size: 22px; }
+
+.specialDetailCard md-card {
+  margin: 0 0 20px 0; }
+
+.specialDetailCard md-card-header {
+  background-color: #82baff;
+  color: #ffffff; }
+
+.specialDetailCard md-card-content {
+  padding-left: 6.67%; }
+  .specialDetailCard md-card-content .flex-20 {
+    color: #666666; }
+
+.specialDetailCard .spanRow {
+  color: #666666; }
+  .specialDetailCard .spanRow label {
+    width: 100px; }
+
+.specialDetailCard .inputRow {
+  height: 80px; }
+  .specialDetailCard .inputRow > md-input-container {
+    width: 25.78%;
+    margin-right: 6.67%; }
+
+.specialDetailCard .longInputRow {
+  height: 80px;
+  width: 58.22%; }
+
+.specialDetailCard .inputRowWithSpan {
+  height: 80px; }
+  .specialDetailCard .inputRowWithSpan > div {
+    width: 25.78%;
+    margin-right: 6.67%; }
+    .specialDetailCard .inputRowWithSpan > div > span {
+      line-height: 80px;
+      color: #666666; }
+
+.specialDetailCard .checkRow {
+  margin-top: 18px; }
+  .specialDetailCard .checkRow label {
+    color: #666666; }
+  .specialDetailCard .checkRow md-checkbox {
+    margin-right: 24px; }
+
+.specialDetailCard .radioRow {
+  margin: 18px 0 36px 0; }
+  .specialDetailCard .radioRow label {
+    color: #666666; }
+  .specialDetailCard .radioRow md-radio-group > label {
+    width: 110px;
+    margin-bottom: 0; }

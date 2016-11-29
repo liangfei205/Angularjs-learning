@@ -1,0 +1,65 @@
+<div role="dialog" aria-label="修改密码" layout="column" layout-align="center center">
+    <div class="editPassword" >
+        <form name="modifyPass"  layout="column" >
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>修改密码</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                    <md-content class="md-no-momentum" layout="column" layout-align="start center">
+                        <md-input-container class="md-block">
+                            <label>原始密码</label>
+                        <input name="oldPassword" ng-model="oldPassword" type="password" ng-required="true"
+                               ng-minlength="6" md-maxlength="20" ng-pattern="/^[a-zA-Z0-9]{6,20}$/">
+
+                        <div ng-show="modifyPass.oldPassword.$touched" ng-messages="modifyPass.oldPassword.$error">
+                                <div ng-message="required">请输入原始密码</div>
+                            <div ng-message="minlength">密码至少6位</div>
+                            <div ng-message="md-maxlength">密码最多20位</div>
+                            <div ng-message="pattern">请使用6-20位的数字或字母作为密码</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>新密码</label>
+                        <input name="newPassword" ng-model="newPassword" type="password" ng-required="true"
+                               ng-minlength="6" md-maxlength="20" 　ng-pattern="/^[a-zA-Z0-9]{6,20}$/">
+
+                        <div ng-show="modifyPass.newPassword.$touched" ng-messages="modifyPass.newPassword.$error">
+                                <div ng-message="required">请输入新密码</div>
+                            <div ng-message="minlength">密码至少6位</div>
+                            <div ng-message="md-maxlength">密码最多20位</div>
+                            <div ng-message="pattern">请使用6-20位的数字或字母作为密码</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>确认密码</label>
+                        <input name="rePassword" ng-model="rePassword" type="password" ng-required="true" rpw-check="newPassword"
+                                ng-required="true" ng-minlength="6" md-maxlength="20" ng-pattern="/^[a-zA-Z0-9]{6,20}$/">
+
+                        <div ng-show="modifyPass.rePassword.$touched" ng-messages="modifyPass.rePassword.$error">
+                                <div ng-message="required">请确认密码</div>
+                                <div ng-message="repeat">两次输入的密码不一致</div>
+                            <div ng-message="minlength">密码至少6位</div>
+                            <div ng-message="md-maxlength">密码最多20位</div>
+                            <div ng-message="pattern">请使用6-20位的数字或字母作为密码</div>
+                            </div>
+                        </md-input-container>
+
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                            <md-button class="md-raised md-primary" ng-disabled="modifyPass.$invalid"
+                                       ng-click="answer()">确认
+                            </md-button>
+                        </section>
+                    </md-content>
+            </md-dialog-content>
+        </form>
+    </div>
+</div>

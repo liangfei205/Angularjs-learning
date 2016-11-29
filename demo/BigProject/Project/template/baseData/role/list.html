@@ -1,0 +1,15 @@
+<div layout="column" layout-fill class="generalTable " >
+    <md-toolbar layout="row" layout-align="start center">
+            <span>系统角色管理</span>
+            <span flex></span>
+            <md-button class="md-raised" aria-label="新建" ng-href="#/main/baseData/roleAdd" ng-if="isShow('1001002001')">
+                新建
+            </md-button>
+    </md-toolbar>
+
+    <div layout="row" layout-fill>
+        <div flex>
+            <table ng-if="isShow('1001002002')" bs-table-control="vm.tableData.bsTableControl"></table>
+        </div>
+    </div>
+</div>

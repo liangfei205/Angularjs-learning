@@ -1,0 +1,72 @@
+<div layout="column" ng-cloak="">
+    <md-content class="backgroundColor">
+        <div layout="row" layout-align="start start" class="commonCard ">
+            <div layout="column">
+            <div class="userSearchRow" layout="row" layout-align="start center">
+                <div>
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>是否上线</label>
+                        <md-select ng-model="vm.selectState">
+                            <md-option ng-value="1">是</md-option>
+                            <md-option ng-value="0">否</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <span></span>
+
+                <div >
+                    <md-input-container md-no-float class="md-block" flex-gt-sm="">
+                        <label>用户名</label>
+                        <input ng-model="vm.account">
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div class="userRoleSelectRow"  layout="row" layout-align="start center">
+                <div>
+                    <md-input-container >
+                        <label>用户角色</label>
+                        <md-select ng-model="vm.selectedRoles"
+                                   md-on-close=""
+                                   multiple>
+                            <md-optgroup label="角色">
+                                <md-option ng-value="role" ng-repeat="role in vm.roles">{{role.ROLE_NAME}}
+                                </md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div flex></div>
+                    <md-button  aria-label="查询" ng-click="vm.getUserList()"
+                                ng-if="isShow('1001003002')">查询
+                    </md-button>
+            </div>
+            </div>
+
+            <div flex layout="column"  layout-align="start end" class="newCreateBtn">
+                <section >
+                    <md-button  aria-label="创建" ng-click="vm.create()"
+                               ng-if="isShow('1001003001')">
+                        创建
+                    </md-button>
+                </section>
+            </div>
+        </div>
+
+        <div layout="row" layour-fill class="generalTable">
+            <div layout="column" flex>
+                <md-toolbar class="md-accent" layout-align="start center" layout="row">
+                    <span>系统用户管理</span>
+                    <div flex></div>
+                </md-toolbar>
+                <div flex="100">
+                    <table ng-if="isShow('1001003002') && vm.tableData"
+                           bs-table-control="vm.tableData.bsTableControl"></table>
+                </div>
+            </div>
+
+        </div>
+    </md-content>
+</div>
+
+

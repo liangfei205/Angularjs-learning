@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "message": "获取角色列表成功",
+  "errCode": "",
+  "value": {
+    "total": 1,
+    "rows": [
+      {
+        "JURISDICTION_NAME": "系统日志管理,系统角色管理,系统用户管理,模块一,模块二,模块三,模块四,模块五",
+        "ROLE_KEY_ID": 1,
+        "ROLE_NAME": "超级管理员"
+      }
+    ]
+  }
+}
