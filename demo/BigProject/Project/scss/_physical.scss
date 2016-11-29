@@ -1,0 +1,324 @@
+.physicalTimeLine{
+  >label{
+    width: 12px;
+  }
+
+  >span{
+    color: #b9b9b9;
+  }
+
+  >div{
+    width: 128px;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  md-input-container{
+    width: 128px;
+  }
+}
+
+.physicalSearchLine{
+  >div{
+    width: 188px;
+    margin-right: 34px;
+  }
+
+  md-input-container{
+    width: 188px;
+  }
+
+  .newCreateBtn{
+    margin-left: 136px;
+    margin-bottom: 4px;
+    button.md-button {
+      @extend .generalBtn;
+    }
+  }
+}
+
+.physicalDetail{
+  margin-top: 8px;
+  font-size: 16px;
+  md-toolbar{
+    color:$white-color;
+    font-size: 22px;
+    padding: 0 30px 0 30px;
+  }
+
+  .physicalCard{
+    @extend .whiteBackgroundColor;
+    margin: 0 0 24px 0;
+    md-toolbar{
+      @extend .lightBlueBackgroundColor
+    }
+    >div{
+      padding: 30px 0 15px 0;
+    }
+
+    .inputRow{
+      height: 100px;
+      >div{
+        width: 25.78%;
+        margin-left: 6.67%;
+        md-input-container{
+          width: 100%;
+        }
+      }
+    }
+
+    .longInputRow{
+      height: 100px;
+      >div{
+        width: 58.22%;
+        margin-left: 6.67%;
+        md-input-container{
+          width: 100%;
+        }
+      }
+    }
+
+    .checkRow{
+      >label{
+        margin-left: 6.67%;
+        width: 12.22%;
+        color: #666666;
+      }
+
+      >span{
+        margin-right: 3.56%;
+      }
+    }
+
+    .inputRowWithSpanAndLabel{
+      height: 100px;
+      padding-left: 6.67%;
+      md-input-container{
+        width: 27.61%;
+      }
+      >label{
+        width: 13.10%;
+        color: #666666;
+      }
+      >span{
+        margin: 0 4.28% 0 1.43%;
+      }
+    }
+
+    .longInputRowWithLabel{
+      height: 100px;
+      padding-left: 6.67%;
+      >div{
+        width: 58.22%;
+        md-input-container{
+          width: 100%;
+        }
+      }
+      >label{
+        width: 13.10%;
+        color: #666666;
+      }
+    }
+
+    .radioRowWithLongLabel{
+      >label{
+        margin-left: 6.67%;
+        margin-top: 16px;
+        width: 28.22%;
+        color: #666666;
+        >span{
+          margin-right: 18.11%;
+        }
+      }
+    }
+
+    .inputRowWithMiddleLabel{
+      height: 100px;
+      >label{
+        margin-left: 6.67%;
+        width: 28.22%;
+        color: #666666;
+      }
+
+      md-input-container{
+        width: 27.61%;
+      }
+    }
+
+    .radioRowWithLabel{
+      >label{
+        margin-left: 6.67%;
+        width: 12.22%;
+        margin-top: 16px;
+        color: #666666;
+      }
+    }
+
+
+    md-radio-button{
+      width: 108px;
+      color: #999999;
+      margin: 18px 0;
+      .md-container{
+        top:12px;
+      }
+    }
+
+    .typeRow{
+      >label{
+        margin-left: 6.67%;
+        margin-bottom: 0;
+        margin-top: 19px;
+        width: 12.22%;
+        color: #666666;
+      }
+
+      >span{
+        margin-right: 3.56%;
+        margin-top: 19px;
+      }
+
+      md-radio-button{
+        width: auto !important;
+        margin-right: 16px !important;
+      }
+
+      md-input-container{
+        width: 27.61%;
+        margin-right: 1.33%;
+      }
+    }
+
+    .typeRowLongInput{
+      >label{
+        margin-left: 6.67%;
+        width: 12.22%;
+        color: #666666;
+      }
+
+      md-input-container{
+        width: 58.22%;
+      }
+    }
+
+  }
+}
+
+.identificationInfo{
+  md-toolbar{
+    color:$white-color;
+    font-size: 22px;
+    padding: 0 30px 0 30px;
+  }
+
+  .identificationCard{
+    margin: 0 0 24px 0;
+    md-toolbar{
+      @extend .lightBlueBackgroundColor;
+    }
+    >md-content{
+      @extend .whiteBackgroundColor;
+      padding-top: 30px;
+    }
+
+    .inputRow{
+      height: 100px;
+      >div{
+        width: 25.78%;
+        margin-left: 6.67%;
+        md-input-container{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .identificationTableCard{
+
+    margin: 0 0 24px 0;
+    md-toolbar{
+      @extend .lightBlueBackgroundColor;
+    }
+    >md-content{
+      @extend .whiteBackgroundColor;
+      padding: 0;
+    }
+
+    .questionTrTd{
+      font-size: 14px;
+      text-align: center;
+      width: 25%;
+      line-height: 18px;
+      padding: 14px 4.33%;
+      border-bottom:1px solid #d9d9d9;
+      border-right:1px solid #d9d9d9;
+    }
+
+    .answerTr{
+      font-size: 14px;
+      text-align: center;
+      width: 15%;
+      line-height: 18px;
+      padding: 14px 0;
+      border-bottom:1px solid #d9d9d9;
+      border-right:1px solid #d9d9d9;
+    }
+
+    .answerTd{
+      font-size: 14px;
+      width: 15%;
+      line-height: 18px;
+      padding: 14px 0;
+      border-bottom:1px solid #d9d9d9;
+      border-right:1px solid #d9d9d9;
+
+      >span{
+        margin-left: 6.67%;
+        margin-top: 4px;
+      }
+
+      >input[type="radio"]{
+        margin-left: 16px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        border: 3px solid white;
+        box-shadow: 0 0 0 1px #757575;
+      }
+
+      >input[type="radio"]:checked{
+        background-color: #24b4f5;
+        box-shadow: 0 0 0 1px #24b4f5;
+      }
+    }
+
+    .td120{
+      font-size: 14px;
+      text-align: center;
+      min-width: 10%;
+      line-height: 18px;
+      padding: 14px 0;
+      border-bottom:1px solid #d9d9d9;
+      border-right:1px solid #d9d9d9;
+    }
+
+    .tdResult{
+      border-bottom:1px solid #d9d9d9;
+      border-right:1px solid #d9d9d9;
+      >div{
+        font-size: 14px;
+        text-align: center;
+        width: 10%;
+        padding: 14px 0;
+
+      }
+
+      md-checkbox{
+        margin: 0;
+      }
+    }
+  }
+}
+

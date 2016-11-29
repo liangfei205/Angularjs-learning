@@ -1,0 +1,521 @@
+.tabSelectTable{
+  @extend .whiteBackgroundColor;
+  @extend .tableMargin;
+
+
+  md-tabs-canvas{
+    height: 54px;
+  }
+
+  md-pagination-wrapper{
+    height: 54px;
+  }
+
+  .md-tab{
+    @extend .generalTableTitle;
+    color: #666666;
+    width: 164px;
+    height: 54px;
+    line-height: 30px;
+  }
+
+  .md-tab.md-active{
+    background-color: #cBe1ff;
+  }
+
+  .tabSelectBtn{
+    position: absolute;
+    height: 54px;
+    margin-left: 1082px;
+    z-index: 1;
+
+    .md-button{
+      @extend .generalBtn;
+    }
+  }
+}
+
+.residentCard{
+  @extend .generalCardPadding;
+  @extend .cardMargin;
+  @extend .whiteBackgroundColor;
+
+  .residentSearchRow{
+    @extend .generalSearchRow;
+    width: 890px;
+
+    .ageLine{
+      width: 448px;
+
+      >div{
+        width: 128px;
+        margin-left: 18px;
+        margin-right: 18px;
+
+        md-input-container{
+          width: 128px;
+        }
+
+        input{
+          width: 128px;
+        }
+      }
+
+      >label{
+        width: 12px;
+      }
+    }
+  }
+
+  md-checkbox{
+    margin-bottom: 20px;
+    .md-container {
+      top: 0;
+      height: 0;
+    }
+  }
+}
+
+.familyDetailCard{
+  @extend .whiteBackgroundColor;
+  @extend .tableMargin;
+
+  md-toolbar {
+    padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+    background-color: #82baff;
+    height: 64px;
+
+    > span {
+      @extend .generalTableTitle;
+      font-size: 20px;
+    }
+
+    button.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+
+    a.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+  }
+
+  md-content{
+    padding:24px 0 24px 60px ;
+    font-size: $bigBaseFontSize;
+  }
+
+
+
+  .inputRow {
+    >div  {
+      width: 27%;
+      margin-right: 4.8%;
+      height: 80px;
+    }
+
+    md-input-container{
+      width: 100%;
+    }
+  }
+
+
+  .radioRow{
+    height: 80px;
+
+    label{
+      width: 150px;
+      margin: 0;
+      color: #666666;
+    }
+
+    .md-label{
+      margin-left: 36px;
+    }
+
+    md-radio-button{
+      margin-right: 30px;
+    }
+  }
+
+  .addressRow{
+    /*height: 80px;*/
+
+    label {
+      width: 150px;
+      margin-top: 28px;
+    }
+    > label {
+      height: 100px;
+      color: #666666;
+    }
+    .addressArea>div {
+      width: 28%;
+      margin-right: 1.8%
+    }
+    md-input-container{
+      width: 100%;
+    }
+
+  }
+
+  .mulselectRow{
+    margin-top: 32px;
+    min-height: 40px;
+
+    label {
+      width: 150px;
+      margin: 0;
+    }
+
+    >label{
+      color: #666666;
+    }
+
+    .mulselect{
+      height: 40px;
+    }
+
+    .md-label{
+     margin-left: 36px;
+    }
+
+  }
+
+  .textareaRow{
+    >div {
+      width: 524px;
+      min-height: 80px;
+
+      textarea{
+        width: 524px;
+      }
+    }
+  }
+
+  md-checkbox{
+    margin-bottom: 20px;
+    .md-container {
+      top: 0;
+      height: 0;
+    }
+  }
+
+}
+
+
+.residentLeftCard{
+  width: 280px;
+  margin-right: 20px;
+  height: -webkit-calc(100vh - 36px);
+  height: -moz-calc(100vh - 36px);
+  height: calc(100vh - 36px);
+  @extend .tableMargin;
+  box-shadow: none;
+
+
+  md-content{
+    background-color: #f3f9fb;
+    overflow-x: hidden;
+
+    >div{
+      border-radius: 2px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 1px 5px 0px rgba(0, 48, 107, 0.12);
+      background-color: $white-color;
+      margin: 2px;
+      overflow-x: hidden;
+    }
+
+    >p{
+      height: 20px;
+    }
+  }
+}
+
+.title_top {
+  background-color: #3d93fe;
+  height: 64px;
+  padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+  > span {
+    @extend .generalTableTitle;
+    font-size: 22px;
+    line-height: 64px;
+  }
+  > div {
+    float: right;
+    margin-top: 8px;
+  }
+  .new_butt{
+    background-color: #fff;
+    color: #3D93FE;
+  }
+  .new_butt:not[disabled]:hover{
+    background-color: #fff;
+  }
+}
+
+.generalBtnRow {
+  height: 64px;
+  padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+  > span {
+    @extend .generalTableTitle;
+    font-size: 22px;
+    margin-right: 510px;
+  }
+}
+
+.residentDetailCard {
+  @extend .whiteBackgroundColor;
+  @extend .tableMargin;
+
+  md-checkbox{
+    margin-bottom: 20px;
+    .md-container {
+      top: 0;
+      height: 0;
+    }
+  }
+
+  md-toolbar {
+    padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+    background-color: #82baff;
+    height: 64px;
+
+    > span {
+      @extend .generalTableTitle;
+      font-size: 20px;
+    }
+
+    button.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+
+    a.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+
+    md-radio-group{
+      color: $white-color;
+
+      label{
+        color: $white-color !important;
+      }
+    }
+
+    .md-on{
+      background-color:#ffffff;
+      border-color: #ffffff !important;
+    }
+
+    .md-off{
+      border-color:#ffffff !important;
+    }
+  }
+
+  >div {
+    padding: 24px 0 24px 4.8%;
+    font-size: $bigBaseFontSize;
+  }
+
+  .inputRow{
+    >div {
+      width: 27%;
+      margin-right: 4.8%;
+      height: 80px;
+    }
+
+    md-input-container{
+      width: 100%;
+    }
+  }
+
+  .radioRow{
+    height: 80px;
+
+    md-radio-group{
+      width: 100%;
+    }
+
+    label{
+      width: 12.67%;
+      margin: 0;
+      color: #666666;
+    }
+
+    .md-label{
+      margin-left: 20px;
+    }
+
+    md-radio-button{
+      margin-right: 20px;
+    }
+  }
+
+  .addressRow{
+    height: 80px;
+
+    label {
+      width: 12.67%;
+      margin: 0;
+    }
+
+    >label{
+      color: #666666;
+    }
+
+    >div {
+      width:14%;
+      margin-right: 2.4%;
+    }
+
+    md-input-container{
+      width: 100%;
+    }
+  }
+
+  .mulselectRow{
+    margin-top: 32px;
+    min-height: 40px;
+
+    label {
+      width: 12.67%;
+      margin: 0;
+    }
+
+    >label{
+      color: #666666;
+    }
+
+    .mulselect{
+      height: 40px;
+    }
+
+    .md-label{
+      margin-left: 36px;
+    }
+
+  }
+
+  .textareaRow{
+    >div {
+      width: 43.67%;
+      min-height: 80px;
+
+      md-input-container{
+        width: 100%;
+      }
+
+      textarea{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.leftPartTitle{
+  height: 450px;
+  .residentTitle{
+    color: #333333;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .residentImg{
+    width: 160px;
+    height: 210px;
+    margin-bottom: 16px;
+  }
+
+  .residentSpecial{
+    margin-bottom: 16px;
+    >span{
+      width: 24px;
+    }
+  }
+
+}
+
+.leftPartSmallTitle{
+  height: 46px;
+  font-size: 18px;
+  color: #333333;
+  font-family: $primary-font-family;
+}
+
+.blackPart{
+  display: block;
+  height: 20px;
+  background-color: $background-color;
+}
+
+.hypertensionIcon{
+
+  >div{
+    background: url("../images/special/hypertensionIcon.png");
+    background-size: 100%;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 6px;
+    border-radius:5px;
+  }
+
+  >span{
+    color: #999999;
+    font-size: 14px;
+  }
+}
+
+.diabetesIcon{
+
+  >div{
+    background: url("../images/special/diabetesIcon.png");
+    background-size: 100%;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 6px;
+    border-radius:5px;
+  }
+
+  >span{
+    color: #999999;
+    font-size: 14px;
+  }
+}
+
+.secondSideNavRow{
+  @extend .whiteBackgroundColor;
+
+  margin-top: 8px;
+  margin-bottom: 20px;
+
+  >div{
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #666666;
+    padding: 0;
+    margin-right: 16px;
+    height: 54px;
+    width: 148px;
+    text-align: center;
+    line-height: 54px;
+
+  }
+
+  >div.selected{
+    background-color: #c8e1ff;
+    color: #3d93fe;
+  }
+
+  >div:hover{
+    background-color: #c8e1ff;
+    color: #3d93fe;
+  }
+}

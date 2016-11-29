@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 合并后的css -->
+    <link rel="stylesheet" href="distCss/all.min.css"/>
+    <link rel="stylesheet" href="distCss/recon.all.min.css"/>
+</head>
+<body ng-app="SMS" ng-controller="Controller">
+    <div ui-view layout-fill ng-cloak></div>
+    <!-- loadingModal-->
+    <div ng-show="ajaxCalls" class="modal fade loadingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="./images/main/loading.gif" alt="loading">
+            </div>
+        </div>
+    </div>
+    <!-- 合并后的js -->
+    <script defer src="distJS/lib.all.min.js"></script>
+    <script defer src="distJS/all.min.js"></script>
+    <script defer src="js/config.js"></script>
+</body>
+</html>

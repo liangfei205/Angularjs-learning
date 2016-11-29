@@ -1,0 +1,155 @@
+.evaluationEditCard{
+  margin-top: 8px;
+  background-color: #f3f9fb;
+  >md-toolbar{
+    padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+    background-color: #82baff;
+    height: 64px;
+    > span {
+      @extend .generalTableTitle;
+      color: #fff;
+    }
+  }
+
+  >div{
+    margin-bottom: 30px;
+  }
+
+  md-card{
+    margin: 0 0 20px 0;
+  }
+
+  md-card-header{
+    @extend .lightBlueBackgroundColor;
+    height: 64px;
+    line-height: 64px;
+    color: white !important;
+  }
+
+  md-card-content{
+    .flex-20{
+      color: #666666;
+    }
+  }
+
+  md-checkbox{
+    margin-bottom: 20px;
+    .md-container {
+      top: 0;
+      height: 0;
+    }
+  }
+}
+
+
+.info_area {
+  padding: 24px 0 24px 6.67%;
+}
+.info_em{
+  width: 25.78%;
+  margin-right: 60px;
+}
+
+.operate_area {
+  margin-top: 58px;
+}
+
+.half_em {
+  width: 23%;
+  margin-right: 2%;
+}
+
+
+
+.specialDetailCard{
+  md-checkbox{
+    margin-bottom: 20px;
+    .md-container {
+      top: 0;
+      height: 0;
+    }
+  }
+
+  md-toolbar{
+    padding: 0 30px 0 30px;
+
+    >span{
+      color:#fff;font-size: 22px;
+    }
+  }
+
+  md-card{
+    margin: 0 0 20px 0;
+  }
+
+  md-card-header{
+    background-color: #82baff;
+    color: $white-color;
+  }
+
+  md-card-content{
+    padding-left: 6.67%;
+
+    .flex-20{
+      color: #666666;
+    }
+  }
+
+  .spanRow{
+    color: #666666;
+    label{
+      width: 100px;
+    }
+  }
+
+  .inputRow{
+    height: 80px;
+
+    >md-input-container{
+      width:25.78%;
+      margin-right:6.67%;
+    }
+  }
+
+  .longInputRow{
+    height: 80px;
+    width: 58.22%;
+  }
+
+  .inputRowWithSpan{
+    height: 80px;
+    >div{
+      width:25.78%;
+      margin-right:6.67%;
+      >span{
+        line-height: 80px;
+        color: #666666;
+      }
+    }
+  }
+
+  .checkRow{
+    margin-top: 18px;
+
+    label{
+      color: #666666;
+    }
+
+    md-checkbox{
+      margin-right: 24px;
+    }
+  }
+
+  .radioRow{
+    margin: 18px 0 36px 0;
+
+    label{
+      color: #666666;
+    }
+
+    md-radio-group>label{
+      width: 110px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.doctorCard {
+  @extend .generalCardPadding;
+  @extend .cardMargin;
+  @extend .whiteBackgroundColor;
+
+  .doctorSearchRow {
+    @extend .generalSearchRow;
+
+    width: 666px;
+
+  }
+}
+
+
+.newOrEditDoctor{
+  @extend .mainWidth;
+  @extend .tableMargin;
+  @extend .whiteBackgroundColor;
+
+  .baseDataPart{
+    @extend .generalEditTab;
+  }
+
+  .editLeftPart{
+    width: 280px;
+    height: -webkit-calc(100vh - 36px);
+    height: -moz-calc(100vh - 36px);
+    height: calc(100vh - 36px);
+    .editShowUser {
+      font-size: $menuFontSize;
+      color: #333333;
+      font-family: $primary-font-family;
+      padding: 20px 0 20px 0;
+    }
+
+    md-content>span{
+      display: block;
+      height: 20px;
+      background-color: $background-color;
+    }
+  }
+
+}
