@@ -1,0 +1,109 @@
+<div layout="column" layout-fill class="generalEditTab">
+    <md-toolbar layout="row" layout-align="start center" class="editToolbarBackgroundColor">
+        <span ng-if="vm.add">新增系统角色</span>
+        <span ng-if="vm.edit">系统角色详情</span>
+        <span flex></span>
+        <md-button ng-if="!vm.editable" class="md-raised" aria-label="返回" ng-click="vm.goBack(roleForm)">
+            返回
+        </md-button>
+        <md-button ng-if="!vm.editable && isShow('1001002003')" class="md-raised" aria-label="编辑" ng-click="vm.edit(roleForm)">
+            编辑
+        </md-button>
+    </md-toolbar>
+    <div layout="column" class="generalEditTabPadding">
+        <form name="roleForm" layout="row" layout-align="start center" class="generalLongInputRow">
+            <div>
+                <md-input-container class="md-block">
+                    <label>角色名称</label>
+                    <input text-change id="ROLE_NAME" name="ROLE_NAME" ng-model="vm.ROLE_NAME" type="text"
+                           ng-required="true" md-maxlength="20" ng-disabled="!vm.editable">
+
+                    <div ng-if="roleForm.ROLE_NAME.$touched" ng-messages="roleForm.ROLE_NAME.$error">
+                        <div ng-message="required">请输入角色名称</div>
+                        <div ng-message="md-maxlength">角色名称不能超过20字</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </form>
+        <div class="generalTitleRow" layout="row" layout-align="start center">
+            <span>功能权限</span>
+        </div>
+        <div class="bootstrap-table  editTabBootsrapTabel">
+            <div class="fixed-table-container" style="padding-bottom: 0px;">
+                <div class="fixed-table-body">
+                    <table class="table table-hover" data-search="true" data-show-toggle="true"
+                           data-show-columns="true"
+                           data-mobile-responsive="true">
+                        <thead>
+                        <tr>
+                            <th style="width: 248px;" data-field="0" tabindex="0">
+                                <div class="th-inner ">模块</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th style="width: 248px;" data-field="1" tabindex="1">
+                                <div class="th-inner ">功能</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th style="width: 584px;" data-field="2" tabindex="2">
+                                <div class="th-inner ">操作</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-index="$index" ng-repeat="item1 in vm.items">
+                            <td>
+                                <div layout="column" layout-align="center start" flex style="padding-left: 47px;">
+                                    <md-checkbox ng-checked="item1.IS_SELECT|selected"
+                                                 ng-disabled="!vm.editable"
+                                                 ng-click="vm.toggle(item1)">
+                                        {{ item1.JURISDICTION_NAME }}
+                                    </md-checkbox>
+                                </div>
+                            </td>
+                            <td>
+                                <div layout="column" layout-align="center start" flex style="padding-left: 47px;">
+                                    <md-checkbox ng-repeat="item2 in item1.SUBLIST"
+                                                 ng-checked="item2.IS_SELECT|selected"
+                                                 ng-disabled="!vm.editable"
+                                                 ng-click="vm.toggle(item2,item1)">
+                                        {{ item2.JURISDICTION_NAME }}
+                                    </md-checkbox>
+                                </div>
+                            </td>
+                            <td>
+                                <div layout="column" flex>
+                                    <div ng-repeat="item2 in item1.SUBLIST" flex style="padding-left: 47px;">
+                                        <div layout="row" layout-align="start center" flex>
+                                            <md-checkbox ng-repeat="item3 in item2.SUBLIST"
+                                                         ng-checked="item3.IS_SELECT|selected"
+                                                         ng-disabled="!vm.editable"
+                                                         class="width98"
+                                                         ng-click="vm.toggle(item3,item2,item1)">
+                                                {{ item3.JURISDICTION_NAME }}
+                                            </md-checkbox>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <section ng-if="vm.edit && vm.editable && isShow('1001002004')" layout="row" layout-sm="column"
+                             layout-align="center center" layout-wrap>
+                        <md-button class="md-raised " ng-click="vm.deleteRole()">删除该角色</md-button>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div layout="row" layout-align="start center" class="generalBtnRow">
+            <md-button ng-if="vm.editable" class="md-raised" aria-label="取消" ng-click="vm.cancel(roleForm)">
+                取消
+            </md-button>
+            <md-button ng-if="vm.editable" class="md-raised md-primary" aria-label="保存"
+                       ng-click="vm.createNewRole(roleForm)">
+                保存
+            </md-button>
+        </div>
+    </div>
+</div>

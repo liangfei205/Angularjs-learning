@@ -1,0 +1,519 @@
+/** Material + Icons */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url('../font/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot'); /* IE9*/
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  height: 100% !important;
+  color: rgba(0, 0, 0, .87) !important;
+  background: #fff !important;
+  font-family: $primary-font-family !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+md-datepicker{
+  .md-datepicker-input-container{
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+md-input-container{
+  label{
+    font-weight:300;
+  }
+}
+
+.md-raised.md-primary.md-button{
+  color: $white-color;
+}
+
+.md-raised.md-button{
+  color: #3d93fe ;
+}
+
+.btnBoxShadow{
+  box-shadow: 0 1px 8px 0 #bbd9ff, 0 3px 4px 0 #bbd9ff, 0 3px 3px -2px #bbd9ff !important;
+}
+
+.backgroundColor {
+  background-color: $background-color;
+}
+
+.backgroundHeight{
+  padding-bottom: 36px;
+  height: auto;
+  width: 100%;
+  min-height: 100%;
+}
+
+.whiteBackgroundColor {
+  background-color: $white-color;
+}
+
+.cardMargin {
+  margin-top: $cardBoxMargin;
+}
+
+.tableMargin {
+  margin-top: $tableCardMargin;
+}
+
+.mainWidth {
+  width: $mainPartWidth;
+}
+
+.btnRadius {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.topButton {
+  @extend .btnRadius;
+  border-color: $primary-color;
+  font-size: $bigBaseFontSize;
+  margin-left: 24px;
+  color: $primary-color !important;
+  background-color: $white-color;
+}
+
+.topButton:hover {
+  background-color: #d4e7ff !important;
+}
+
+.generalBtn {
+  @extend .btnRadius;
+  @extend .btnBoxShadow;
+  width: $btnWidth;
+  height: $btnHeight;
+  font-size: $bigBaseFontSize;
+  font-family: $primary-font-family;
+  font-weight: bold;
+  color: $white-color;
+  background-color: $primary-color;
+}
+
+.generalBtn:hover {
+  background-color: #3176cb;
+}
+
+.generalCardPadding {
+  padding: 24px 30px 24px 30px;
+}
+
+.generalDatepickRow{
+  height: 80px;
+  font-size: $bigBaseFontSize;
+  font-family: $primary-font-family;
+  padding-right: 30px;
+  label{
+    font-weight: normal;
+  }
+
+  > div {
+    width: 188px;
+  }
+
+  md-input-container{
+    width: 188px;
+  }
+
+  > span {
+    width: nth($primary-px, 2);
+  }
+}
+
+.generalSearchRow {
+  height: 80px;
+  font-size: $bigBaseFontSize;
+  font-family: $primary-font-family;
+  padding-right: 30px;
+  label{
+    font-weight: normal;
+  }
+
+  > div {
+    width: 188px;
+  }
+
+  md-input-container{
+    width: 188px;
+  }
+
+  > span {
+    width: nth($primary-px, 2);
+  }
+
+  button.md-button {
+    @extend .generalBtn;
+    margin: 0 0 6px 0;
+  }
+
+}
+
+.flag{
+  cursor: pointer;
+}
+
+.generalTableTitle {
+  font-family: $primary-font-family;
+  color: $white-color;
+  font-size: $cardTitleFontSize;
+}
+
+.lightBlueBackgroundColor {
+  background-color: #82baff !important;
+  padding: 0 30px 0 30px !important;
+}
+
+.generalTable {
+  @extend .tableMargin;
+  @extend .whiteBackgroundColor;
+
+  md-toolbar {
+    padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+    background-color: #3d93fe !important;
+
+    > span {
+      @extend .generalTableTitle;
+    }
+
+    button.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+
+    a.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+  }
+
+
+
+
+  table.table thead {
+    font-size: $bigBaseFontSize;
+    font-family: $primary-font-family;
+  }
+
+  table.table tbody {
+    font-size: $baseFontSize;
+    font-family: $primary-font-family;
+  }
+}
+
+.newCreateBtn {
+  section {
+    margin-top: 24px;
+
+  }
+
+  button.md-button {
+    @extend .generalBtn;
+    margin: 0;
+  }
+}
+
+.generalEditTab{
+  @extend .tableMargin;
+  @extend .whiteBackgroundColor;
+  @extend .mainWidth;
+  margin-top: 0;
+  margin-bottom: 36px;
+  md-toolbar {
+    padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+    background-color:#3d93fe ;
+
+    > span {
+      @extend .generalTableTitle;
+      font-size: 22px;
+    }
+
+    button.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+
+    a.md-button {
+      @extend .topButton;
+      margin-left: 24px;
+      margin-right: 0;
+    }
+  }
+
+
+
+  .generalEditTabPadding{
+    padding: 24px 0 24px 60px;
+
+    font-family: $primary-font-family;
+    font-size: $bigBaseFontSize;
+
+    label{
+      font-weight: normal ;
+    }
+  }
+
+  .generalLongInputRow{
+    min-height: 100px;
+
+    >div{
+      width: 524px;
+    }
+
+    md-input-container{
+      width: 524px;
+    }
+  }
+
+  .generalNormalInputRow{
+    height: 100px;
+
+    >div{
+      width: 168px;
+    }
+
+    >span{
+      width: 60px;
+    }
+
+    md-input-container{
+      width: 168px;
+    }
+  }
+
+  .generalAddressRow{
+    height: 100px;
+
+    >div{
+      width: 168px;
+    }
+
+    >span{
+      width: 30px;
+    }
+
+    md-input-container{
+      width: 168px;
+    }
+  }
+
+  .generalBtnRow{
+    background-color: white;
+    height: 80px;
+
+    button.md-button{
+      margin: 0 24px 0 0;
+      @extend .btnBoxShadow;
+    }
+  }
+
+  .generalTitleRow{
+    font-size: $bigBaseFontSize;
+    font-family: $primary-font-family;
+    color:#9C9C9C;
+    height: 100px;
+    font-weight:bold ;
+  }
+}
+
+.noErrorsSpacer{
+  .md-errors-spacer{
+    display: none;
+  }
+}
+
+.navSelectBtn{
+  width: 280px;
+  margin: 0;
+  height: 64px;
+  color: #666666;
+}
+
+.navSelectBtn:hover{
+  background-color: #cBe1ff !important;
+  color: #3D93FE;
+}
+
+.md-panel-outer-wrapper{
+  position: fixed;
+}
+.searchAlert {
+  min-width: 720px;
+  background-color: #fff;
+
+  md-toolbar {
+    padding: 0 0 0 nth($primary-px, 1);
+    background-color: #3d93fe;
+
+    > span {
+      @extend .generalTableTitle;
+      color: #fff;
+    }
+    md-icon {
+      color: #fff;
+      fill: #fff;
+    }
+  }
+  .searchArea {
+    padding: 56px 40px 50px 40px;
+    .searchPart > md-input-container {
+      width: 490px;
+      margin-right: 30px;
+    }
+    .tablePart{
+      padding-top: 10px;
+      padding-bottom: 20px;
+      min-width: 640px;
+      max-height: 320px;
+      overflow-x: auto;
+    }
+  }
+
+  .searchAlert {
+
+    md-toolbar {
+      padding: 0 nth($primary-px, 1) 0 nth($primary-px, 1);
+      background-color: #3d93fe;
+
+      > span {
+        @extend .generalTableTitle;
+        color: #fff;
+
+      }
+    }
+
+    .tablePart {
+      min-width: 608px;
+      max-height: 320px;
+      overflow-x: auto;
+    }
+
+    md-dialog-content > div {
+      padding: 58px 20px 72px 20px;
+    }
+
+    .searchPart {
+      width: 608px;
+
+      button.md-button {
+        width: 88px;
+        height: 36px;
+        margin: 0 0 0 30px;
+
+      }
+    }
+  }
+}
+
+.secondTableMagin{
+  margin-top: 36px !important;
+}
+
+.secondCardMagin{
+  margin-top: 24px !important;
+}
+
+.editToolbarBackgroundColor{
+  background-color: #3d93fe !important;
+}
+
+.sidebarButton{
+  margin-top: 16px;
+  color: #666666;
+  font-size: 18px;
+  height: 48px;
+  text-align: left;
+  padding-left: 36px;
+  background-color: #c8e1ff;
+  border: none;
+}
+
+.sidebarSelectButton{
+  margin-top: 16px;
+
+
+  >button.md-button{
+    color: #666666;
+    font-size: 18px;
+    height: 64px;
+    background-color: $white-color;
+  }
+
+  >button.md-button.selected{
+    background-color: #c8e1ff;
+  }
+
+  >button.md-button:hover{
+    background-color: #c8e1ff;
+  }
+}
+
+.loadingModal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100000;
+  background-color: rgba(255, 255, 255, 0.55);
+  .modal-dialog {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}

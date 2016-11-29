@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "value": {
+    "editorName": "帐号一",
+    "userMailbox": "",
+    "editorId": 1,
+    "credentialsNonExpired": true,
+    "creatorId": 1,
+    "creatorName": "帐号一",
+    "gpRoleLevel": "",
+    "isOnline": 1,
+    "enabled": true,
+    "userKeyId": 1,
+    "organizationCode": "",
+    "familydoctorKeyId": 0,
+    "organizationKeyId": 0,
+    "accountNonExpired": true,
+    "account": "account1",
+    "accountNonLocked": true,
+    "username": "帐号一"
+  },
+  "message": "login success"
+}

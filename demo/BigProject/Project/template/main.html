@@ -1,0 +1,75 @@
+<div layout="column"  class="backgroundColor backgroundHeight">
+    <div layout="row" layout-align="center center" class="topTitle">
+        <md-toolbar layout="row" layout-align="start center" md-scroll-shrink  >
+                <label></label>
+                <div flex></div>
+                <span>{{vm.loginInfo.username}}</span>
+                <md-button class="topButton" aria-label="退出登录" ng-click="vm.showLogout()">
+                    退出登录
+                </md-button>
+        </md-toolbar>
+    </div>
+    <div ng-if="vm.runMode" layout="row" layout-align="center center" class="topMainMenu" style="margin-top: 24px">
+        <div class="menu_pc">
+            <md-menu-bar>
+                <md-button ng-href="#/main">
+                    首页
+                </md-button>
+            </md-menu-bar>
+            <md-menu-bar>
+                <md-menu>
+                    <button ng-click="$mdOpenMenu()">基础数据管理</button>
+                    <md-menu-content class="topMainMenuItem" width="1">
+                        <md-menu-item>
+                            <md-button ng-href="#/main/baseData/roleList">
+                                系统角色管理
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-href="#/main/baseData/userList">
+                                系统用户管理
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-menu-bar>
+            <md-menu-bar>
+                <md-menu>
+                    <button ng-click="$mdOpenMenu()">统计分析</button>
+                    <md-menu-content class="topMainMenuItem" width="1">
+                        <md-menu-item>
+                            <md-button ng-href="#/main/report/keyPopulationReport">
+                                重点人群统计
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-menu-bar>
+        </div>
+    </div>
+    <div layout="row" layout-align="center center" class="topMainNavi topMainMenu" style="margin-top:8px;">
+        <div class="menu_nav">
+            <div class="md-menu-bar">
+                <div ng-repeat="menu1 in vm.loginInfo.resources">
+                    <div ng-repeat="menu2 in menu1.hcrmGpDetailResource">
+                        <span class="nav_span" ng-if="naviPath==menu2.resourcePath">{{menu1.resourceName}}</span>
+                        <span ng-if="naviPath==menu2.resourcePath">></span>
+                        <a class="nav_a" href='#{{menu2.resourcePath}}' ng-if="naviPath==menu2.resourcePath">{{menu2.resourceName}}</a>
+                    </div>
+                    <div ng-if="menu1.hcrmGpDetailResource|isEmptyArray">
+                        <a class="nav_a" href='#{{menu1.resourcePath}}' ng-if="naviPath==menu1.resourcePath">{{menu1.resourceName}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div flex="grow" layout="row" layout-align="center start">
+        <div ui-view layout="column" class="mainWidth">
+           <div class="mainWelcome" layout="row" layout-align="center center">
+               <div layout="column" layout-align="center start">
+
+               </div>
+           </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+.topTitle {
+  background-color: $primary-color;
+
+  md-toolbar {
+    @extend .mainWidth;
+
+    height: 80px;
+
+    .topIcon {
+      background: url("../images/main/mainIcon.png");
+      width: 56px;
+      height: 56px;
+    }
+
+    label {
+      margin-left: 12px;
+      font-family: $primary-font-family;
+      font-size: $titleFontSize;
+      color: $white-color;
+    }
+
+    > span {
+      font-family: $primary-font-family;
+      margin-right: 36px;
+      font-size: $bigBaseFontSize;
+      color: $white-color;
+    }
+  }
+
+}
+
+.menu_pc{
+  width: 1200px;
+  height: 64px;
+  display: flex;
+  background-color: #fff;
+}
+
+.menu_nav{
+  width: 1200px;
+  height: 20px;
+  .nav_span {
+    color: #666666;
+    font-size: 12px;
+  }
+  .nav_a{
+    color: #3D93FE;
+    font-size: 12px;
+  }
+}
+
+.topMainMenu {
+  @extend .cardMargin;
+
+  md-menu-bar {
+    /*@extend .mainWidth;*/
+
+    font-family: $primary-font-family;
+    background-color: $white-color;
+    color: #666666;
+    padding: 0;
+    margin-right: 16px;
+
+    span{
+      font-size: $menuFontSize;
+    }
+
+    md-menu button {
+      width: 148px;
+      height: 64px;
+      text-align: center;
+      line-height: 64px;
+    }
+
+    md-menu button:hover {
+      background-color: #c8e1ff;
+      color: $primary-color;
+    }
+    md-menu button.selected {
+      background-color: #c8e1ff;
+      color: $primary-color;
+    }
+    .md-button{
+      width: 148px;
+      height: 64px;
+      text-align: center;
+      line-height: 64px;
+      margin: 0;
+      border-radius: 0;
+    }
+    .md-button:hover {
+      background-color: #c8e1ff;
+      color: $primary-color;
+    }
+    .md-button.selected {
+      background-color: #c8e1ff;
+      color: $primary-color;
+    }
+    .md-menu.md-open button {
+      background-color: #c8e1ff;
+      color: $primary-color;
+    }
+  }
+}
+
+md-menu-content.topMainMenuItem.md-menu-bar-menu {
+  padding: 0;
+  width: 188px;
+
+  md-menu-item {
+    height: 64px;
+    padding: 14px 0 14px 0;
+    a.md-button {
+      height: 36px;
+      line-height: 36px;
+      padding: 0;
+      text-align: center;
+      font-family: $primary-font-family;
+      font-size: $bigBaseFontSize;
+    }
+  }
+
+  md-menu-item:hover {
+    a.md-button {
+      background-color: #c8e1ff;
+      color: $primary-color;
+    }
+  }
+}
+
+.mainWelcome {
+  @extend .cardMargin;
+  background: url("../images/main/background.png");
+  height: 700px;
+  span {
+    font-size: 60px;
+    line-height: 110px;
+    font-family: nth($primary-font-family, 18),"SimHei";
+    color: $white-color;
+  }
+}

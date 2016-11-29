@@ -1,0 +1,59 @@
+<div layout="column" layout-fill>
+    <div class="login">
+        <div flex layout-align="center center" layout="row" style="height: 91%;">
+            <div layout="row"  >
+                <form name="login" novalidate flex >
+                    <md-toolbar layout="row" layout-align="center center" class="md-primary">
+                        <div class="md-toolbar-tools" layout="row" layout-align="center center ">
+                            <span></span>
+                        </div>
+                    </md-toolbar>
+                    <md-content class="md-no-momentum" layout="column" layout-align="end center">
+                        <div class="loginInput" layout="row" layout-align="start start">
+                            <md-input-container class="md-block" >
+                                <label>账号</label>
+                                <input name="name" ng-model="vm.name" type="text"
+                                       ng-required="true" ng-minlength="4" md-maxlength="20"
+                                       ng-pattern="/^[a-zA-Z0-9]{4,20}$/">
+
+                                <div ng-show="login.name.$touched" ng-messages="login.name.$error">
+                                    <div ng-message="required">请输入用户名</div>
+                                    <div ng-message="minlength">用户名至少4位</div>
+                                    <div ng-message="md-maxlength">用户名最多20位</div>
+                                    <div ng-message="pattern">请输入4至20位数字或字母的组合</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                        <div class="loginInput" layout="row" layout-align="start start">
+                            <md-input-container class="md-block" >
+                                <label>密码</label>
+                                <input name="password" ng-model="vm.password" type="password" ng-required="true" ng-enter="vm.login()">
+
+                                <div ng-show="login.password.$touched" ng-messages="login.password.$error">
+                                    <div ng-message="required">请输入密码</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="loginCode" layout="row" layout-align="start start">
+                            <md-input-container class="md-block" md-no-float>
+                                <label>验证码</label>
+                                <input name="code" ng-model="vm.code" type="text" ng-required="true" ng-enter="vm.login()">
+                                <div ng-show="login.code.$touched" ng-messages="login.code.$error">
+                                    <div ng-message="required">请输入验证码</div>
+                                </div>
+                            </md-input-container>
+                            <img ng-src="{{vm.codeUrl}}" ng-click="vm.getCode()">
+                        </div>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                            <md-button class="md-raised md-primary loginButton" ng-disabled="login.$invalid" ng-click="vm.login()" >
+                                登录
+                            </md-button>
+                        </section>
+                    </md-content>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

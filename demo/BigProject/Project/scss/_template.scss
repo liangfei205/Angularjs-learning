@@ -1,0 +1,133 @@
+.halfRow{
+  width: 520px;
+}
+
+.totalRow{
+  width: 1200px;
+}
+
+.templateInputRow{
+  width: 324px;
+  margin-right: 60px;
+  height: 84px;
+}
+
+.templateMain{
+
+  >div{
+    padding-left: 60px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: $bigBaseFontSize;
+  }
+
+  .templateInputRow{
+    width: 324px;
+    margin-right: 60px;
+    height: 84px;
+  }
+
+  .templateMulselectRow{
+    margin-top: 18px;
+    min-height: 40px;
+
+    label {
+      margin: 0 32px 0 0;
+    }
+
+    >label{
+      color: #666666;
+    }
+
+    .mulselect{
+      height: 40px;
+      width: 180px;
+    }
+
+    .md-label{
+      margin-left: 32px;
+    }
+  }
+
+  .templateMulinputRow{
+    label{
+      margin: 0 16px 0 0;
+    }
+
+    >label{
+      color: #666666;
+    }
+
+    .spanClass{
+      margin: 0 12px 0 12px;
+    }
+
+    md-input-container{
+      margin:0;
+      width: 48px;
+    }
+
+  }
+
+  .templateNumberRow{
+    >div{
+      width: 324px;
+      margin-right: 12px;
+      height: 84px;
+    }
+
+    >span{
+      margin-top: 24px;
+      font-size: 16px;
+      color: #9e9e9e;
+      margin-right: 36px;
+    }
+  }
+
+
+  .templateRadioRow{
+    height: 84px;
+
+    >label{
+      color: #666666;
+    }
+
+    label{
+      margin: 0 32px 0 0;
+    }
+
+    .md-label{
+      margin-left: 32px;
+    }
+
+    md-radio-button{
+      padding-right: 30px;
+    }
+
+
+    md-input-container{
+      width: 232px;
+      margin:0 0 0 -14px;
+    }
+  }
+
+}
+
+
+.showTemplateRow{
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+
+  label{
+    color: #666666;
+  }
+}
+
+.halfShowRow{
+  width: 46%;
+}
+
+.totalShowRow{
+  width: 92%;
+}

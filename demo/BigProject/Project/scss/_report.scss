@@ -1,0 +1,141 @@
+.reportBtn{
+  >section{
+    margin-top: 22px;
+    button.md-button.md-raised{
+      margin: 0 0 0 24px;
+      @extend .btnBoxShadow;
+    }
+  }
+}
+
+
+.reportChart{
+  width: 480px;
+  height: 360px;
+
+  .chartPart{
+    width: 480px;
+  }
+}
+
+.reportDetailChart{
+  width: 840px;
+  height: 400px;
+  margin: 48px 0 48px 0;
+}
+
+.reportBorder{
+  border: solid 1px #EEEEEE;
+  padding: 0;
+  font-size: $bigBaseFontSize;
+}
+
+.reportMain{
+  padding: 0 80px 0 80px;
+  height: 430px;
+}
+
+.reportBtnRow{
+  height: 70px;
+  padding-top: 16px;
+
+  button.md-raised.md-primary{
+    color: $white-color;
+    margin: 0;
+  }
+}
+
+.reportSearchRow{
+  height: 80px;
+  font-size: $bigBaseFontSize;
+  font-family: $primary-font-family;
+  padding-right: 30px;
+  label{
+    font-weight: normal;
+  }
+
+  > div {
+    width: 188px;
+  }
+
+  md-input-container{
+    width: 188px;
+  }
+
+  > span {
+    width: nth($primary-px, 2);
+  }
+
+  md-input-container._md-datepicker-floating-label._md-datepicker-has-calendar-icon{
+    button.md-datepicker-button.md-icon-button.md-button.md-ink-ripple{
+      display: none;
+    }
+
+    .md-datepicker-input-container{
+      margin-left:0 ;
+      width: 100%;
+    }
+
+    label{
+      left: 2px !important;
+    }
+  }
+}
+
+.reportTimeChoose{
+  >div{
+    width: 128px;
+  }
+
+  md-input-container{
+    width: 128px;
+  }
+
+  >span{
+    width: 36px;
+  }
+}
+
+.reportMoreInfo{
+  height: 74px;
+  width: 480px;
+  >div{
+    margin-top: 16px;
+    margin-bottom: 22px;
+  }
+
+  button.md-button{
+    margin: 0;
+  }
+}
+
+.reportMathData{
+  font-size: 16px;
+  margin-left: 32px;
+  color: #666666;
+  >span{
+    margin-top: 24px;
+  }
+  >div{
+    margin-top: 18px;
+    margin-bottom: 24px;
+    >span{
+      margin-right: 30px;
+    }
+  }
+
+  .smallMagin{
+    margin-right: 24px;
+  }
+  .specialColor{
+    color: #3d93fe;
+  }
+}
+
+.reportSmallChart{
+  margin-left: 120px;
+  >div{
+    width: 480px;
+    height: 270px;
+  }
+}

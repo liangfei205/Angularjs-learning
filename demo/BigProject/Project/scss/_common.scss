@@ -1,0 +1,84 @@
+.commonCard {
+  @extend .generalCardPadding;
+  @extend .cardMargin;
+  @extend .whiteBackgroundColor;
+
+  .commonSearchRow {
+    @extend .generalSearchRow;
+
+    width: 890px;
+  }
+
+  .md-errors-spacer{
+    display: none;
+  }
+
+  .userSearchRow{
+    @extend .generalSearchRow;
+    width: 666px;
+  }
+
+  .userRoleSelectRow{
+    width: 666px;
+    height: 80px;
+    font-size: $bigBaseFontSize;
+    font-family: $primary-font-family;
+    padding-right: 30px;
+    > div {
+      width: 524px;
+    }
+
+    md-input-container{
+      width: 524px;
+    }
+
+    button.md-button {
+      @extend .generalBtn;
+      margin: 0 0 6px 0;
+    }
+  }
+
+}
+
+.editTabBootsrapTabel{
+  margin-right: 60px;
+  background-color: #f9fbff;
+  font-family: $primary-font-family;
+
+  md-checkbox{
+    line-height: 42px;
+    height: 42px;
+    margin: 0;
+  }
+
+  .width98{
+    width: 98px;
+  }
+
+  thead tr{
+    line-height: 50px;
+    font-size: $bigBaseFontSize;
+  }
+
+  tbody tr{
+    font-size: $baseFontSize;
+  }
+
+
+
+  .th-inner{
+    text-align: center;
+  }
+}
+
+.userDetailRoleRow{
+  height:42px;
+  width: 786px;
+  md-checkbox{
+    line-height: 42px;
+    height: 42px;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.87) ;
+  }
+}
+

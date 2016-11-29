@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "message": "成功",
+  "errCode": "",
+  "value": {
+    "ACCOUNT": "njroot",
+    "IS_ONLINE": 1,
+    "USER_ROLE": [
+      {
+        "ROLE_KEY_ID": 1,
+        "ROLE_NAME": "超级管理员"
+      }
+    ],
+    "USER_KEY_ID": 79
+  }
+}

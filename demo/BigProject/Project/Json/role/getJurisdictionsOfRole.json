@@ -1,0 +1,349 @@
+{
+  "success": true,
+  "message": "查询全部的角色权限成功",
+  "errCode": "",
+  "value": [
+    {
+      "JURISDICTION_NAME": "基础数据管理",
+      "IS_SELECT": 1,
+      "JURISDICTION_KEY_ID": 1,
+      "SUBLIST": [
+        {
+          "JURISDICTION_NAME": "系统日志管理",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 3,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "新增",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 7,
+              "JURISDICTION_CODE": "1001001001"
+            },
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 8,
+              "JURISDICTION_CODE": "1001001002"
+            },
+            {
+              "JURISDICTION_NAME": "修改",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 9,
+              "JURISDICTION_CODE": "1001001003"
+            },
+            {
+              "JURISDICTION_NAME": "信息导出",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 10,
+              "JURISDICTION_CODE": "1001001004"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1001001"
+        },
+        {
+          "JURISDICTION_NAME": "系统角色管理",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 4,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "新增",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 11,
+              "JURISDICTION_CODE": "1001002001"
+            },
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 12,
+              "JURISDICTION_CODE": "1001002002"
+            },
+            {
+              "JURISDICTION_NAME": "修改",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 13,
+              "JURISDICTION_CODE": "1001002003"
+            },
+            {
+              "JURISDICTION_NAME": "删除",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 14,
+              "JURISDICTION_CODE": "1001002004"
+            },
+            {
+              "JURISDICTION_NAME": "信息导出",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 15,
+              "JURISDICTION_CODE": "1001002005"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1001002"
+        },
+        {
+          "JURISDICTION_NAME": "系统用户管理",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 5,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "新增",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 16,
+              "JURISDICTION_CODE": "1001003001"
+            },
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 17,
+              "JURISDICTION_CODE": "1001003002"
+            },
+            {
+              "JURISDICTION_NAME": "修改",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 18,
+              "JURISDICTION_CODE": "1001003003"
+            },
+            {
+              "JURISDICTION_NAME": "删除",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 19,
+              "JURISDICTION_CODE": "1001003004"
+            },
+            {
+              "JURISDICTION_NAME": "信息导出",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 20,
+              "JURISDICTION_CODE": "1001003005"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1001003"
+        }
+      ],
+      "ROLE_KEY_ID": "1",
+      "JURISDICTION_CODE": "1001"
+    },
+    {
+      "JURISDICTION_NAME": "模块一",
+      "IS_SELECT": 1,
+      "JURISDICTION_KEY_ID": 2,
+      "SUBLIST": [
+        {
+          "JURISDICTION_NAME": "模块一-一",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 6,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "新增",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 21,
+              "JURISDICTION_CODE": "1002001001"
+            },
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 22,
+              "JURISDICTION_CODE": "1002001002"
+            },
+            {
+              "JURISDICTION_NAME": "修改",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 23,
+              "JURISDICTION_CODE": "1002001003"
+            },
+            {
+              "JURISDICTION_NAME": "删除",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 25,
+              "JURISDICTION_CODE": "1002001005"
+            },
+            {
+              "JURISDICTION_NAME": "信息导出",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 24,
+              "JURISDICTION_CODE": "1002001004"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1002001"
+        }
+      ],
+      "ROLE_KEY_ID": "1",
+      "JURISDICTION_CODE": "1002"
+    },
+    {
+      "JURISDICTION_NAME": "模块二",
+      "IS_SELECT": 1,
+      "JURISDICTION_KEY_ID": 26,
+      "SUBLIST": [
+        {
+          "JURISDICTION_NAME": "模块二-一",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 27,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "新增",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 29,
+              "JURISDICTION_CODE": "1003001001"
+            },
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 30,
+              "JURISDICTION_CODE": "1003001002"
+            },
+            {
+              "JURISDICTION_NAME": "修改",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 31,
+              "JURISDICTION_CODE": "1003001003"
+            },
+            {
+              "JURISDICTION_NAME": "信息导出",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 32,
+              "JURISDICTION_CODE": "1003001004"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1003001"
+        },
+        {
+          "JURISDICTION_NAME": "模块二-二",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 28,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "新增",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 33,
+              "JURISDICTION_CODE": "1003002001"
+            },
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 34,
+              "JURISDICTION_CODE": "1003002002"
+            },
+            {
+              "JURISDICTION_NAME": "修改",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 35,
+              "JURISDICTION_CODE": "1003002003"
+            },
+            {
+              "JURISDICTION_NAME": "删除",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 36,
+              "JURISDICTION_CODE": "1003002004"
+            },
+            {
+              "JURISDICTION_NAME": "信息导出",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 37,
+              "JURISDICTION_CODE": "1003002005"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1003002"
+        }
+      ],
+      "ROLE_KEY_ID": "1",
+      "JURISDICTION_CODE": "1003"
+    },
+    {
+      "JURISDICTION_NAME": "模块三",
+      "IS_SELECT": 1,
+      "JURISDICTION_KEY_ID": 38,
+      "SUBLIST": [
+        {
+          "JURISDICTION_NAME": "模块三-一",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 41,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 48,
+              "JURISDICTION_CODE": "1004001001"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1004001"
+        },
+        {
+          "JURISDICTION_NAME": "模块三-二",
+          "IS_SELECT": 1,
+          "JURISDICTION_KEY_ID": 42,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 1,
+              "JURISDICTION_KEY_ID": 49,
+              "JURISDICTION_CODE": "1004002001"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1004002"
+        }
+      ],
+      "ROLE_KEY_ID": "1",
+      "JURISDICTION_CODE": "1004"
+    },
+    {
+      "JURISDICTION_NAME": "数据统计分析",
+      "IS_SELECT": 0,
+      "JURISDICTION_KEY_ID": 39,
+      "SUBLIST": [
+        {
+          "JURISDICTION_NAME": "统计一",
+          "IS_SELECT": 0,
+          "JURISDICTION_KEY_ID": 43,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 0,
+              "JURISDICTION_KEY_ID": 50,
+              "JURISDICTION_CODE": "1005001001"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1005001"
+        },
+        {
+          "JURISDICTION_NAME": "统计二",
+          "IS_SELECT": 0,
+          "JURISDICTION_KEY_ID": 52,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 0,
+              "JURISDICTION_KEY_ID": 54,
+              "JURISDICTION_CODE": "1005002001"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1005002"
+        },
+        {
+          "JURISDICTION_NAME": "统计三",
+          "IS_SELECT": 0,
+          "JURISDICTION_KEY_ID": 53,
+          "SUBLIST": [
+            {
+              "JURISDICTION_NAME": "查看",
+              "IS_SELECT": 0,
+              "JURISDICTION_KEY_ID": 55,
+              "JURISDICTION_CODE": "1005003001"
+            }
+          ],
+          "ROLE_KEY_ID": "1",
+          "JURISDICTION_CODE": "1005003"
+        }
+      ],
+      "ROLE_KEY_ID": "1",
+      "JURISDICTION_CODE": "1005"
+    }
+  ]
+}

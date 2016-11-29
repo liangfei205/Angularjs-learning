@@ -5,10 +5,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 合并前的css -->
+    <link rel="stylesheet" href="vendor/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css"/>
+    <link rel="stylesheet" href="scss/recon.all.css"/>
+    <!-- 合并后的css -->
+    <!--<link rel="stylesheet" href="distCss/all.min.css"/>-->
 </head>
-<body>
-<div ng-app="" ng-init="">
+<body ng-app="APP" ng-controller="Controller">
+<div ui-view layout-fill ng-cloak></div>
+<!-- loadingModal-->
+<div ng-show="ajaxCalls" class="modal fade loadingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="./images/main/loading.gif" alt="loading">
+        </div>
+    </div>
 </div>
-<script defer src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<!-- 合并前的js -->
+<script defer src="vendor/jquery/jquery.min.js"></script>
+<script defer src="vendor/bootstrap/bootstrap.min.js"></script>
+<script defer src="vendor/angular/angular.min.js"></script>
+<script defer src="vendor/angular/i18n/angular-locale_zh-cn.js"></script>
+<script defer src="vendor/angular/angular-animate.min.js"></script>
+<script defer src="vendor/angular/angular-aria.min.js"></script>
+<script defer src="vendor/angular/angular-cookies.min.js"></script>
+<script defer src="vendor/angular/angular-route.min.js"></script>
+<script defer src="vendor/angular/angular-resource.min.js"></script>
+<script defer src="vendor/angular-material/angular-material.min.js"></script>
+<script defer src="vendor/angular-messages/angular-messages.min.js"></script>
+<script defer src="vendor/angular-ui/angular-ui-router.min.js"></script>
+
+<script defer src="vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script defer src="vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script defer src="vendor/bootstrap-table/bootstrap-table-angular.js"></script>
+
+<script defer src="vendor/E-charts/echarts.common.min.js"></script>
+
+<script defer src="vendor/moment/moment.min.js"></script>
+
+<script defer src="js/app.js"></script>
+<script defer src="js/config.js"></script>
+<script defer src="js/svgcache.js"></script>
+<script defer src="js/common.js"></script>
+<script defer src="js/filter.js"></script>
+<script defer src="js/directive.js"></script>
+<script defer src="js/backend.js"></script>
+<script defer src="js/main/Controller.js"></script>
+
+<script defer src="js/login/services/loginService.js"></script>
+<script defer src="js/login/controller/loginCtrl.js"></script>
+
+<script defer src="js/main/services/mainService.js"></script>
+<script defer src="js/main/controller/mainCtrl.js"></script>
+
+<script defer src="js/baseData/role/controller/roleListCtrl.js"></script>
+<script defer src="js/baseData/role/controller/roleAddCtrl.js"></script>
+<script defer src="js/baseData/role/controller/roleEditCtrl.js"></script>
+<script defer src="js/baseData/role/services/roleService.js"></script>
+
+<script defer src="js/baseData/user/controller/userListCtrl.js"></script>
+<script defer src="js/baseData/user/controller/userAddCtrl.js"></script>
+<script defer src="js/baseData/user/controller/userEditCtrl.js"></script>
+<script defer src="js/baseData/user/services/userService.js"></script>
+
+<script defer src="js/report/keyPopulation/controller/keyPopulationReportCtrl.js"></script>
+<script defer src="js/report/keyPopulation/services/keyPopulationReportService.js"></script>
+<!-- 合并后的js -->
+<!--<script defer src="distJS/lib.all.min.js"></script>-->
+<!--<script defer src="distJS/all.min.js"></script>-->
+<!--<script defer src="js/config.js"></script>-->
 </body>
 </html>

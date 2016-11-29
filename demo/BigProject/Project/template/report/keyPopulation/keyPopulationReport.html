@@ -1,0 +1,116 @@
+<div layout="row" class="generalTable secondTableMagin" ng-if="isShow('1005002001')">
+    <div layout="column" flex>
+        <md-nav-bar md-selected-nav-item="vm.currentNavItem" nav-bar-aria-label="navigation links" class="topMainMenu">
+            <md-nav-item md-nav-click="goto('diabetes');vm.changeNavItem('diabetes');" name="diabetes">重点人群统计</md-nav-item>
+        </md-nav-bar>
+        <div layout="row" class="secondTableMagin " layout-align="space-around start" >
+            <div layout="column" layout-align="space-around start" >
+                <div layout="column" layout-align="start center" ng-show="vm.showLeftMiddle.chart" class="reportChart">
+                    <div layout="row" ng-show="vm.showLeftMiddle.date" class="reportTimeChoose">
+                        <div >
+                            <md-input-container>
+                                <label>年份</label>
+                                <md-select ng-model="vm.leftMiddleYear" ng-change="vm.changeLeftMiddleYear()">
+                                    <md-option ng-value="year" ng-repeat="year in vm.years">{{year}}年</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <span></span>
+                        <div>
+                            <md-input-container>
+                                <label>月</label>
+                                <md-select ng-model="vm.leftMiddleMonth" ng-change="vm.refreshLeftMiddle()">
+                                    <md-option ng-value="month" ng-hide="(vm.leftMiddleYear+'')===vm.nowYear && month>vm.nowMonth" ng-repeat="month in vm.months">{{month}}月</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div flex class="chartPart" e-chart e-data="vm.leftMiddle" ></div>
+                </div>
+                <div class="reportChart" layout="column" layout-align="start center" ng-show="vm.showLeftBottom.chart">
+                    <div layout="row" ng-show="vm.showLeftBottom.date" class="reportTimeChoose">
+                        <div>
+                            <md-input-container>
+                                <label>年份</label>
+                                <md-select ng-model="vm.leftBottomYear" ng-change="vm.refreshLeftBottom()">
+                                    <md-option ng-value="year" ng-repeat="year in vm.years">{{year}}年</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div flex class="chartPart" e-chart e-data="vm.leftBottom"></div>
+                </div>
+            </div>
+            <div layout="column" layout-align="space-around start" >
+                <div class="reportChart"  layout="column" layout-align="start center" ng-show="vm.showRightTop.chart && vm.isLevel==='1'">
+                    <div layout="row" ng-show="vm.showRightTop.date" class="reportTimeChoose">
+                        <div>
+                            <md-input-container>
+                                <label>年份</label>
+                                <md-select ng-model="vm.rightTopYear">
+                                    <md-option ng-value="year" ng-repeat="year in vm.years">{{year}}年</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <span></span>
+                        <div>
+                            <md-input-container>
+                                <label>月</label>
+                                <md-select ng-model="vm.rightTopMonth">
+                                    <md-option ng-value="month" ng-hide="(vm.rightTopYear+'')===vm.nowYear && month>vm.nowMonth" ng-repeat="month in vm.months">{{month}}月</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div flex class="chartPart" e-chart e-data="vm.rightTop"></div>
+
+                </div>
+                <div class="reportChart" layout="column" layout-align="start center" ng-show="vm.showRightMiddle.chart">
+                    <div layout="row" ng-show="vm.showRightMiddle.date" class="reportTimeChoose">
+                        <div>
+                            <md-input-container>
+                                <label>年份</label>
+                                <md-select ng-model="vm.rightMiddleYear" ng-change="vm.changeRightMiddleYear()">
+                                    <md-option ng-value="year" ng-repeat="year in vm.years">{{year}}年</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <span></span>
+                        <div>
+                            <md-input-container>
+                                <label>月</label>
+                                <md-select ng-model="vm.rightMiddleMonth" ng-change="vm.refreshRightMiddle()">
+                                    <md-option ng-value="month" ng-hide="(vm.rightMiddleYear+'')===vm.nowYear && month>vm.nowMonth" ng-repeat="month in vm.months">{{month}}月</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div flex class="chartPart" e-chart e-data="vm.rightMiddle"></div>
+
+                </div>
+                <div class="reportChart" layout="column" layout-align="start center" ng-show="vm.showRightBottom.chart">
+                    <div layout="row" ng-show="vm.showRightBottom.date" class="reportTimeChoose">
+                        <div >
+                            <md-input-container>
+                                <label>年份</label>
+                                <md-select ng-model="vm.rightBottomYear">
+                                    <md-option ng-value="year" ng-repeat="year in vm.years">{{year}}年</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <span></span>
+                        <div>
+                            <md-input-container>
+                                <label>月</label>
+                                <md-select ng-model="vm.rightBottomMonth">
+                                    <md-option ng-value="month" ng-hide="(vm.rightBottomYear+'')===vm.nowYear && month>vm.nowMonth" ng-repeat="month in vm.months">{{month}}月</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div flex class="chartPart" e-chart e-data="vm.rightBottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
