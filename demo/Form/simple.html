@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>simple</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 30px;
+        }
+        table tr:nth-child(1) td,
+        table tr td:nth-child(1){
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="myTest" ng-controller="myController">
+    <div class="col-md-6">
+        <form role="form" name="myForm" ng-submit="submitForm(myForm)" class="form-horizontal" novalidate>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="name">1.必填项</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" id="name" name="name" type="text" required ng-model='user.name'/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.name.$dirty && myForm.name.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="minlength">2.最小长度=5</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" id="minlength" name="minlength" ng-minlength="5" ng-model="user.minlength"
+                           class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.minlength.$dirty && myForm.minlength.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="maxlength">3.最大长度=20</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" id="maxlength" name="maxlength" ng-model="user.maxlength" ng-maxlength="20"
+                           class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.maxlength.$dirty && myForm.maxlength.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="pattern">4. 模式匹配</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" id="pattern" name="pattern" ng-model="user.pattern"
+                           ng-pattern="/^[a-zA-Z]*\d$/" class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.pattern.$dirty && myForm.pattern.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="email">5. 电子邮件</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="email" id="email" name="email" ng-model="user.email" class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.email.$dirty && myForm.email.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="age">6. 数字</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" id="age" name="age" ng-model="user.age" class="form-control"/>
+
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.age.$dirty && myForm.age.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-4">
+                    <label for="url"> 7. URL</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="url" id="url" name="url" ng-model="user.url" class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.url.$dirty && myForm.url.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  text-center">
+                <input class="btn btn-primary btn-lg" ng-disabled="myForm.$invalid" type="submit" value="提交"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <tr>
+                <td>验证方式</td>
+                <td>当前值</td>
+                <td>$pristine 【没修改】</td>
+                <td>$dirty【修改过】</td>
+                <td>$invalid【验证失败】</td>
+                <td>$valid【验证成功】</td>
+                <td>$error【错误详情】</td>
+            </tr>
+            <tr>
+                <td>必填项</td>
+                <td>{{user.name}}</td>
+                <td>{{myForm.name.$pristine}}</td>
+                <td>{{myForm.name.$dirty}}</td>
+                <td>{{myForm.name.$invalid}}</td>
+                <td>{{myForm.name.$valid}}</td>
+                <td>{{myForm.name.$error}}</td>
+            </tr>
+            <tr>
+                <td>最小长度=5</td>
+                <td>{{user.minlength}}</td>
+                <td>{{myForm.minlength.$pristine}}</td>
+                <td>{{myForm.minlength.$dirty}}</td>
+                <td>{{myForm.minlength.$invalid}}</td>
+                <td>{{myForm.minlength.$valid}}</td>
+                <td>{{myForm.minlength.$error}}</td>
+            </tr>
+            <tr>
+                <td>最大长度=20</td>
+                <td>{{user.maxlength}}</td>
+                <td>{{myForm.maxlength.$pristine}}</td>
+                <td>{{myForm.maxlength.$dirty}}</td>
+                <td>{{myForm.maxlength.$invalid}}</td>
+                <td>{{myForm.maxlength.$valid}}</td>
+                <td>{{myForm.maxlength.$error}}</td>
+            </tr>
+            <tr>
+                <td>模式匹配</td>
+                <td>{{user.pattern}}</td>
+                <td>{{myForm.pattern.$pristine}}</td>
+                <td>{{myForm.pattern.$dirty}}</td>
+                <td>{{myForm.pattern.$invalid}}</td>
+                <td>{{myForm.pattern.$valid}}</td>
+                <td>{{myForm.pattern.$error}}</td>
+            </tr>
+            <tr>
+                <td>电子邮件</td>
+                <td>{{user.email}}</td>
+                <td>{{myForm.email.$pristine}}</td>
+                <td>{{myForm.email.$dirty}}</td>
+                <td>{{myForm.email.$invalid}}</td>
+                <td>{{myForm.email.$valid}}</td>
+                <td>{{myForm.email.$error}}</td>
+            </tr>
+            <tr>
+                <td>数字</td>
+                <td>{{user.age}}</td>
+                <td>{{myForm.age.$pristine}}</td>
+                <td>{{myForm.age.$dirty}}</td>
+                <td>{{myForm.age.$invalid}}</td>
+                <td>{{myForm.age.$valid}}</td>
+                <td>{{myForm.age.$error}}</td>
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>{{user.url}}</td>
+                <td>{{myForm.url.$pristine}}</td>
+                <td>{{myForm.url.$dirty}}</td>
+                <td>{{myForm.url.$invalid}}</td>
+                <td>{{myForm.url.$valid}}</td>
+                <td>{{myForm.url.$error}}</td>
+            </tr>
+            <tr>
+                <td>整个表单</td>
+                <td>{{user}}</td>
+                <td>{{myForm.$pristine}}</td>
+                <td>{{myForm.$dirty}}</td>
+                <td>{{myForm.$invalid}}</td>
+                <td>{{myForm.$valid}}</td>
+                <td>{{myForm.$error}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module('myTest', [])
+        .controller('myController', function ($scope) {
+            $scope.submitForm = function (myForm) {
+                if (myForm.$valid) {
+                    alert('表单提交...');
+                    var user = $scope.user;
+                    user.name = '';
+                    user.minlength = '';
+                    user.maxlength = '';
+                    user.pattern = '';
+                    user.email = '';
+                    user.age = '';
+                    user.url = '';
+//                    $scope.user = {};
+//                    $scope.user = '';
+//                    $scope.user = undefined;
+//                    $scope.user = null;
+                    myForm.$setPristine();
+                } else {
+                    alert('验证失败');
+                }
+            };
+        });
+</script>
+</body>
+</html>
