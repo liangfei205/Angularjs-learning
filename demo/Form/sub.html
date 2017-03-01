@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>simple</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 30px;
+        }
+
+        table tr:nth-child(1) td,
+        table tr td:nth-child(1) {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="myTest" ng-controller="myController" ng-cloak>
+    <div class="col-md-12">
+        <form role="form" name="myForm" ng-submit="submitForm(myForm)" class="form-horizontal" novalidate>
+            <div class="form-group  has-feedback">
+                <div class="col-md-2">
+                    <label for="name">主题</label>
+                </div>
+                <div class="col-md-12">
+                    <input class="form-control" id="name" name="name" type="text" required ng-model='appData.name'/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.name.$dirty && myForm.name.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-2">
+                    <label for="author">作者</label>
+                </div>
+                <div class="col-md-12">
+                    <input type="text" id="author" name="author" ng-model="appData.author" ng-maxlength="3"
+                           class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.author.$dirty && myForm.author.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group  has-feedback">
+                <div class="col-md-2">
+                    <label for="email">电子邮件</label>
+                </div>
+                <div class="col-md-12">
+                    <input type="email" id="email" name="email" ng-model="appData.email" class="form-control"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"
+                          ng-show="myForm.email.$dirty && myForm.email.$valid"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>技术</td>
+                        <td>描述</td>
+                        <td>URL</td>
+                        <td>操作列</td>
+                    </tr>
+                    <tr ng-form="subForm" ng-repeat="item in appData.books" class="form-horizontal" novalidate>
+                        <td class="form-group">
+                            <div class="has-feedback">
+                                <input type="text" id="name{{$index}}" name="name{{$index}}" ng-model="item.name"
+                                       required class="form-control"/>
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="right: 0"
+                                      ng-show="subForm['name'+$index].$dirty && subForm['name'+$index].$valid"></span>
+                            </div>
+                        </td>
+                        <td class="form-group">
+                            <div class="has-feedback">
+                                <input type="text" id="desc{{$index}}" name="desc{{$index}}" ng-model="item.desc"
+                                       class="form-control"/>
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="right: 0"
+                                      ng-show="subForm['desc'+$index].$dirty && subForm['desc'+$index].$valid"></span>
+                            </div>
+                        </td>
+                        <td class="form-group">
+                            <div class="has-feedback">
+                                <input type="url" id="website{{$index}}" name="website{{$index}}"
+                                       ng-model="item.website"
+                                       class="form-control"/>
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="right: 0"
+                                      ng-show="subForm['website'+$index].$dirty && subForm['website'+$index].$valid"></span>
+                            </div>
+                        </td>
+                        <td class="form-group has-feedback">
+                            <input class="btn btn-danger btn-sm" ng-click="remove($index, appData.books)" value="删除">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="form-group text-center">
+                            <input class="btn btn-primary btn-lg" ng-click="addItem(appData.books)" value="添加一项">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group text-center">
+                <input class="btn btn-primary btn-lg" ng-disabled="myForm.$invalid" type="submit" value="提交"/>
+                <input class="btn btn-danger btn-lg" ng-click="resetForm(myForm)" type="button" value="取消"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <tr>
+                <td>验证</td>
+                <td>当前值</td>
+                <td>$pristine 【没修改】</td>
+                <td>$dirty【修改过】</td>
+                <td>$invalid【验证失败】</td>
+                <td>$valid【验证成功】</td>
+                <td>$error【错误详情】</td>
+            </tr>
+            <tr>
+                <td>主题</td>
+                <td>{{appData.name}}</td>
+                <td>{{myForm.name.$pristine}}</td>
+                <td>{{myForm.name.$dirty}}</td>
+                <td>{{myForm.name.$invalid}}</td>
+                <td>{{myForm.name.$valid}}</td>
+                <td>{{myForm.name.$error}}</td>
+            </tr>
+            <tr>
+                <td>作者</td>
+                <td>{{appData.author}}</td>
+                <td>{{myForm.author.$pristine}}</td>
+                <td>{{myForm.author.$dirty}}</td>
+                <td>{{myForm.author.$invalid}}</td>
+                <td>{{myForm.author.$valid}}</td>
+                <td>{{myForm.author.$error}}</td>
+            </tr>
+            <tr>
+                <td>电子邮件</td>
+                <td>{{appData.email}}</td>
+                <td>{{myForm.email.$pristine}}</td>
+                <td>{{myForm.email.$dirty}}</td>
+                <td>{{myForm.email.$invalid}}</td>
+                <td>{{myForm.email.$valid}}</td>
+                <td>{{myForm.email.$error}}</td>
+            </tr>
+            <tr>
+                <td>父表单</td>
+                <td>{{appData}}</td>
+                <td>{{myForm.$pristine}}</td>
+                <td>{{myForm.$dirty}}</td>
+                <td>{{myForm.$invalid}}</td>
+                <td>{{myForm.$valid}}</td>
+                <td>{{myForm.$error}}</td>
+            </tr>
+            <tr>
+                <td>子表单</td>
+                <td>{{appData.books}}</td>
+                <td>{{myForm.subForm.$pristine}}</td>
+                <td>{{myForm.subForm.$dirty}}</td>
+                <td>{{myForm.subForm.$invalid}}</td>
+                <td>{{myForm.subForm.$valid}}</td>
+                <td>{{myForm.subForm.$error}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module('myTest', [])
+        .controller('myController', function ($scope) {
+            $scope.appData = {
+                name: 'JS从入门到放弃',
+                author: '王鹏飞',
+                email: '1015088819@qq.com',
+                books: [
+                    {
+                        name: 'angularjs',
+                        desc: 'mvw',
+                        website: 'https://angularjs.org/'
+                    },
+                    {
+                        name: 'react',
+                        desc: 'React 教程 React 是一个用于构建用户界面的 JAVASCRIPT 库',
+                        website: 'https://react.rocks/'
+                    },
+                    {
+                        name: 'nodejs',
+                        desc: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境',
+                        website: 'http://nodejs.cn/'
+                    },
+                    {
+                        name: 'gulp',
+                        desc: 'Gulp.js 是一个自动化构建工具,开发者可以使用它在项目开发过程中自动执行常见任务',
+                        website: 'http://gulpjs.com/'
+                    }
+                ]
+            };
+            $scope.appDataBak = {};
+            angular.copy($scope.appData, $scope.appDataBak);
+            $scope.remove = function (index, list) {
+                list.splice(index, 1);
+            };
+            $scope.addItem = function (list) {
+                list.push({});
+            };
+            $scope.submitForm = function (myForm) {
+                if (myForm.$valid) {
+                    alert('表单提交...');
+                    $scope.appData = {};
+                    myForm.$setPristine();
+                } else {
+                    alert('验证失败');
+                }
+            };
+            $scope.resetForm = function (myForm) {
+                alert('表单重置...');
+                angular.copy($scope.appDataBak, $scope.appData);
+                myForm.$setPristine();
+            };
+        });
+</script>
+</body>
+</html>
